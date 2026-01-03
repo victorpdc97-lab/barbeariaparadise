@@ -12,6 +12,7 @@ const Header = () => {
     { name: "Serviços", path: "/servicos" },
     { name: "Sobre", path: "/sobre" },
     { name: "Contato", path: "/contato" },
+    { name: "CLUBE", path: "/clube", featured: true },
   ];
 
   const isActive = (path: string) => location.pathname === path;
@@ -35,7 +36,11 @@ const Header = () => {
               <Link
                 key={link.path}
                 to={link.path}
-                className={`text-sm font-medium transition-colors hover:text-primary ${
+                className={`text-sm font-medium transition-colors ${
+                  link.featured 
+                    ? "px-4 py-2 border border-foreground rounded-md hover:bg-foreground hover:text-background" 
+                    : "hover:text-primary"
+                } ${
                   isActive(link.path) ? "text-primary" : "text-foreground/80"
                 }`}
               >
