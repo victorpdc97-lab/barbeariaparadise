@@ -1,11 +1,8 @@
 import { Link } from "react-router-dom";
 import { Instagram, Phone, MapPin, Clock } from "lucide-react";
-
 const Footer = () => {
   const whatsappLink = "https://wa.me/5500000000000?text=Olá,%20quero%20agendar%20um%20horário%20na%20Barbearia%20Paradise.";
-
-  return (
-    <footer className="bg-card border-t border-border">
+  return <footer className="bg-card border-t border-border">
       <div className="container-narrow section-padding">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
           {/* Brand */}
@@ -17,20 +14,10 @@ const Footer = () => {
               Seu estilo, nosso ritual. Experiência premium em barbearia com profissionais especializados.
             </p>
             <div className="flex gap-4">
-              <a
-                href="https://instagram.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center text-foreground hover:bg-primary hover:text-primary-foreground transition-colors"
-              >
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center text-foreground hover:bg-primary hover:text-primary-foreground transition-colors">
                 <Instagram size={20} />
               </a>
-              <a
-                href={whatsappLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center text-foreground hover:bg-primary hover:text-primary-foreground transition-colors"
-              >
+              <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center text-foreground hover:bg-primary hover:text-primary-foreground transition-colors">
                 <Phone size={20} />
               </a>
             </div>
@@ -77,9 +64,10 @@ const Footer = () => {
               Localização
             </h4>
             <p className="text-sm text-muted-foreground leading-relaxed">
-              Rua das Barbearias, 123<br />
-              Centro, São Paulo - SP<br />
-              CEP 00000-000
+              Rua Juiz de Fora, 1374   <br />
+              Santo Agostinho, 
+Belo Horizonte, MG <br />
+              CEP 30180-061
             </p>
           </div>
         </div>
@@ -94,8 +82,6 @@ const Footer = () => {
           </p>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;
