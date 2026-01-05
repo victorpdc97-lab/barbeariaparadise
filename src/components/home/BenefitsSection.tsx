@@ -1,42 +1,35 @@
+import { Link } from "react-router-dom";
 import barbershopInterior from "@/assets/barbershop-interior.jpg";
 
 const BenefitsSection = () => {
   return (
-    <section className="relative">
-      {/* Background Image */}
-      <div className="absolute inset-0">
+    <section className="bg-secondary">
+      <div className="tile rounded-none">
+        {/* Background */}
         <img 
           src={barbershopInterior} 
           alt="Nossa marca" 
-          className="w-full h-full object-cover"
+          className="tile-bg"
         />
-        <div className="absolute inset-0 bg-background/85" />
-      </div>
+        <div className="absolute inset-0 bg-black/50" />
 
-      <div className="relative z-10 section-padding">
-        <div className="container-narrow">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-            {/* Left - Title */}
-            <div className="animate-fade-up">
-              <h2 className="font-display text-5xl md:text-6xl lg:text-7xl font-bold text-foreground leading-none tracking-wider">
-                NOSSA
-              </h2>
-              <h2 className="font-display text-5xl md:text-6xl lg:text-7xl font-bold text-foreground leading-none tracking-wider">
-                MARCA
-              </h2>
-            </div>
+        {/* Content */}
+        <div className="tile-content text-white">
+          <p className="eyebrow-apple text-white/70 mb-4 animate-fade-up">
+            Nossa Marca
+          </p>
+          
+          <h2 className="headline-apple text-white mb-6 max-w-3xl animate-fade-up delay-100">
+            Inspirada nas barbearias nova-iorquinas dos anos 50.
+          </h2>
+          
+          <p className="subheadline-apple text-white/70 max-w-2xl mx-auto mb-8 animate-fade-up delay-200">
+            Resgatamos a cultura masculina clássica, onde os homens se encontravam para fazer a barba à navalha enquanto conversavam.
+          </p>
 
-            {/* Right - Description */}
-            <div className="animate-fade-up delay-200">
-              <p className="text-foreground/80 text-lg md:text-xl leading-relaxed font-light">
-                Inspirada nas antigas barbearias nova-iorquinas típicas das décadas de 40, 50 e 60, 
-                a <span className="text-foreground font-medium">Barbearia Paradise</span> chega com a 
-                intenção de resgatar a cultura masculina, perdida ao longo dos anos, em que os homens 
-                se encontravam para fazer a barba à navalha e cortar os cabelos enquanto fumavam seus 
-                charutos, bebiam e conversavam.
-              </p>
-            </div>
-          </div>
+          <Link to="/sobre" className="link-apple text-white hover:text-white/80 animate-fade-up delay-300">
+            Conhecer nossa história
+          </Link>
         </div>
       </div>
     </section>

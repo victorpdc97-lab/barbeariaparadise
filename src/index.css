@@ -1,67 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
-
 @layer base {
   :root {
-    --background: 0 0% 8%;
-    --foreground: 0 0% 98%;
+    /* Apple-inspired Light Theme */
+    --background: 0 0% 100%;
+    --foreground: 0 0% 7%;
 
-    --card: 0 0% 12%;
-    --card-foreground: 0 0% 98%;
+    --card: 0 0% 98%;
+    --card-foreground: 0 0% 7%;
 
-    --popover: 0 0% 12%;
-    --popover-foreground: 0 0% 98%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 7%;
 
-    --primary: 0 0% 100%;
-    --primary-foreground: 0 0% 8%;
+    --primary: 0 0% 7%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 0 0% 15%;
-    --secondary-foreground: 0 0% 98%;
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 7%;
 
-    --muted: 0 0% 18%;
-    --muted-foreground: 0 0% 65%;
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
 
-    --accent: 0 72% 51%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 0 0% 96%;
+    --accent-foreground: 0 0% 7%;
 
-    --destructive: 0 84.2% 60.2%;
+    --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 0 0% 20%;
-    --input: 0 0% 20%;
-    --ring: 0 0% 100%;
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 0 0% 7%;
 
-    --radius: 0rem;
+    --radius: 0.75rem;
 
-    /* Barber pole accent colors */
-    --barber-red: 0 72% 51%;
-    --barber-blue: 210 100% 50%;
-    --barber-white: 0 0% 100%;
+    /* Apple Blue */
+    --apple-blue: 211 100% 50%;
+    --apple-blue-hover: 211 100% 45%;
 
-    /* Gold accents for premium feel */
-    --gold: 45 93% 47%;
-    --gold-light: 45 93% 60%;
-    --gold-dark: 45 93% 35%;
-
-    /* Shadows */
-    --shadow-dark: 0 10px 40px -10px rgba(0, 0, 0, 0.5);
-    --shadow-glow: 0 0 40px rgba(255, 255, 255, 0.05);
-
-    --sidebar-background: 0 0% 8%;
-    --sidebar-foreground: 0 0% 98%;
-    --sidebar-primary: 0 0% 100%;
-    --sidebar-primary-foreground: 0 0% 8%;
-    --sidebar-accent: 0 0% 15%;
-    --sidebar-accent-foreground: 0 0% 98%;
-    --sidebar-border: 0 0% 20%;
-    --sidebar-ring: 0 0% 100%;
+    /* Sidebar */
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 0 0% 7%;
+    --sidebar-primary: 0 0% 7%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 0 0% 96%;
+    --sidebar-accent-foreground: 0 0% 7%;
+    --sidebar-border: 0 0% 90%;
+    --sidebar-ring: 0 0% 7%;
   }
 
   .dark {
-    /* Same as root for this dark theme */
+    /* Apple-inspired Dark Theme */
+    --background: 0 0% 0%;
+    --foreground: 0 0% 98%;
+
+    --card: 0 0% 7%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 0 0% 7%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 7%;
+
+    --secondary: 0 0% 12%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 0 0% 12%;
+    --muted-foreground: 0 0% 60%;
+
+    --accent: 0 0% 12%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 18%;
+    --input: 0 0% 18%;
+    --ring: 0 0% 98%;
+
+    --sidebar-background: 0 0% 7%;
+    --sidebar-foreground: 0 0% 98%;
+    --sidebar-primary: 0 0% 98%;
+    --sidebar-primary-foreground: 0 0% 7%;
+    --sidebar-accent: 0 0% 12%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 0 0% 18%;
+    --sidebar-ring: 0 0% 98%;
   }
 }
 
@@ -71,124 +99,111 @@
   }
 
   body {
-    @apply bg-background text-foreground font-sans antialiased;
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-display uppercase tracking-wider;
+  html {
+    scroll-behavior: smooth;
   }
 }
 
 @layer components {
-  /* Barber pole stripe effect */
-  .barber-stripe {
-    height: 3px;
-    background: linear-gradient(
-      90deg,
-      hsl(0, 72%, 51%) 0%,
-      hsl(0, 72%, 51%) 33%,
-      hsl(0, 0%, 100%) 33%,
-      hsl(0, 0%, 100%) 66%,
-      hsl(210, 100%, 50%) 66%,
-      hsl(210, 100%, 50%) 100%
-    );
+  /* Apple-style container */
+  .container-apple {
+    @apply max-w-[980px] mx-auto px-6;
   }
 
-  /* Decorative divider */
-  .divider-ornament {
-    @apply flex items-center justify-center gap-4;
+  .container-apple-wide {
+    @apply max-w-[1200px] mx-auto px-6;
   }
 
-  .divider-ornament::before,
-  .divider-ornament::after {
-    content: '';
-    @apply h-px flex-1 bg-border;
+  /* Apple-style section padding */
+  .section-apple {
+    @apply py-20 md:py-28 lg:py-32;
   }
 
-  /* Gold gradient text */
-  .text-gold-gradient {
-    @apply bg-clip-text text-transparent;
-    background-image: linear-gradient(135deg, hsl(45, 93%, 60%) 0%, hsl(45, 93%, 47%) 50%, hsl(45, 93%, 35%) 100%);
+  /* Apple-style text styles */
+  .headline-apple {
+    @apply text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight leading-tight;
   }
 
-  /* Section styling */
-  .section-padding {
-    @apply py-20 md:py-28 lg:py-36;
+  .subheadline-apple {
+    @apply text-xl md:text-2xl lg:text-[28px] font-normal text-muted-foreground leading-relaxed;
   }
 
-  .container-narrow {
-    @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8;
+  .eyebrow-apple {
+    @apply text-xs md:text-sm font-medium uppercase tracking-widest text-muted-foreground;
   }
 
-  /* Vintage card style */
-  .vintage-card {
-    @apply bg-card border border-border/50 relative overflow-hidden;
-    box-shadow: var(--shadow-dark);
+  /* Apple-style link */
+  .link-apple {
+    @apply text-[hsl(var(--apple-blue))] hover:underline font-normal inline-flex items-center gap-1.5 text-lg md:text-xl;
   }
 
-  .vintage-card::before {
-    content: '';
-    @apply absolute inset-0 border border-foreground/5;
-    margin: 4px;
-    pointer-events: none;
+  .link-apple::after {
+    content: "›";
+    @apply text-xl transition-transform;
   }
 
-  /* Title with decorative elements */
-  .title-decorated {
-    @apply relative inline-block;
+  .link-apple:hover::after {
+    transform: translateX(3px);
   }
 
-  .title-decorated::before {
-    content: '✦';
-    @apply absolute -left-8 top-1/2 -translate-y-1/2 text-muted-foreground text-sm;
+  /* Apple-style cards */
+  .card-apple {
+    @apply bg-card rounded-3xl overflow-hidden;
   }
 
-  .title-decorated::after {
-    content: '✦';
-    @apply absolute -right-8 top-1/2 -translate-y-1/2 text-muted-foreground text-sm;
+  /* Apple-style button */
+  .btn-apple {
+    @apply inline-flex items-center justify-center px-7 py-3 rounded-full font-medium text-lg transition-all;
   }
 
-  /* Hover glow effect */
-  .hover-glow {
-    @apply transition-all duration-300;
+  .btn-apple-primary {
+    @apply btn-apple bg-[hsl(var(--apple-blue))] text-white hover:bg-[hsl(var(--apple-blue-hover))];
   }
 
-  .hover-glow:hover {
-    box-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
+  .btn-apple-secondary {
+    @apply btn-apple bg-transparent border-2 border-[hsl(var(--apple-blue))] text-[hsl(var(--apple-blue))] hover:bg-[hsl(var(--apple-blue))] hover:text-white;
   }
 
-  /* Image overlay */
-  .image-overlay {
-    @apply absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent;
+  /* Tile grid */
+  .tile-grid {
+    @apply grid gap-3;
   }
 
-  /* Full-screen hero */
-  .hero-fullscreen {
-    @apply min-h-screen flex items-center justify-center relative overflow-hidden;
+  /* Feature tile */
+  .tile {
+    @apply relative overflow-hidden flex flex-col items-center justify-center text-center p-8 md:p-12 min-h-[500px] md:min-h-[580px];
+  }
+
+  .tile-content {
+    @apply relative z-10;
+  }
+
+  .tile-bg {
+    @apply absolute inset-0 w-full h-full object-cover;
+  }
+
+  /* Nav Apple style */
+  .nav-apple {
+    @apply fixed top-0 left-0 right-0 z-50 backdrop-blur-xl bg-background/80 border-b border-border/50;
+  }
+
+  .nav-link-apple {
+    @apply text-xs font-normal text-foreground/80 hover:text-foreground transition-colors;
   }
 }
 
 @layer utilities {
-  .animate-fade-up {
-    animation: fadeUp 0.8s ease-out forwards;
-  }
-
-  .animate-fade-in {
-    animation: fadeIn 0.6s ease-out forwards;
-  }
-
-  .animate-scale-in {
-    animation: scaleIn 0.5s ease-out forwards;
-  }
-
-  .animate-slide-right {
-    animation: slideRight 0.6s ease-out forwards;
-  }
-
+  /* Animations */
   @keyframes fadeUp {
     from {
       opacity: 0;
-      transform: translateY(40px);
+      transform: translateY(30px);
     }
     to {
       opacity: 1;
@@ -204,7 +219,7 @@
   @keyframes scaleIn {
     from {
       opacity: 0;
-      transform: scale(0.9);
+      transform: scale(0.95);
     }
     to {
       opacity: 1;
@@ -212,20 +227,20 @@
     }
   }
 
-  @keyframes slideRight {
-    from {
-      opacity: 0;
-      transform: translateX(-30px);
-    }
-    to {
-      opacity: 1;
-      transform: translateX(0);
-    }
+  .animate-fade-up {
+    animation: fadeUp 0.8s ease-out forwards;
   }
 
-  .delay-100 { animation-delay: 100ms; }
-  .delay-200 { animation-delay: 200ms; }
-  .delay-300 { animation-delay: 300ms; }
-  .delay-400 { animation-delay: 400ms; }
-  .delay-500 { animation-delay: 500ms; }
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.6s ease-out forwards;
+  }
+
+  .delay-100 { animation-delay: 0.1s; }
+  .delay-200 { animation-delay: 0.2s; }
+  .delay-300 { animation-delay: 0.3s; }
+  .delay-400 { animation-delay: 0.4s; }
 }
