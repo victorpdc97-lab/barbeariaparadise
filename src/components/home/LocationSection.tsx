@@ -89,7 +89,7 @@ const LocationSection = () => {
 
             {/* Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 mt-8">
-              <Button variant="booking" size="lg" asChild>
+              <Button variant="whatsapp" size="lg" asChild>
                 <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
                   <Phone size={18} />
                   Fale Conosco

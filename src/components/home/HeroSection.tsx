@@ -33,7 +33,7 @@ const HeroSection = () => {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-up delay-300">
-            <Button variant="booking" size="xl" asChild>
+            <Button variant="whatsapp" size="xl" asChild>
               <a href={bookingLink} target="_blank" rel="noopener noreferrer">
                 <MessageCircle size={20} />
                 

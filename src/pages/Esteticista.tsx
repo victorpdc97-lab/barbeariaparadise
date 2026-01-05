@@ -123,7 +123,7 @@ const EsteticsistaPage = () => {
 
             {/* CTA Button */}
             <div className="text-center mt-10">
-              <Button variant="booking" size="xl" asChild>
+              <Button variant="whatsapp" size="xl" asChild>
                 <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
                   <MessageCircle size={20} />
                   Agendar Agora
@@ -142,7 +142,7 @@ const EsteticsistaPage = () => {
             <p className="text-muted-foreground text-lg max-w-xl mx-auto mb-8">
               Agende seu horário agora mesmo pelo WhatsApp e venha viver a experiência Paradise.
             </p>
-            <Button variant="booking" size="xl" asChild>
+            <Button variant="whatsapp" size="xl" asChild>
               <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
                 <MessageCircle size={20} />
                 Agendar no WhatsApp

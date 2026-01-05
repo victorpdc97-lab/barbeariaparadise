@@ -64,7 +64,7 @@ const PricingSection = () => {
             <p className="text-muted-foreground text-sm mb-6">
               * Preços sujeitos a alteração. Consulte disponibilidade.
             </p>
-            <Button variant="booking" size="xl" asChild>
+            <Button variant="whatsapp" size="xl" asChild>
               <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
                 <MessageCircle size={20} />
                 Agendar Horário

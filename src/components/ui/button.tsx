@@ -9,18 +9,18 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-gradient-to-r from-teal to-cyan text-white hover:from-teal-light hover:to-cyan shadow-teal hover:shadow-lg",
+        default: "bg-primary text-primary-foreground hover:bg-primary/90 shadow-gold",
         destructive:
           "bg-destructive text-destructive-foreground hover:bg-destructive/90",
         outline:
-          "border-2 border-teal/60 bg-transparent text-teal hover:bg-teal/10 hover:border-teal transition-all duration-300",
+          "border border-primary/50 bg-transparent text-primary hover:bg-primary hover:text-primary-foreground",
         secondary:
           "bg-secondary text-secondary-foreground hover:bg-secondary/80",
-        ghost: "hover:bg-teal/10 hover:text-teal",
-        link: "text-teal underline-offset-4 hover:underline",
-        hero: "bg-gradient-to-r from-teal via-cyan to-teal-light text-white font-semibold shadow-teal hover:shadow-xl hover:scale-105 transition-all duration-300",
-        heroOutline: "border-2 border-teal/60 bg-transparent text-foreground hover:bg-teal/10 hover:border-teal transition-all duration-300",
-        booking: "bg-gradient-to-r from-teal to-cyan text-white hover:from-teal-light hover:to-cyan shadow-teal hover:shadow-xl hover:scale-105 transition-all duration-300",
+        ghost: "hover:bg-accent hover:text-accent-foreground",
+        link: "text-primary underline-offset-4 hover:underline",
+        hero: "bg-gradient-to-r from-primary to-accent text-primary-foreground font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300",
+        heroOutline: "border-2 border-primary/60 bg-transparent text-foreground hover:bg-primary/10 hover:border-primary transition-all duration-300",
+        whatsapp: "bg-[#25D366] text-white hover:bg-[#20BA5C] shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300",
       },
       size: {
         default: "h-10 px-4 py-2",
