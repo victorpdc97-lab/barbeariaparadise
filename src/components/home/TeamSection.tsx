@@ -29,12 +29,12 @@ const team = [
 
 const TeamSection = () => {
   return (
-    <section className="section-padding bg-card">
+    <section className="section-padding bg-secondary">
       <div className="container-narrow">
         {/* Header */}
         <div className="text-center mb-16">
           <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
-            Nossa <span className="text-gradient-gold">Equipe</span>
+            NOSSA <span className="text-primary">EQUIPE</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             Profissionais apaixonados pelo que fazem, prontos para transformar seu visual.
@@ -49,7 +49,7 @@ const TeamSection = () => {
               className="group text-center"
             >
               {/* Image */}
-              <div className="relative mb-6 mx-auto w-48 h-48 md:w-56 md:h-56 rounded-full overflow-hidden border-4 border-primary/20 group-hover:border-primary/50 transition-colors">
+              <div className="relative mb-6 mx-auto w-48 h-48 md:w-56 md:h-56 rounded-full overflow-hidden border-4 border-primary/20 group-hover:border-primary transition-colors shadow-card">
                 <img
                   src={member.image}
                   alt={member.name}
@@ -69,10 +69,10 @@ const TeamSection = () => {
               </div>
 
               {/* Info */}
-              <h3 className="font-display text-xl font-bold text-foreground mb-1">
+              <h3 className="font-display text-xl font-bold text-foreground mb-1 uppercase">
                 {member.name}
               </h3>
-              <p className="text-primary font-medium text-sm mb-3">
+              <p className="text-primary font-medium text-sm mb-3 uppercase tracking-wide">
                 {member.role}
               </p>
               <p className="text-muted-foreground text-sm max-w-xs mx-auto">

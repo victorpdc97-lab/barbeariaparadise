@@ -30,12 +30,12 @@ const benefits = [
 
 const BenefitsSection = () => {
   return (
-    <section className="section-padding bg-card">
+    <section className="section-padding bg-secondary">
       <div className="container-narrow">
         {/* Header */}
         <div className="text-center mb-16">
           <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
-            Por Que Escolher a <span className="text-gradient-gold">Paradise</span>?
+            POR QUE ESCOLHER A <span className="text-primary">PARADISE</span>?
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             Mais do que um corte, oferecemos uma experiência completa de cuidado masculino.
@@ -47,13 +47,13 @@ const BenefitsSection = () => {
           {benefits.map((benefit, index) => (
             <div
               key={benefit.title}
-              className="group p-6 rounded-xl bg-secondary/50 border border-border hover:border-primary/50 transition-all duration-300 hover:-translate-y-1"
+              className="group p-6 rounded-xl bg-card border border-border hover:border-primary/50 transition-all duration-300 hover:-translate-y-1 shadow-card"
               style={{ animationDelay: `${index * 100}ms` }}
             >
-              <div className="w-12 h-12 rounded-lg bg-gradient-gold flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                <benefit.icon size={24} className="text-primary-foreground" />
+              <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                <benefit.icon size={24} className="text-primary" />
               </div>
-              <h3 className="font-display text-lg font-semibold text-foreground mb-2">
+              <h3 className="font-display text-lg font-semibold text-foreground mb-2 uppercase">
                 {benefit.title}
               </h3>
               <p className="text-sm text-muted-foreground">

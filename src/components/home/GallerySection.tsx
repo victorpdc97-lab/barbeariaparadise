@@ -3,7 +3,6 @@ import beardTrim from "@/assets/beard-trim.jpg";
 import fadeHaircut from "@/assets/fade-haircut.jpg";
 import barbershopInterior from "@/assets/barbershop-interior.jpg";
 import heroImage from "@/assets/hero-barbershop.jpg";
-import barber1 from "@/assets/barber-portrait-1.jpg";
 
 const galleryImages = [
   { src: barbershopInterior, alt: "Ambiente interno da barbearia", span: "col-span-2 row-span-2" },
@@ -15,12 +14,12 @@ const galleryImages = [
 
 const GallerySection = () => {
   return (
-    <section className="section-padding bg-card">
+    <section className="section-padding bg-secondary">
       <div className="container-narrow">
         {/* Header */}
         <div className="text-center mb-16">
           <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
-            Nossa <span className="text-gradient-gold">Galeria</span>
+            NOSSA <span className="text-primary">GALERIA</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             Um pouco do nosso trabalho e do ambiente que preparamos para você.
@@ -32,7 +31,7 @@ const GallerySection = () => {
           {galleryImages.map((image, index) => (
             <div
               key={index}
-              className={`${image.span} overflow-hidden rounded-xl group cursor-pointer`}
+              className={`${image.span} overflow-hidden rounded-xl group cursor-pointer shadow-card`}
             >
               <img
                 src={image.src}
