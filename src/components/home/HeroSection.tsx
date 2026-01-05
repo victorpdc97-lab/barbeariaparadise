@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { MessageCircle, Scissors } from "lucide-react";
 import heroImage from "@/assets/hero-barbershop.jpg";
 const HeroSection = () => {
-  const whatsappLink = "https://wa.me/5500000000000?text=Olá,%20quero%20agendar%20um%20horário%20na%20Barbearia%20Paradise.";
+  const bookingLink = "https://agendamentos.bestbarbers.app/barbershop/paradise";
   return <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0">
@@ -34,7 +34,7 @@ const HeroSection = () => {
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-up delay-300">
             <Button variant="whatsapp" size="xl" asChild>
-              <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
+              <a href={bookingLink} target="_blank" rel="noopener noreferrer">
                 <MessageCircle size={20} />
                 
                 Agendar no WhatsApp
