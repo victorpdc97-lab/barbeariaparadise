@@ -2,7 +2,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import { Button } from "@/components/ui/button";
-import { MessageCircle, Award, Heart, Target, Users } from "lucide-react";
+import { Award, Heart, Target, Users } from "lucide-react";
 import barbershopInterior from "@/assets/barbershop-interior.jpg";
 import heroImage from "@/assets/hero-barbershop.jpg";
 import barber1 from "@/assets/barber-portrait-1.jpg";
@@ -33,53 +33,52 @@ const values = [
 ];
 
 const SobrePage = () => {
-  const whatsappLink = "https://wa.me/5500000000000?text=Olá,%20quero%20agendar%20um%20horário%20na%20Barbearia%20Paradise.";
+  const bookingLink = "https://agendamentos.bestbarbers.app/barbershop/paradise";
 
   return (
     <div className="min-h-screen bg-background">
       <Header />
       
-      <main className="pt-20">
+      <main className="pt-24">
         {/* Hero */}
-        <section className="section-padding bg-card">
+        <section className="section-padding bg-secondary">
           <div className="container-narrow text-center">
-            <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
-              Sobre a <span className="text-gradient-gold">Paradise</span>
+            <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-foreground tracking-wider mb-6">
+              NOSSA MARCA
             </h1>
-            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              Conheça nossa história, nossos valores e o que nos torna a escolha certa para cuidar do seu visual.
-            </p>
+            <div className="divider-ornament max-w-md mx-auto">
+              <span className="text-muted-foreground text-sm tracking-widest">PARADISE</span>
+            </div>
           </div>
         </section>
 
         {/* Story Section */}
         <section className="section-padding bg-background">
           <div className="container-narrow">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
               <div className="order-2 lg:order-1">
-                <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-6">
-                  Nossa <span className="text-gradient-gold">História</span>
+                <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground tracking-wider mb-8">
+                  NOSSA HISTÓRIA
                 </h2>
-                <div className="space-y-4 text-muted-foreground leading-relaxed">
+                <div className="space-y-6 text-muted-foreground font-light leading-relaxed">
                   <p>
-                    A Barbearia Paradise nasceu da visão de criar mais do que um simples salão de barbearia. 
-                    Queríamos construir um espaço onde cada homem pudesse se sentir especial, onde o 
-                    cuidado pessoal fosse tratado como um ritual de autocuidado.
+                    Inspirada nas antigas barbearias nova-iorquinas típicas das décadas de 40, 50 e 60, 
+                    a Barbearia Paradise chega com a intenção de resgatar a cultura masculina, perdida 
+                    ao longo dos anos.
                   </p>
                   <p>
-                    Fundada por profissionais apaixonados pela arte de barbear, nossa barbearia combina 
-                    técnicas tradicionais com as tendências mais modernas do mercado. Cada membro da 
-                    nossa equipe é cuidadosamente selecionado não apenas pela habilidade técnica, mas 
-                    também pela capacidade de criar conexões genuínas com nossos clientes.
+                    Um espaço onde os homens se encontram para fazer a barba à navalha e cortar os 
+                    cabelos enquanto fumam seus charutos, bebem e conversam.
                   </p>
                   <p>
-                    Hoje, somos referência em cortes masculinos, barba e cuidados pessoais, sempre 
-                    mantendo nosso compromisso com a excelência e o atendimento humanizado.
+                    Entre toalhas quentes e massagem facial, os melhores cremes e espumas preparam 
+                    o rosto dos nossos clientes. E hoje, eles ainda podem aproveitar o espaço da 
+                    nossa cervejaria.
                   </p>
                 </div>
               </div>
               <div className="order-1 lg:order-2">
-                <div className="rounded-2xl overflow-hidden">
+                <div className="overflow-hidden aspect-[4/3]">
                   <img
                     src={heroImage}
                     alt="Interior da Barbearia Paradise"
@@ -92,29 +91,29 @@ const SobrePage = () => {
         </section>
 
         {/* Values */}
-        <section className="section-padding bg-card">
+        <section className="section-padding bg-secondary">
           <div className="container-narrow">
             <div className="text-center mb-16">
-              <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
-                Nossos <span className="text-gradient-gold">Valores</span>
+              <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground tracking-wider mb-6">
+                NOSSOS VALORES
               </h2>
-              <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-                Os pilares que guiam cada decisão e cada atendimento na Paradise.
-              </p>
+              <div className="divider-ornament max-w-md mx-auto">
+                <span className="text-muted-foreground text-sm tracking-widest">PILARES</span>
+              </div>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
               {values.map((value) => (
                 <div
                   key={value.title}
-                  className="p-6 rounded-xl bg-secondary/50 border border-border hover:border-primary/50 transition-all text-center"
+                  className="vintage-card p-8 text-center hover-glow"
                 >
-                  <div className="w-14 h-14 rounded-lg bg-gradient-to-br from-primary to-accent flex items-center justify-center mx-auto mb-4">
-                    <value.icon size={28} className="text-primary-foreground" />
+                  <div className="w-14 h-14 border border-border flex items-center justify-center mx-auto mb-6">
+                    <value.icon size={24} className="text-foreground" />
                   </div>
-                  <h3 className="font-display text-xl font-semibold text-foreground mb-2">
+                  <h3 className="font-display text-xl tracking-wider text-foreground mb-3">
                     {value.title}
                   </h3>
-                  <p className="text-sm text-muted-foreground">
+                  <p className="text-sm text-muted-foreground font-light">
                     {value.description}
                   </p>
                 </div>
@@ -127,22 +126,22 @@ const SobrePage = () => {
         <section className="section-padding bg-background">
           <div className="container-narrow">
             <div className="text-center mb-16">
-              <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
-                Nosso <span className="text-gradient-gold">Ambiente</span>
+              <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground tracking-wider mb-6">
+                NOSSO AMBIENTE
               </h2>
-              <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-                Um espaço pensado para seu conforto e relaxamento.
-              </p>
+              <div className="divider-ornament max-w-md mx-auto">
+                <span className="text-muted-foreground text-sm tracking-widest">ESPAÇO</span>
+              </div>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="rounded-2xl overflow-hidden aspect-video">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="overflow-hidden aspect-video">
                 <img
                   src={barbershopInterior}
                   alt="Área de espera"
                   className="w-full h-full object-cover"
                 />
               </div>
-              <div className="rounded-2xl overflow-hidden aspect-video">
+              <div className="overflow-hidden aspect-video">
                 <img
                   src={heroImage}
                   alt="Estações de trabalho"
@@ -154,15 +153,15 @@ const SobrePage = () => {
         </section>
 
         {/* Team */}
-        <section className="section-padding bg-card">
+        <section className="section-padding bg-secondary">
           <div className="container-narrow">
             <div className="text-center mb-16">
-              <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
-                Nossa <span className="text-gradient-gold">Equipe</span>
+              <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground tracking-wider mb-6">
+                NOSSA EQUIPE
               </h2>
-              <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-                Profissionais dedicados que fazem a diferença.
-              </p>
+              <div className="divider-ornament max-w-md mx-auto">
+                <span className="text-muted-foreground text-sm tracking-widest">PROFISSIONAIS</span>
+              </div>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {[
@@ -171,18 +170,18 @@ const SobrePage = () => {
                 { name: "Carlos Silva", role: "Barbeiro Fundador", experience: "20+ anos", image: barber3 },
               ].map((member) => (
                 <div key={member.name} className="text-center">
-                  <div className="w-40 h-40 mx-auto rounded-full overflow-hidden border-4 border-primary/20 mb-4">
+                  <div className="aspect-[3/4] overflow-hidden mb-6">
                     <img
                       src={member.image}
                       alt={member.name}
                       className="w-full h-full object-cover"
                     />
                   </div>
-                  <h3 className="font-display text-xl font-bold text-foreground">
+                  <h3 className="font-display text-xl tracking-wider text-foreground">
                     {member.name}
                   </h3>
-                  <p className="text-primary text-sm font-medium">{member.role}</p>
-                  <p className="text-muted-foreground text-sm">{member.experience} de experiência</p>
+                  <p className="text-muted-foreground text-sm tracking-wide">{member.role}</p>
+                  <p className="text-muted-foreground/60 text-xs">{member.experience} de experiência</p>
                 </div>
               ))}
             </div>
@@ -192,16 +191,15 @@ const SobrePage = () => {
         {/* CTA */}
         <section className="section-padding bg-background">
           <div className="container-narrow text-center">
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Venha <span className="text-gradient-gold">Nos Conhecer</span>
+            <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground tracking-wider mb-4">
+              VENHA NOS CONHECER
             </h2>
-            <p className="text-muted-foreground text-lg max-w-xl mx-auto mb-8">
+            <p className="text-muted-foreground text-lg max-w-xl mx-auto mb-8 font-light">
               Estamos esperando você para uma experiência única de cuidado masculino.
             </p>
-            <Button variant="whatsapp" size="xl" asChild>
-              <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
-                <MessageCircle size={20} />
-                Agendar Visita
+            <Button size="lg" className="px-12" asChild>
+              <a href={bookingLink} target="_blank" rel="noopener noreferrer">
+                AGENDAR VISITA
               </a>
             </Button>
           </div>

@@ -1,73 +1,64 @@
 import { Button } from "@/components/ui/button";
-import { MessageCircle } from "lucide-react";
 
 const PricingSection = () => {
   const bookingLink = "https://agendamentos.bestbarbers.app/barbershop/paradise";
 
   const services = [
-    { name: "Corte Masculino", duration: "45 min", price: "R$ 50" },
-    { name: "Barba Completa", duration: "30 min", price: "R$ 35" },
-    { name: "Cabelo + Barba", duration: "1h 15min", price: "R$ 75" },
-    { name: "Acabamento (Pezinho)", duration: "15 min", price: "R$ 25" },
-    { name: "Design de Sobrancelha", duration: "15 min", price: "R$ 20" },
-    { name: "Pigmentação de Barba", duration: "1h", price: "R$ 80" },
-    { name: "Hidratação Capilar", duration: "30 min", price: "R$ 45" },
-    { name: "Platinado Completo", duration: "2h", price: "R$ 150" },
+    { name: "Corte Masculino", price: "R$ 50" },
+    { name: "Barba Completa", price: "R$ 35" },
+    { name: "Cabelo + Barba", price: "R$ 75" },
+    { name: "Acabamento (Pezinho)", price: "R$ 25" },
+    { name: "Design de Sobrancelha", price: "R$ 20" },
+    { name: "Pigmentação de Barba", price: "R$ 80" },
+    { name: "Hidratação Capilar", price: "R$ 45" },
+    { name: "Platinado Completo", price: "R$ 150" },
   ];
 
   return (
     <section className="section-padding bg-background">
       <div className="container-narrow">
         {/* Header */}
-        <div className="text-center mb-16">
-          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
-            TABELA DE <span className="text-primary">PREÇOS</span>
+        <div className="text-center mb-16 animate-fade-up">
+          <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-foreground tracking-wider">
+            SERVIÇOS & VALORES
           </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Investimento justo para resultados excepcionais.
-          </p>
+          <div className="divider-ornament mt-6 max-w-md mx-auto">
+            <span className="text-muted-foreground text-sm tracking-widest">TABELA</span>
+          </div>
         </div>
 
         {/* Pricing Table */}
-        <div className="max-w-3xl mx-auto">
-          <div className="bg-card rounded-2xl border border-border overflow-hidden shadow-card">
-            {/* Table Header */}
-            <div className="grid grid-cols-3 bg-primary/10 p-4 border-b border-border">
-              <span className="font-display font-semibold text-foreground uppercase">Serviço</span>
-              <span className="font-display font-semibold text-foreground text-center uppercase">Duração</span>
-              <span className="font-display font-semibold text-foreground text-right uppercase">Valor</span>
-            </div>
-
-            {/* Table Rows */}
+        <div className="max-w-2xl mx-auto">
+          <div className="vintage-card">
             {services.map((service, index) => (
               <div
                 key={service.name}
-                className={`grid grid-cols-3 p-4 items-center hover:bg-primary/5 transition-colors ${
-                  index !== services.length - 1 ? "border-b border-border" : ""
-                }`}
+                className={`flex items-center justify-between p-6 ${
+                  index !== services.length - 1 ? "border-b border-border/50" : ""
+                } hover:bg-muted/30 transition-colors`}
               >
-                <span className="text-foreground font-medium text-sm md:text-base">
+                <span className="text-foreground font-light tracking-wide">
                   {service.name}
                 </span>
-                <span className="text-muted-foreground text-sm text-center">
-                  {service.duration}
-                </span>
-                <span className="text-primary font-bold text-right">
-                  {service.price}
-                </span>
+                <div className="flex items-center gap-4">
+                  <span className="text-muted-foreground text-sm">............</span>
+                  <span className="text-foreground font-display text-xl tracking-wider">
+                    {service.price}
+                  </span>
+                </div>
               </div>
             ))}
           </div>
 
           {/* CTA */}
-          <div className="text-center mt-10">
-            <p className="text-muted-foreground text-sm mb-6">
-              * Preços sujeitos a alteração. Consulte disponibilidade.
-            </p>
-            <Button variant="hero" size="xl" asChild>
+          <div className="text-center mt-12 animate-fade-up">
+            <Button 
+              className="bg-foreground text-background hover:bg-foreground/90 text-sm tracking-widest px-12"
+              size="lg"
+              asChild
+            >
               <a href={bookingLink} target="_blank" rel="noopener noreferrer">
-                <MessageCircle size={20} />
-                Agendar Horário
+                AGENDAR AGORA
               </a>
             </Button>
           </div>
