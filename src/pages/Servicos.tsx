@@ -20,6 +20,14 @@ const services = [
   { name: "Pigmentação de Barba (a partir de)", price: "R$ 30,00", duration: "00:15" },
   { name: "Tintura (a partir de)", price: "R$ 60,00", duration: "01:30" },
   { name: "Luzes (a partir de)", price: "R$ 80,00", duration: "01:30" },
+  { name: "Platinado (a partir de)", price: "R$ 200,00", duration: "02:00" },
+  { name: "Banho Vestiário Paradise", price: "R$ 15,00", duration: "00:15" },
+  { name: "Máscara de Limpeza", price: "R$ 25,00", duration: "00:15" },
+  { name: "Corte Feminino Curto (a partir de)", price: "R$ 90,00", duration: "01:15" },
+  { name: "Abordagem Visagismo", price: "R$ 120,00", duration: "01:00" },
+  { name: "Corte (Clube de Assinatura)", price: "R$ 0,00", duration: "00:30" },
+  { name: "Corte + Barba (Clube de Assinatura)", price: "R$ 0,00", duration: "00:50" },
+  { name: "Barba (Clube de Assinatura)", price: "R$ 0,00", duration: "00:30" },
 ];
 
 const ServicosPage = () => {
