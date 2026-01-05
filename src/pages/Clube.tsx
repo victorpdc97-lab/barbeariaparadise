@@ -2,62 +2,59 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import { Button } from "@/components/ui/button";
-import { Check, Smartphone, CreditCard, Calendar, Crown } from "lucide-react";
+import { Check, CreditCard, Calendar, Crown, Scissors, Percent, Users } from "lucide-react";
 
 const Clube = () => {
-  const whatsappLink = "https://wa.me/5500000000000?text=Olá,%20quero%20saber%20mais%20sobre%20o%20Clube%20Paradise.";
+  const bookingLink = "https://agendamentos.bestbarbers.app/barbershop/paradise";
 
   const plans = [
     {
-      name: "Plano Flex",
-      description: "Serviço disponível uma vez na semana de segunda a sábado.",
-      options: [
-        { service: "Corte e Barba", price: "R$ 220,00" },
-        { service: "Corte", price: "R$ 132,00" },
-        { service: "Barba", price: "R$ 132,00" },
-      ],
-    },
-    {
-      name: "Plano Essencial",
-      description: "Serviços disponíveis de segunda a sábado.",
+      name: "Clube Paradise Premium",
+      subtitle: "(ILIMITADO)",
+      availability: "SEGUNDA A SÁBADO",
       featured: true,
       options: [
-        { service: "Corte e Barba", price: "R$ 275,00" },
-        { service: "Corte", price: "R$ 165,00" },
-        { service: "Barba", price: "R$ 165,00" },
+        { service: "Corte + Barba", price: "R$199,90", period: "/mês" },
+        { service: "Corte", price: "R$129,90", period: "/mês" },
+        { service: "Barba", price: "R$129,90", period: "/mês" },
       ],
     },
     {
-      name: "Clube One",
-      description: "Serviço disponível uma vez por mês em qualquer dia da semana.",
+      name: "Clube Paradise Basic",
+      subtitle: "(LIMITADO)",
+      availability: "SEGUNDA A QUARTA",
       options: [
-        { service: "Corte", price: "R$ 70,00" },
+        { service: "Corte + Barba", price: "R$169,90", period: "/mês" },
+        { service: "Corte", price: "R$109,90", period: "/mês" },
+        { service: "Barba", price: "R$109,90", period: "/mês" },
       ],
     },
-  ];
-
-  const benefits = [
-    "A assinatura não tem fidelidade",
-    "O valor não compromete o limite do seu cartão",
-    "Planos ilimitados e limitados de acordo com a sua preferência",
   ];
 
   const faqs = [
     {
-      question: "O Clube possui taxa de adesão ou fidelidade?",
-      answer: "A assinatura não tem cobranças adicionais.",
+      question: "Como funciona?",
+      answer: "O Clube Paradise é um serviço de assinatura recorrente para os amantes da Barbearia Paradise, dividido em 2 opções: Premium e Basic.",
     },
     {
-      question: "Quais são as formas de pagamento?",
-      answer: "Aceitamos cartão de crédito com débito automático mensal.",
+      question: "Possui limite de uso?",
+      answer: "Planos Premium: quantas vezes quiser de segunda a sábado. Planos Basic: quantas vezes quiser, apenas de segunda a quarta.",
     },
     {
-      question: "Posso cancelar a qualquer momento?",
-      answer: "Sim, não há fidelidade. Você pode cancelar quando quiser.",
+      question: "Quais as formas de pagamento?",
+      answer: "A mensalidade da assinatura é realizada apenas via cartão de crédito, sem prejudicar o limite.",
     },
     {
-      question: "Os serviços são realmente ilimitados?",
-      answer: "Sim! Nos planos Flex e Essencial você pode usar quantas vezes quiser dentro das regras do plano.",
+      question: "Possui taxa de adesão/fidelidade?",
+      answer: "Sem cobranças adicionais. Você pode entrar e sair quando quiser e sem pagar nem um centavo a mais por isso!",
+    },
+    {
+      question: "A assinatura é feita apenas pelo site?",
+      answer: "Você pode assinar o clube tanto na unidade física quanto on-line.",
+    },
+    {
+      question: "Terceiros podem utilizar o meu plano?",
+      answer: "Não. A assinatura é individual e instransferível.",
     },
   ];
 
@@ -66,51 +63,28 @@ const Clube = () => {
       <Header />
       
       {/* Hero Section */}
-      <section className="relative min-h-[80vh] flex items-center pt-20 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-background via-secondary/50 to-background" />
+      <section className="relative min-h-[60vh] flex items-center pt-20 overflow-hidden bg-gradient-to-br from-primary/10 via-background to-secondary/20">
         <div className="absolute inset-0 opacity-20">
           <div className="absolute top-20 right-10 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
           <div className="absolute bottom-20 left-10 w-72 h-72 bg-muted/30 rounded-full blur-3xl" />
         </div>
         
         <div className="container-narrow relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="animate-fade-up">
-              <h1 className="font-display text-5xl md:text-7xl font-bold mb-6">
-                <span className="text-primary">Clube</span>
-                <br />
-                <span className="text-foreground">Paradise</span>
-              </h1>
-              <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-lg">
-                Corte o cabelo e faça a barba <strong className="text-foreground">quantas vezes quiser</strong>{" "}
-                <span className="underline decoration-primary">sem pagar a mais por isso.</span>
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button variant="hero" size="lg" asChild>
-                  <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
-                    Quero ser membro
-                  </a>
-                </Button>
-              </div>
-            </div>
-            
-            <div className="relative animate-fade-up delay-200 hidden lg:block">
-              <div className="relative">
-                {/* Mock App Screenshots */}
-                <div className="flex justify-center gap-4">
-                  <div className="w-48 h-96 bg-card rounded-3xl border border-border shadow-card p-4 transform -rotate-6">
-                    <div className="w-full h-full bg-secondary rounded-2xl flex items-center justify-center">
-                      <Smartphone className="w-16 h-16 text-muted-foreground" />
-                    </div>
-                  </div>
-                  <div className="w-48 h-96 bg-card rounded-3xl border border-border shadow-card p-4 transform rotate-6 -translate-y-8">
-                    <div className="w-full h-full bg-secondary rounded-2xl flex items-center justify-center">
-                      <Calendar className="w-16 h-16 text-muted-foreground" />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+          <div className="text-center animate-fade-up">
+            <h1 className="font-display text-4xl md:text-6xl font-bold mb-6">
+              Já pensou em assinar uma{" "}
+              <span className="text-primary">barbearia?</span>
+            </h1>
+            <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
+              Corte o cabelo e faça a barba <strong className="text-foreground">quantas vezes quiser</strong>{" "}
+              sem pagar a mais por isso.
+            </p>
+            <Button variant="hero" size="lg" asChild>
+              <a href={bookingLink} target="_blank" rel="noopener noreferrer">
+                <Calendar className="w-5 h-5 mr-2" />
+                Quero ser membro
+              </a>
+            </Button>
           </div>
         </div>
       </section>
@@ -118,19 +92,7 @@ const Clube = () => {
       {/* Plans Section */}
       <section className="section-padding bg-card">
         <div className="container-narrow">
-          <div className="text-center mb-16 animate-fade-up">
-            <span className="text-xs uppercase tracking-[0.3em] text-muted-foreground mb-4 block">
-              Tudo que você precisa
-            </span>
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-6">
-              O <span className="text-primary">Clube Paradise</span> foi criado para aqueles que desejam ficar sempre na régua!
-            </h2>
-            <p className="text-muted-foreground text-lg">
-              Conheça nossos planos e escolha o que mais combina com você:
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {plans.map((plan, index) => (
               <div
                 key={plan.name}
@@ -144,27 +106,37 @@ const Clube = () => {
                 {plan.featured && (
                   <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground px-4 py-1 rounded-full text-sm font-medium flex items-center gap-2">
                     <Crown className="w-4 h-4" />
-                    Popular
+                    Recomendado
                   </div>
                 )}
                 
-                <h3 className="font-display text-2xl font-bold text-foreground mb-3">
-                  {plan.name.split(" ")[0]}{" "}
-                  <span className="text-primary">{plan.name.split(" ")[1]}</span>
-                </h3>
-                <p className="text-muted-foreground text-sm mb-6">{plan.description}</p>
+                <div className="text-center mb-6">
+                  <h3 className="font-display text-xl font-bold text-foreground mb-1">
+                    {plan.name}
+                  </h3>
+                  <span className="text-sm text-muted-foreground">{plan.subtitle}</span>
+                </div>
                 
-                <div className="space-y-4">
+                <div className="space-y-4 mb-6">
                   {plan.options.map((option) => (
-                    <div key={option.service} className="flex justify-between items-center py-3 border-b border-border last:border-0">
-                      <span className="text-foreground font-medium">{option.service}</span>
-                      <span className="font-display text-xl font-bold text-primary">{option.price}</span>
+                    <div key={option.service} className="text-center py-3 border-b border-border last:border-0">
+                      <span className="text-muted-foreground text-sm block mb-1">{option.service}</span>
+                      <span className="font-display text-3xl font-bold text-primary">{option.price}</span>
+                      <span className="text-muted-foreground text-sm">{option.period}</span>
                     </div>
                   ))}
                 </div>
                 
-                <Button variant="hero" className="w-full mt-8" asChild>
-                  <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
+                <div className="text-center py-4 bg-secondary/50 rounded-lg mb-6">
+                  <span className="text-sm font-semibold text-foreground">{plan.availability}</span>
+                  <div className="flex justify-center gap-4 mt-2">
+                    <Scissors className="w-5 h-5 text-muted-foreground" />
+                    <Scissors className="w-5 h-5 text-muted-foreground" />
+                  </div>
+                </div>
+                
+                <Button variant="hero" className="w-full" asChild>
+                  <a href={bookingLink} target="_blank" rel="noopener noreferrer">
                     Assinar agora
                   </a>
                 </Button>
@@ -177,41 +149,76 @@ const Clube = () => {
       {/* Benefits Section */}
       <section className="section-padding">
         <div className="container-narrow">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="animate-fade-up">
-              <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-6">
-                Somos a primeira barbearia por assinatura da região.
-              </h2>
-              <ul className="space-y-4 mb-8">
-                {benefits.map((benefit, index) => (
-                  <li key={index} className="flex items-start gap-3">
-                    <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                    <span className="text-muted-foreground">{benefit}</span>
-                  </li>
-                ))}
-              </ul>
+          <div className="grid md:grid-cols-4 gap-6 mb-12">
+            <div className="text-center p-6 bg-card rounded-xl border border-border animate-fade-up">
+              <CreditCard className="w-10 h-10 text-primary mx-auto mb-4" />
+              <p className="text-sm text-muted-foreground">Não compromete o limite do cartão</p>
             </div>
-            
-            <div className="bg-card rounded-2xl p-8 border border-border animate-fade-up delay-200">
-              <CreditCard className="w-12 h-12 text-primary mb-6" />
-              <h3 className="font-display text-xl font-bold text-foreground mb-4">
-                É muito simples se tornar membro do nosso Clube
-              </h3>
-              <p className="text-muted-foreground mb-6">
-                Você pode assinar através do WhatsApp, presencialmente em nossa unidade ou baixando nosso aplicativo.
-              </p>
-              <Button variant="whatsapp" size="lg" asChild>
-                <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
-                  Falar no WhatsApp
-                </a>
-              </Button>
+            <div className="text-center p-6 bg-card rounded-xl border border-border animate-fade-up" style={{ animationDelay: "100ms" }}>
+              <Percent className="w-10 h-10 text-primary mx-auto mb-4" />
+              <p className="text-sm text-muted-foreground">10% de desconto em produtos</p>
+            </div>
+            <div className="text-center p-6 bg-card rounded-xl border border-border animate-fade-up" style={{ animationDelay: "200ms" }}>
+              <Check className="w-10 h-10 text-primary mx-auto mb-4" />
+              <p className="text-sm text-muted-foreground">Sem taxa de adesão</p>
+            </div>
+            <div className="text-center p-6 bg-card rounded-xl border border-border animate-fade-up" style={{ animationDelay: "300ms" }}>
+              <Scissors className="w-10 h-10 text-primary mx-auto mb-4" />
+              <p className="text-sm text-muted-foreground">Serviços ilimitados</p>
+            </div>
+          </div>
+
+          <div className="bg-gradient-to-r from-primary/10 via-primary/5 to-primary/10 rounded-2xl p-8 text-center animate-fade-up">
+            <h3 className="font-display text-2xl font-bold text-foreground mb-4">
+              Sabemos que economizar e estar em sua melhor versão são fatores indispensáveis...
+            </h3>
+            <p className="text-lg text-foreground font-semibold mb-6">
+              Por esse motivo, os assinantes do Clube Paradise recebem{" "}
+              <span className="text-primary">10% de desconto em todos os produtos/serviços avulsos.</span>
+            </p>
+          </div>
+
+          <div className="mt-12 text-center animate-fade-up">
+            <p className="text-muted-foreground mb-6">
+              Além de benefícios em + de 30 mil estabelecimentos parceiros (solicitar ativação)
+            </p>
+            <div className="flex flex-wrap justify-center items-center gap-8 opacity-60">
+              <span className="text-lg font-bold text-muted-foreground">Drogasil</span>
+              <span className="text-lg font-bold text-muted-foreground">Araujo</span>
+              <span className="text-lg font-bold text-muted-foreground">Philips</span>
+              <span className="text-lg font-bold text-muted-foreground">Zé Delivery</span>
+              <span className="text-lg font-bold text-muted-foreground">Burger King</span>
+              <span className="text-lg font-bold text-muted-foreground">Petz</span>
+              <span className="text-lg font-bold text-muted-foreground">Coco Bambu</span>
+              <span className="text-lg font-bold text-muted-foreground">Cineart</span>
             </div>
           </div>
         </div>
       </section>
 
-      {/* FAQ Section */}
+      {/* How to Join Section */}
       <section className="section-padding bg-card">
+        <div className="container-narrow">
+          <div className="max-w-2xl mx-auto text-center animate-fade-up">
+            <Users className="w-16 h-16 text-primary mx-auto mb-6" />
+            <h2 className="font-display text-3xl font-bold text-foreground mb-4">
+              É muito simples se tornar membro do nosso Clube
+            </h2>
+            <p className="text-muted-foreground mb-8">
+              Você pode assinar através do nosso site, presencialmente em nossa unidade ou pelo aplicativo.
+            </p>
+            <Button variant="hero" size="lg" asChild>
+              <a href={bookingLink} target="_blank" rel="noopener noreferrer">
+                <Calendar className="w-5 h-5 mr-2" />
+                Assinar agora
+              </a>
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="section-padding">
         <div className="container-narrow">
           <div className="text-center mb-12 animate-fade-up">
             <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">
@@ -223,11 +230,11 @@ const Clube = () => {
             {faqs.map((faq, index) => (
               <div
                 key={index}
-                className="bg-background rounded-xl p-6 border border-border animate-fade-up"
+                className="bg-card rounded-xl p-6 border border-border animate-fade-up"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
                 <h3 className="font-display text-lg font-bold text-foreground mb-2">
-                  {index + 1} - {faq.question}
+                  {index + 1}) {faq.question}
                 </h3>
                 <p className="text-muted-foreground">{faq.answer}</p>
               </div>
