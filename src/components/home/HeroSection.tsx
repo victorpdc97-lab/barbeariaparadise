@@ -37,7 +37,7 @@ const HeroSection = () => {
               <a href={bookingLink} target="_blank" rel="noopener noreferrer">
                 <MessageCircle size={20} />
                 
-                Agendar no WhatsApp
+                Agendar 
               
               </a>
             </Button>
