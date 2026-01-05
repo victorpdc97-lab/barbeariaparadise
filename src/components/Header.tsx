@@ -11,6 +11,7 @@ const Header = () => {
   const navLinks = [
     { name: "Início", path: "/" },
     { name: "Serviços", path: "/servicos" },
+    { name: "Esteticista", path: "/esteticista" },
     { name: "Sobre", path: "/sobre" },
     { name: "Contato", path: "/contato" },
     { name: "CLUBE", path: "/clube", featured: true },
