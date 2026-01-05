@@ -135,7 +135,7 @@ const ContatoPage = () => {
                   <p className="text-sm text-foreground mb-4">
                     <strong>Prefere falar diretamente?</strong> Clique no botão abaixo para conversar no WhatsApp.
                   </p>
-                  <Button variant="whatsapp" size="lg" className="w-full" asChild>
+                  <Button variant="booking" size="lg" className="w-full" asChild>
                     <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
                       <MessageCircle size={20} />
                       Chamar no WhatsApp
