@@ -3,38 +3,102 @@ import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import { Button } from "@/components/ui/button";
 import { MessageCircle, Clock } from "lucide-react";
-
-const services = [
-  { name: "Corte", price: "R$ 65,00", duration: "00:30" },
-  { name: "Barba", price: "R$ 50,00", duration: "00:30" },
-  { name: "Corte + Barba", price: "R$ 115,00", duration: "00:40" },
-  { name: "Selagem (a partir de)", price: "R$ 100,00", duration: "00:30" },
-  { name: "Acabamento", price: "R$ 20,00", duration: "00:15" },
-  { name: "Depilação Cera", price: "R$ 25,00", duration: "00:20" },
-  { name: "Sobrancelha Navalha", price: "R$ 20,00", duration: "00:15" },
-  { name: "Sobrancelha Pinça", price: "R$ 30,00", duration: "00:30" },
-  { name: "Hidratação Cabelo", price: "R$ 35,00", duration: "00:30" },
-  { name: "Hidratação Barba", price: "R$ 35,00", duration: "00:30" },
-  { name: "Escova", price: "R$ 25,00", duration: "00:15" },
-  { name: "Camuflagem (a partir de)", price: "R$ 40,00", duration: "00:30" },
-  { name: "Pigmentação de Barba (a partir de)", price: "R$ 30,00", duration: "00:15" },
-  { name: "Tintura (a partir de)", price: "R$ 60,00", duration: "01:30" },
-  { name: "Luzes (a partir de)", price: "R$ 80,00", duration: "01:30" },
-  { name: "Platinado (a partir de)", price: "R$ 200,00", duration: "02:00" },
-  { name: "Banho Vestiário Paradise", price: "R$ 15,00", duration: "00:15" },
-  { name: "Máscara de Limpeza", price: "R$ 25,00", duration: "00:15" },
-  { name: "Corte Feminino Curto (a partir de)", price: "R$ 90,00", duration: "01:15" },
-  { name: "Abordagem Visagismo", price: "R$ 120,00", duration: "01:00" },
-  { name: "Corte (Clube de Assinatura)", price: "R$ 0,00", duration: "00:30" },
-  { name: "Corte + Barba (Clube de Assinatura)", price: "R$ 0,00", duration: "00:50" },
-  { name: "Barba (Clube de Assinatura)", price: "R$ 0,00", duration: "00:30" },
-];
-
+const services = [{
+  name: "Corte",
+  price: "R$ 65,00",
+  duration: "00:30"
+}, {
+  name: "Barba",
+  price: "R$ 50,00",
+  duration: "00:30"
+}, {
+  name: "Corte + Barba",
+  price: "R$ 115,00",
+  duration: "00:40"
+}, {
+  name: "Selagem (a partir de)",
+  price: "R$ 100,00",
+  duration: "00:30"
+}, {
+  name: "Acabamento",
+  price: "R$ 20,00",
+  duration: "00:15"
+}, {
+  name: "Depilação Cera",
+  price: "R$ 25,00",
+  duration: "00:20"
+}, {
+  name: "Sobrancelha Navalha",
+  price: "R$ 20,00",
+  duration: "00:15"
+}, {
+  name: "Sobrancelha Pinça",
+  price: "R$ 30,00",
+  duration: "00:30"
+}, {
+  name: "Hidratação Cabelo",
+  price: "R$ 35,00",
+  duration: "00:30"
+}, {
+  name: "Hidratação Barba",
+  price: "R$ 35,00",
+  duration: "00:30"
+}, {
+  name: "Escova",
+  price: "R$ 25,00",
+  duration: "00:15"
+}, {
+  name: "Camuflagem (a partir de)",
+  price: "R$ 40,00",
+  duration: "00:30"
+}, {
+  name: "Pigmentação de Barba (a partir de)",
+  price: "R$ 30,00",
+  duration: "00:15"
+}, {
+  name: "Tintura (a partir de)",
+  price: "R$ 60,00",
+  duration: "01:30"
+}, {
+  name: "Luzes (a partir de)",
+  price: "R$ 80,00",
+  duration: "01:30"
+}, {
+  name: "Platinado (a partir de)",
+  price: "R$ 200,00",
+  duration: "02:00"
+}, {
+  name: "Banho Vestiário Paradise",
+  price: "R$ 15,00",
+  duration: "00:15"
+}, {
+  name: "Máscara de Limpeza",
+  price: "R$ 25,00",
+  duration: "00:15"
+}, {
+  name: "Corte Feminino Curto (a partir de)",
+  price: "R$ 90,00",
+  duration: "01:15"
+}, {
+  name: "Abordagem Visagismo",
+  price: "R$ 120,00",
+  duration: "01:00"
+}, {
+  name: "Corte (Clube de Assinatura)",
+  price: "R$ 0,00",
+  duration: "00:30"
+}, {
+  name: "Corte + Barba (Clube de Assinatura)",
+  price: "R$ 0,00",
+  duration: "00:50"
+}, {
+  name: "Barba (Clube de Assinatura)",
+  price: "R$ 0,00",
+  duration: "00:30"
+}];
 const ServicosPage = () => {
   const whatsappLink = "https://wa.me/5500000000000?text=Olá,%20quero%20agendar%20um%20horário%20na%20Barbearia%20Paradise.";
-
-  return (
-    <div className="min-h-screen bg-background">
+  return <div className="min-h-screen bg-background">
       <Header />
       
       <main className="pt-20">
@@ -60,17 +124,11 @@ const ServicosPage = () => {
                   <tr className="bg-card border-b border-border">
                     <th className="text-left py-4 px-6 font-display font-semibold text-primary">NOME</th>
                     <th className="text-left py-4 px-6 font-display font-semibold text-primary">VALOR</th>
-                    <th className="text-left py-4 px-6 font-display font-semibold text-primary">HORÁRIO</th>
+                    <th className="text-left py-4 px-6 font-display font-semibold text-primary">TEMPO</th>
                   </tr>
                 </thead>
                 <tbody>
-                  {services.map((service, index) => (
-                    <tr 
-                      key={service.name}
-                      className={`border-b border-border last:border-b-0 hover:bg-card/50 transition-colors ${
-                        index % 2 === 0 ? "bg-background" : "bg-card/30"
-                      }`}
-                    >
+                  {services.map((service, index) => <tr key={service.name} className={`border-b border-border last:border-b-0 hover:bg-card/50 transition-colors ${index % 2 === 0 ? "bg-background" : "bg-card/30"}`}>
                       <td className="py-4 px-6 text-foreground font-medium">{service.name}</td>
                       <td className="py-4 px-6 text-primary font-semibold">{service.price}</td>
                       <td className="py-4 px-6 text-muted-foreground">
@@ -79,8 +137,7 @@ const ServicosPage = () => {
                           {service.duration}
                         </div>
                       </td>
-                    </tr>
-                  ))}
+                    </tr>)}
                 </tbody>
               </table>
             </div>
@@ -118,8 +175,6 @@ const ServicosPage = () => {
 
       <Footer />
       <WhatsAppButton />
-    </div>
-  );
+    </div>;
 };
-
 export default ServicosPage;
