@@ -1,63 +1,42 @@
 import { Link } from "react-router-dom";
-import { Instagram, Phone, MapPin, Clock } from "lucide-react";
+import { Instagram, Facebook, MapPin } from "lucide-react";
+import logoParadise from "@/assets/logo-paradise.png";
 
 const Footer = () => {
-  const bookingLink = "https://agendamentos.bestbarbers.app/barbershop/paradise";
-  
   return (
-    <footer className="bg-foreground text-background">
-      <div className="container-narrow section-padding">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
-          {/* Brand */}
+    <footer className="bg-background border-t border-border">
+      <div className="container-narrow py-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+          {/* Logo */}
           <div className="lg:col-span-1">
-            <div className="mb-4">
-              <span className="text-xs text-background/60 uppercase tracking-widest">BARBEARIA</span>
-              <h3 className="font-display text-2xl font-bold text-background">
-                PARADISE
-              </h3>
-            </div>
-            <p className="text-background/70 text-sm leading-relaxed mb-4">
-              Seu estilo, nosso ritual. Experiência premium em barbearia com profissionais especializados.
+            <Link to="/">
+              <img 
+                src={logoParadise} 
+                alt="Paradise Barber" 
+                className="h-20 w-auto mb-6"
+              />
+            </Link>
+            <p className="text-muted-foreground text-sm font-light leading-relaxed">
+              Resgatando a tradição das barbearias clássicas com um toque moderno.
             </p>
-            <div className="flex gap-4">
-              <a 
-                href="https://instagram.com" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="w-10 h-10 rounded-full bg-background/10 flex items-center justify-center text-background hover:bg-primary hover:text-primary-foreground transition-colors"
-              >
-                <Instagram size={20} />
-              </a>
-              <a 
-                href={bookingLink} 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="w-10 h-10 rounded-full bg-background/10 flex items-center justify-center text-background hover:bg-primary hover:text-primary-foreground transition-colors"
-              >
-                <Phone size={20} />
-              </a>
-            </div>
           </div>
 
           {/* Navigation */}
           <div>
-            <h4 className="font-display text-lg font-semibold text-background mb-4 uppercase">
-              Navegação
+            <h4 className="font-display text-lg tracking-wider text-foreground mb-6">
+              NAVEGAÇÃO
             </h4>
-            <nav className="flex flex-col gap-2">
-              <Link to="/" className="text-background/70 hover:text-primary transition-colors text-sm">
-                Início
+            <nav className="flex flex-col gap-3">
+              <Link to="/" className="text-muted-foreground hover:text-foreground transition-colors text-sm font-light">
+                Home
               </Link>
-              <Link to="/servicos" className="text-background/70 hover:text-primary transition-colors text-sm">
-                Serviços
+              <Link to="/sobre" className="text-muted-foreground hover:text-foreground transition-colors text-sm font-light">
+                Nossa Marca
               </Link>
-              <Link to="/sobre" className="text-background/70 hover:text-primary transition-colors text-sm">
-                Sobre
+              <Link to="/servicos" className="text-muted-foreground hover:text-foreground transition-colors text-sm font-light">
+                Barba & Cabelo
               </Link>
-              <Link to="/contato" className="text-background/70 hover:text-primary transition-colors text-sm">
-                Contato
-              </Link>
-              <Link to="/clube" className="text-primary hover:text-primary/80 transition-colors text-sm font-semibold">
+              <Link to="/clube" className="text-muted-foreground hover:text-foreground transition-colors text-sm font-light">
                 Clube Paradise
               </Link>
             </nav>
@@ -65,39 +44,57 @@ const Footer = () => {
 
           {/* Hours */}
           <div>
-            <h4 className="font-display text-lg font-semibold text-background mb-4 flex items-center gap-2 uppercase">
-              <Clock size={18} className="text-primary" />
-              Horários
+            <h4 className="font-display text-lg tracking-wider text-foreground mb-6">
+              HORÁRIOS
             </h4>
-            <div className="text-sm text-background/70 space-y-1">
+            <div className="text-sm text-muted-foreground font-light space-y-2">
               <p>Segunda a Sexta: 09h - 20h</p>
               <p>Sábado: 09h - 15h</p>
               <p>Domingo: Fechado</p>
             </div>
           </div>
 
-          {/* Location */}
+          {/* Contact */}
           <div>
-            <h4 className="font-display text-lg font-semibold text-background mb-4 flex items-center gap-2 uppercase">
-              <MapPin size={18} className="text-primary" />
-              Localização
+            <h4 className="font-display text-lg tracking-wider text-foreground mb-6">
+              CONTATO
             </h4>
-            <p className="text-sm text-background/70 leading-relaxed">
-              Rua Juiz de Fora, 1374<br />
-              Santo Agostinho,
-              Belo Horizonte, MG<br />
-              CEP 30180-061
-            </p>
+            <div className="space-y-4">
+              <p className="text-sm text-muted-foreground font-light flex items-start gap-3">
+                <MapPin size={16} className="flex-shrink-0 mt-0.5" />
+                <span>
+                  Rua Juiz de Fora, 1374<br />
+                  Santo Agostinho, BH - MG
+                </span>
+              </p>
+              
+              {/* Social */}
+              <div className="flex gap-3 pt-2">
+                <a 
+                  href="https://instagram.com" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="w-10 h-10 border border-border flex items-center justify-center text-muted-foreground hover:text-foreground hover:border-foreground transition-colors"
+                >
+                  <Instagram size={18} />
+                </a>
+                <a 
+                  href="https://facebook.com" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="w-10 h-10 border border-border flex items-center justify-center text-muted-foreground hover:text-foreground hover:border-foreground transition-colors"
+                >
+                  <Facebook size={18} />
+                </a>
+              </div>
+            </div>
           </div>
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-background/20 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-sm text-background/60">
+        <div className="border-t border-border mt-12 pt-8 text-center">
+          <p className="text-sm text-muted-foreground font-light">
             © {new Date().getFullYear()} Barbearia Paradise. Todos os direitos reservados.
-          </p>
-          <p className="text-sm text-background/60">
-            Feito com ❤️ para você
           </p>
         </div>
       </div>

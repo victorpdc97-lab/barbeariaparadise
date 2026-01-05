@@ -2,41 +2,45 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import { Button } from "@/components/ui/button";
-import { Check, CreditCard, Calendar, Scissors, DollarSign, ClipboardCheck } from "lucide-react";
+import { Check, Scissors } from "lucide-react";
 import clubeHeroMan from "@/assets/clube-hero-man.png";
+import heroImage from "@/assets/hero-barbershop.jpg";
 
 const Clube = () => {
   const bookingLink = "https://agendamentos.bestbarbers.app/barbershop/paradise";
 
   const plans = [
     {
-      name: "CLUBE PARADISE PREMIUM",
-      subtitle: "( ILIMITADO )",
+      name: "CLUBE PARADISE",
+      subtitle: "PREMIUM",
+      tag: "ILIMITADO",
       availability: "SEGUNDA A SÁBADO",
       featured: true,
       options: [
-        { service: "CORTE + BARBA", price: "R$199,90", period: "/MÊS" },
-        { service: "CORTE", price: "R$129,90", period: "/MÊS" },
-        { service: "BARBA", price: "R$129,90", period: "/MÊS" },
+        { service: "CORTE + BARBA", price: "R$199,90" },
+        { service: "CORTE", price: "R$129,90" },
+        { service: "BARBA", price: "R$129,90" },
       ],
     },
     {
-      name: "CLUBE PARADISE BASIC",
-      subtitle: "( LIMITADO )",
+      name: "CLUBE PARADISE",
+      subtitle: "BASIC",
+      tag: "LIMITADO",
       availability: "SEGUNDA A QUARTA",
       options: [
-        { service: "CORTE + BARBA", price: "R$169,90", period: "/MÊS" },
-        { service: "CORTE", price: "R$109,90", period: "/MÊS" },
-        { service: "BARBA", price: "R$109,90", period: "/MÊS" },
+        { service: "CORTE + BARBA", price: "R$169,90" },
+        { service: "CORTE", price: "R$109,90" },
+        { service: "BARBA", price: "R$109,90" },
       ],
     },
   ];
 
   const benefits = [
-    { icon: DollarSign, text: "Economia garantida" },
-    { icon: Calendar, text: "Agenda flexível" },
-    { icon: ClipboardCheck, text: "Sem burocracia" },
-    { icon: Scissors, text: "Serviços ilimitados" },
+    "Economia garantida todos os meses",
+    "Agenda flexível conforme sua rotina",
+    "Sem burocracia ou taxas escondidas",
+    "Cancele quando quiser",
+    "10% de desconto em produtos",
   ];
 
   const partners = [
@@ -67,7 +71,7 @@ const Clube = () => {
     },
     {
       question: "TERCEIROS PODEM UTILIZAR O MEU PLANO?",
-      answer: "Não. A assinatura é individual e instransferível.",
+      answer: "Não. A assinatura é individual e intransferível.",
     },
   ];
 
@@ -76,81 +80,102 @@ const Clube = () => {
       <Header />
       
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center pt-20 overflow-hidden bg-gradient-to-br from-primary via-primary/80 to-background">
-        {/* Watermark text */}
-        <div className="absolute left-0 top-1/4 -translate-y-1/2 overflow-hidden pointer-events-none select-none">
-          <div className="watermark-text -ml-8">
-            PLANO<br />PLANO<br />PLANO
-          </div>
+      <section className="hero-fullscreen pt-24 relative">
+        <div className="absolute inset-0">
+          <img 
+            src={heroImage} 
+            alt="Clube Paradise" 
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-background/80" />
         </div>
-        
-        <div className="container-narrow relative z-10">
-          <div className="grid lg:grid-cols-2 gap-8 items-center">
-            {/* Left side - Image placeholder (using gradient as reference shows a man) */}
-            <div className="relative hidden lg:flex justify-center items-end">
-              <div className="relative">
-                <div className="w-80 h-[500px] bg-gradient-to-t from-primary/20 to-transparent rounded-t-full overflow-hidden flex items-end justify-center">
-                  <div className="text-center text-primary-foreground/50 text-lg">
-                    {/* Placeholder for barber image */}
-                  </div>
-                </div>
-              </div>
+
+        <div className="container-narrow relative z-10 py-20">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Left - Image */}
+            <div className="hidden lg:flex justify-center animate-fade-up">
+              <img 
+                src={clubeHeroMan} 
+                alt="Clube Paradise" 
+                className="h-[500px] w-auto object-contain"
+              />
             </div>
 
-            {/* Right side - Text */}
-            <div className="text-right animate-fade-up">
-              <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground leading-tight">
+            {/* Right - Text */}
+            <div className="text-center lg:text-right animate-fade-up delay-200">
+              <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight tracking-wider">
                 JÁ PENSOU EM<br />
                 ASSINAR UMA<br />
                 BARBEARIA?
               </h1>
+              <p className="text-muted-foreground mt-6 text-lg font-light max-w-md ml-auto">
+                Com o Clube Paradise, você paga um valor fixo por mês e corta o cabelo e/ou barba quantas vezes quiser.
+              </p>
             </div>
           </div>
         </div>
       </section>
 
       {/* Plans Section */}
-      <section className="section-padding bg-gradient-to-b from-primary/10 to-background -mt-32 pt-48 relative z-20">
+      <section className="section-padding bg-secondary">
         <div className="container-narrow">
+          <div className="text-center mb-16 animate-fade-up">
+            <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-foreground tracking-wider">
+              ESCOLHA SEU PLANO
+            </h2>
+            <div className="divider-ornament mt-6 max-w-md mx-auto">
+              <span className="text-muted-foreground text-sm tracking-widest">ASSINATURA</span>
+            </div>
+          </div>
+
           <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {plans.map((plan, index) => (
               <div
-                key={plan.name}
-                className={`relative bg-card rounded-2xl p-8 shadow-card transition-all duration-300 hover:scale-105 animate-fade-up ${
-                  plan.featured 
-                    ? "border-2 border-primary" 
-                    : "border border-border"
+                key={plan.subtitle}
+                className={`vintage-card p-8 animate-fade-up ${
+                  plan.featured ? "border-foreground" : ""
                 }`}
-                style={{ animationDelay: `${index * 100}ms` }}
+                style={{ animationDelay: `${index * 150}ms` }}
               >
+                {/* Tag */}
                 <div className="text-center mb-6">
-                  <h3 className="font-display text-xl md:text-2xl font-bold text-foreground mb-1">
+                  <span className="text-xs tracking-widest text-muted-foreground">
+                    {plan.tag}
+                  </span>
+                </div>
+
+                {/* Title */}
+                <div className="text-center mb-8">
+                  <h3 className="font-display text-sm tracking-widest text-muted-foreground">
                     {plan.name}
                   </h3>
-                  <span className="text-sm text-muted-foreground">{plan.subtitle}</span>
+                  <span className="font-display text-4xl md:text-5xl font-bold text-foreground tracking-wider">
+                    {plan.subtitle}
+                  </span>
                 </div>
                 
-                <div className="space-y-4 mb-6">
+                {/* Options */}
+                <div className="space-y-4 mb-8">
                   {plan.options.map((option) => (
-                    <div key={option.service} className="text-center py-3 border-b border-border last:border-0">
-                      <span className="text-muted-foreground text-sm block mb-1">{option.service}</span>
-                      <span className="font-display text-3xl md:text-4xl font-bold text-primary">{option.price}</span>
-                      <span className="text-muted-foreground text-xs">{option.period}</span>
+                    <div key={option.service} className="flex items-center justify-between py-3 border-b border-border/50">
+                      <span className="text-muted-foreground text-sm tracking-wide">{option.service}</span>
+                      <span className="font-display text-2xl text-foreground">{option.price}<span className="text-sm text-muted-foreground">/MÊS</span></span>
                     </div>
                   ))}
                 </div>
                 
-                <div className="text-center py-4 bg-secondary rounded-lg mb-6">
-                  <span className="text-sm font-semibold text-foreground uppercase tracking-wide">
+                {/* Availability */}
+                <div className="text-center py-4 bg-muted/50 mb-8">
+                  <span className="text-sm tracking-widest text-foreground">
                     {plan.availability}
                   </span>
-                  <div className="flex justify-center gap-4 mt-2">
-                    <Scissors className="w-5 h-5 text-muted-foreground" />
-                    <Scissors className="w-5 h-5 text-muted-foreground" />
-                  </div>
                 </div>
                 
-                <Button variant="hero" className="w-full" asChild>
+                <Button 
+                  className="w-full bg-foreground text-background hover:bg-foreground/90 tracking-widest"
+                  size="lg"
+                  asChild
+                >
                   <a href={bookingLink} target="_blank" rel="noopener noreferrer">
                     ASSINAR AGORA
                   </a>
@@ -161,108 +186,70 @@ const Clube = () => {
         </div>
       </section>
 
-      {/* Benefits Icons Section */}
-      <section className="py-12 bg-background">
+      {/* Benefits Section */}
+      <section className="section-padding bg-background">
         <div className="container-narrow">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
-            {benefits.map((benefit, index) => (
-              <div 
-                key={index} 
-                className="text-center p-6 animate-fade-up"
-                style={{ animationDelay: `${index * 100}ms` }}
-              >
-                <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                  <benefit.icon className="w-8 h-8 text-primary" />
-                </div>
-                <p className="text-sm text-muted-foreground font-medium">{benefit.text}</p>
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="animate-fade-up">
+              <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground tracking-wider mb-8">
+                BENEFÍCIOS
+              </h2>
+              <ul className="space-y-4">
+                {benefits.map((benefit, index) => (
+                  <li key={index} className="flex items-center gap-4">
+                    <div className="w-6 h-6 border border-foreground flex items-center justify-center flex-shrink-0">
+                      <Check size={14} className="text-foreground" />
+                    </div>
+                    <span className="text-foreground/80 font-light">{benefit}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="animate-fade-up delay-200">
+              <p className="text-muted-foreground font-light text-sm mb-6 tracking-wide">
+                ALÉM DE BENEFÍCIOS EM + DE 30 MIL ESTABELECIMENTOS PARCEIROS
+              </p>
+              <div className="flex flex-wrap gap-3">
+                {partners.map((partner) => (
+                  <span 
+                    key={partner} 
+                    className="px-4 py-2 border border-border text-xs tracking-widest text-muted-foreground"
+                  >
+                    {partner}
+                  </span>
+                ))}
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Discount Section */}
-      <section className="py-16 bg-secondary">
-        <div className="container-narrow">
-          <div className="max-w-3xl mx-auto text-center animate-fade-up">
-            <h3 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-4 leading-tight">
-              SABEMOS QUE<br />
-              ECONOMIZAR E ESTAR<br />
-              EM SUA MELHOR VERSÃO<br />
-              SÃO FATORES INDISPENSÁVEIS...
-            </h3>
-            <p className="text-lg md:text-xl text-foreground font-bold mt-6">
-              POR ESSE MOTIVO, OS ASSINANTES<br />
-              DO CLUBE PARADISE RECEBEM <span className="text-primary">10% DE<br />
-              DESCONTO EM TODOS OS PRODUTOS/SERVIÇOS AVULSOS.</span>
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Partners Section */}
-      <section className="py-16 bg-background">
-        <div className="container-narrow">
-          <div className="text-center animate-fade-up">
-            <p className="text-foreground font-bold uppercase text-sm mb-8">
-              Além de benefícios em + de 30 mil estabelecimentos parceiros<br />
-              (Solicitar ativação)
-            </p>
-            <div className="flex flex-wrap justify-center items-center gap-6 md:gap-10 opacity-70">
-              {partners.map((partner) => (
-                <span 
-                  key={partner} 
-                  className="text-sm md:text-base font-bold text-muted-foreground uppercase"
-                >
-                  {partner}
-                </span>
-              ))}
             </div>
           </div>
         </div>
       </section>
 
       {/* FAQ Section */}
-      <section className="section-padding bg-gradient-to-br from-primary via-primary/90 to-accent relative overflow-hidden">
-        {/* Watermark */}
-        <div className="absolute right-0 top-1/4 overflow-hidden pointer-events-none select-none opacity-10">
-          <div className="font-display text-[150px] md:text-[200px] font-bold text-primary-foreground leading-none">
-            PLANO<br />PLANO
-          </div>
-        </div>
-
-        <div className="container-narrow relative z-10">
-          <div className="text-left mb-12 animate-fade-up">
-            <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground">
-              PERGUNTAS<br />FREQUENTES
+      <section className="section-padding bg-secondary">
+        <div className="container-narrow">
+          <div className="text-center mb-16 animate-fade-up">
+            <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-foreground tracking-wider">
+              PERGUNTAS FREQUENTES
             </h2>
+            <div className="divider-ornament mt-6 max-w-md mx-auto">
+              <span className="text-muted-foreground text-sm tracking-widest">FAQ</span>
+            </div>
           </div>
           
-          <div className="max-w-3xl space-y-6">
+          <div className="max-w-3xl mx-auto space-y-8">
             {faqs.map((faq, index) => (
               <div
                 key={index}
-                className="animate-fade-up"
+                className="animate-fade-up border-b border-border/50 pb-8"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
-                <h3 className="font-display text-lg md:text-xl font-bold text-primary-foreground mb-2">
-                  {index + 1}) {faq.question}
+                <h3 className="font-display text-lg tracking-wider text-foreground mb-3">
+                  {index + 1}. {faq.question}
                 </h3>
-                <p className="text-primary-foreground/80 text-sm md:text-base">{faq.answer}</p>
+                <p className="text-muted-foreground font-light">{faq.answer}</p>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Bottom Logo Section */}
-      <section className="py-16 bg-background">
-        <div className="container-narrow text-center">
-          <div className="inline-block">
-            <span className="text-xs text-muted-foreground uppercase tracking-widest">CLUBE</span>
-            <h3 className="font-display text-3xl md:text-4xl font-bold text-foreground">
-              PARADISE
-            </h3>
           </div>
         </div>
       </section>

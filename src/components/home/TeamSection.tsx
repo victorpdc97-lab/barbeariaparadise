@@ -7,21 +7,18 @@ const team = [
   {
     name: "Rafael Costa",
     role: "Barbeiro Master",
-    bio: "10+ anos de experiência. Especialista em degradê e cortes modernos.",
     image: barber1,
     instagram: "#",
   },
   {
     name: "Lucas Mendes",
     role: "Barbeiro Senior",
-    bio: "Mestre em barbas e estilos clássicos. Atenção impecável aos detalhes.",
     image: barber2,
     instagram: "#",
   },
   {
     name: "Carlos Silva",
     role: "Barbeiro Fundador",
-    bio: "20+ anos transformando estilos. A experiência que você merece.",
     image: barber3,
     instagram: "#",
   },
@@ -32,51 +29,51 @@ const TeamSection = () => {
     <section className="section-padding bg-secondary">
       <div className="container-narrow">
         {/* Header */}
-        <div className="text-center mb-16">
-          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
-            NOSSA <span className="text-primary">EQUIPE</span>
+        <div className="text-center mb-16 animate-fade-up">
+          <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-foreground tracking-wider">
+            NOSSA EQUIPE
           </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Profissionais apaixonados pelo que fazem, prontos para transformar seu visual.
-          </p>
+          <div className="divider-ornament mt-6 max-w-md mx-auto">
+            <span className="text-muted-foreground text-sm tracking-widest">PROFISSIONAIS</span>
+          </div>
         </div>
 
         {/* Team Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {team.map((member) => (
+          {team.map((member, index) => (
             <div
               key={member.name}
-              className="group text-center"
+              className="group text-center animate-fade-up"
+              style={{ animationDelay: `${index * 150}ms` }}
             >
               {/* Image */}
-              <div className="relative mb-6 mx-auto w-48 h-48 md:w-56 md:h-56 rounded-full overflow-hidden border-4 border-primary/20 group-hover:border-primary transition-colors shadow-card">
+              <div className="relative mb-6 mx-auto aspect-[3/4] overflow-hidden">
                 <img
                   src={member.image}
                   alt={member.name}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
-                {/* Overlay */}
-                <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/20 transition-colors flex items-center justify-center">
+                <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent opacity-60" />
+                
+                {/* Overlay on hover */}
+                <div className="absolute inset-0 bg-background/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                   <a
                     href={member.instagram}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="opacity-0 group-hover:opacity-100 transition-opacity w-10 h-10 rounded-full bg-background flex items-center justify-center"
+                    className="w-12 h-12 border border-foreground/50 flex items-center justify-center text-foreground hover:bg-foreground hover:text-background transition-colors"
                   >
-                    <Instagram size={20} className="text-foreground" />
+                    <Instagram size={20} />
                   </a>
                 </div>
               </div>
 
               {/* Info */}
-              <h3 className="font-display text-xl font-bold text-foreground mb-1 uppercase">
+              <h3 className="font-display text-xl tracking-wider text-foreground mb-1">
                 {member.name}
               </h3>
-              <p className="text-primary font-medium text-sm mb-3 uppercase tracking-wide">
+              <p className="text-muted-foreground text-sm tracking-wide">
                 {member.role}
-              </p>
-              <p className="text-muted-foreground text-sm max-w-xs mx-auto">
-                {member.bio}
               </p>
             </div>
           ))}

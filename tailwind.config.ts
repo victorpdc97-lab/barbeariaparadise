@@ -15,6 +15,7 @@ export default {
     extend: {
       fontFamily: {
         display: ["Bebas Neue", "sans-serif"],
+        serif: ["Playfair Display", "serif"],
         sans: ["Inter", "sans-serif"],
       },
       colors: {
@@ -51,14 +52,15 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        turquoise: {
-          DEFAULT: "hsl(var(--turquoise))",
-          light: "hsl(var(--turquoise-light))",
-          dark: "hsl(var(--turquoise-dark))",
+        gold: {
+          DEFAULT: "hsl(var(--gold))",
+          light: "hsl(var(--gold-light))",
+          dark: "hsl(var(--gold-dark))",
         },
-        navy: {
-          DEFAULT: "hsl(var(--navy))",
-          light: "hsl(var(--navy-light))",
+        barber: {
+          red: "hsl(var(--barber-red))",
+          blue: "hsl(var(--barber-blue))",
+          white: "hsl(var(--barber-white))",
         },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",

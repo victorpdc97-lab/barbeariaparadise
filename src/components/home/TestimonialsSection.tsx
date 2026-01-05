@@ -1,87 +1,60 @@
-import { Star, Quote } from "lucide-react";
+import { Star } from "lucide-react";
 
 const testimonials = [
   {
-    name: "Marcos Oliveira",
-    text: "Melhor barbearia da cidade! Atendimento impecável e resultado sempre perfeito.",
+    name: "Marcos Silva",
+    text: "Melhor barbearia da cidade. Ambiente incrível e profissionais de primeira!",
     rating: 5,
   },
   {
-    name: "Pedro Santos",
-    text: "Ambiente top e profissionais de primeira. Nunca mais troco de barbearia.",
+    name: "João Pedro",
+    text: "Atendimento impecável. Voltarei sempre!",
     rating: 5,
   },
   {
-    name: "André Lima",
-    text: "O degradê que fazem aqui é outro nível. Recomendo demais!",
-    rating: 5,
-  },
-  {
-    name: "Felipe Costa",
-    text: "Pontualidade nota 10. Agendo pelo WhatsApp e sou atendido na hora marcada.",
-    rating: 5,
-  },
-  {
-    name: "Bruno Mendes",
-    text: "Produtos de qualidade e atendimento personalizado. Vale cada centavo.",
-    rating: 5,
-  },
-  {
-    name: "Ricardo Souza",
-    text: "Desde que descobri a Paradise, não vou em outro lugar. Simplesmente o melhor.",
-    rating: 5,
-  },
-  {
-    name: "Thiago Alves",
-    text: "O Carlos é um mestre na barba. Saio de lá me sentindo outro homem.",
-    rating: 5,
-  },
-  {
-    name: "Gabriel Ferreira",
-    text: "Ambiente acolhedor, clima descontraído e resultado profissional. Perfeito!",
+    name: "André Costa",
+    text: "O corte ficou perfeito. Recomendo demais!",
     rating: 5,
   },
 ];
 
 const TestimonialsSection = () => {
   return (
-    <section className="section-padding bg-background overflow-hidden">
+    <section className="section-padding bg-background">
       <div className="container-narrow">
         {/* Header */}
-        <div className="text-center mb-16">
-          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
-            O QUE DIZEM <span className="text-primary">NOSSOS CLIENTES</span>
+        <div className="text-center mb-16 animate-fade-up">
+          <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-foreground tracking-wider">
+            DEPOIMENTOS
           </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            A satisfação de quem confia no nosso trabalho.
-          </p>
+          <div className="divider-ornament mt-6 max-w-md mx-auto">
+            <span className="text-muted-foreground text-sm tracking-widest">CLIENTES</span>
+          </div>
         </div>
 
         {/* Testimonials Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="p-6 rounded-xl bg-card border border-border hover:border-primary/50 transition-all duration-300 shadow-card"
+              className="vintage-card p-8 text-center animate-fade-up hover-glow"
+              style={{ animationDelay: `${index * 150}ms` }}
             >
-              {/* Quote Icon */}
-              <Quote size={24} className="text-primary/30 mb-4" />
-
-              {/* Rating */}
-              <div className="flex gap-1 mb-3">
+              {/* Stars */}
+              <div className="flex justify-center gap-1 mb-6">
                 {[...Array(testimonial.rating)].map((_, i) => (
-                  <Star key={i} size={14} className="fill-primary text-primary" />
+                  <Star key={i} size={16} className="fill-gold text-gold" />
                 ))}
               </div>
 
-              {/* Text */}
-              <p className="text-foreground/90 text-sm mb-4 leading-relaxed">
+              {/* Quote */}
+              <p className="text-foreground/80 font-light leading-relaxed mb-6 italic">
                 "{testimonial.text}"
               </p>
 
               {/* Author */}
-              <p className="text-muted-foreground text-sm font-medium">
-                — {testimonial.name}
+              <p className="font-display text-foreground tracking-wider">
+                {testimonial.name}
               </p>
             </div>
           ))}
