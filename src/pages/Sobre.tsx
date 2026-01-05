@@ -198,7 +198,7 @@ const SobrePage = () => {
             <p className="text-muted-foreground text-lg max-w-xl mx-auto mb-8">
               Estamos esperando você para uma experiência única de cuidado masculino.
             </p>
-            <Button variant="whatsapp" size="xl" asChild>
+            <Button variant="booking" size="xl" asChild>
               <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
                 <MessageCircle size={20} />
                 Agendar Visita
