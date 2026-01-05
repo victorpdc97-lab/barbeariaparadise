@@ -8,52 +8,50 @@ const testimonials = [
   },
   {
     name: "João Pedro",
-    text: "Atendimento impecável. Voltarei sempre!",
+    text: "Atendimento impecável. O corte ficou exatamente como eu queria.",
     rating: 5,
   },
   {
     name: "André Costa",
-    text: "O corte ficou perfeito. Recomendo demais!",
+    text: "O corte ficou perfeito. Recomendo demais para quem busca qualidade!",
     rating: 5,
   },
 ];
 
 const TestimonialsSection = () => {
   return (
-    <section className="section-padding bg-background">
-      <div className="container-narrow">
+    <section className="section-apple bg-background">
+      <div className="container-apple">
         {/* Header */}
-        <div className="text-center mb-16 animate-fade-up">
-          <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-foreground tracking-wider">
-            DEPOIMENTOS
+        <div className="text-center mb-16">
+          <p className="eyebrow-apple mb-4 animate-fade-up">Depoimentos</p>
+          <h2 className="headline-apple animate-fade-up delay-100">
+            O que nossos<br />clientes dizem.
           </h2>
-          <div className="divider-ornament mt-6 max-w-md mx-auto">
-            <span className="text-muted-foreground text-sm tracking-widest">CLIENTES</span>
-          </div>
         </div>
 
         {/* Testimonials Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="vintage-card p-8 text-center animate-fade-up hover-glow"
-              style={{ animationDelay: `${index * 150}ms` }}
+              className="bg-card rounded-3xl p-8 text-center animate-fade-up"
+              style={{ animationDelay: `${(index + 2) * 0.1}s` }}
             >
               {/* Stars */}
               <div className="flex justify-center gap-1 mb-6">
                 {[...Array(testimonial.rating)].map((_, i) => (
-                  <Star key={i} size={16} className="fill-gold text-gold" />
+                  <Star key={i} size={18} className="fill-[hsl(45,100%,50%)] text-[hsl(45,100%,50%)]" />
                 ))}
               </div>
 
               {/* Quote */}
-              <p className="text-foreground/80 font-light leading-relaxed mb-6 italic">
+              <p className="text-foreground/80 leading-relaxed mb-6 text-lg">
                 "{testimonial.text}"
               </p>
 
               {/* Author */}
-              <p className="font-display text-foreground tracking-wider">
+              <p className="font-semibold text-foreground">
                 {testimonial.name}
               </p>
             </div>

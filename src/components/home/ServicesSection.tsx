@@ -1,66 +1,55 @@
-import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import beardTrim from "@/assets/beard-trim.jpg";
+import fadeHaircut from "@/assets/fade-haircut.jpg";
+
+const services = [
+  {
+    title: "Corte",
+    subtitle: "Precisão em cada detalhe.",
+    image: fadeHaircut,
+    link: "/servicos",
+  },
+  {
+    title: "Barba",
+    subtitle: "O ritual clássico da navalha.",
+    image: beardTrim,
+    link: "/servicos",
+  },
+];
 
 const ServicesSection = () => {
-  const bookingLink = "https://agendamentos.bestbarbers.app/barbershop/paradise";
-
   return (
-    <section className="relative">
-      {/* Background Image */}
-      <div className="absolute inset-0">
-        <img 
-          src={beardTrim} 
-          alt="Barba & Cabelo" 
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-background/80" />
-      </div>
+    <section className="bg-background section-apple">
+      <div className="container-apple-wide">
+        <div className="tile-grid grid-cols-1 md:grid-cols-2">
+          {services.map((service, index) => (
+            <div 
+              key={service.title}
+              className="card-apple relative min-h-[500px] md:min-h-[580px] flex flex-col items-center justify-end p-8 md:p-12 group overflow-hidden"
+              style={{ animationDelay: `${index * 0.1}s` }}
+            >
+              {/* Background Image */}
+              <img 
+                src={service.image} 
+                alt={service.title}
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
 
-      <div className="relative z-10 section-padding">
-        <div className="container-narrow">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-            {/* Left - Description */}
-            <div className="animate-fade-up order-2 lg:order-1">
-              <p className="text-foreground/80 text-lg md:text-xl leading-relaxed font-light mb-8">
-                Entre toalhas quentes e massagem facial, os melhores cremes e espumas preparam 
-                o rosto dos nossos clientes. E hoje, eles e nossos visitantes ainda podem 
-                aproveitar o espaço da nossa cervejaria.
-              </p>
-              
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button 
-                  className="bg-foreground text-background hover:bg-foreground/90 text-sm tracking-widest px-8"
-                  size="lg"
-                  asChild
-                >
-                  <a href={bookingLink} target="_blank" rel="noopener noreferrer">
-                    AGENDAR HORÁRIO
-                  </a>
-                </Button>
-                <Button 
-                  variant="outline" 
-                  className="border-foreground/30 text-foreground hover:bg-foreground/10 text-sm tracking-widest px-8"
-                  size="lg"
-                  asChild
-                >
-                  <Link to="/servicos">
-                    VER SERVIÇOS
-                  </Link>
-                </Button>
+              {/* Content */}
+              <div className="relative z-10 text-center text-white">
+                <h3 className="text-3xl md:text-4xl font-semibold mb-2">
+                  {service.title}
+                </h3>
+                <p className="text-lg text-white/70 mb-4">
+                  {service.subtitle}
+                </p>
+                <Link to={service.link} className="link-apple text-white hover:text-white/80">
+                  Saiba mais
+                </Link>
               </div>
             </div>
-
-            {/* Right - Title */}
-            <div className="animate-fade-up order-1 lg:order-2 text-right">
-              <h2 className="font-display text-5xl md:text-6xl lg:text-7xl font-bold text-foreground leading-none tracking-wider">
-                BARBA &
-              </h2>
-              <h2 className="font-display text-5xl md:text-6xl lg:text-7xl font-bold text-foreground leading-none tracking-wider">
-                CABELO
-              </h2>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>
