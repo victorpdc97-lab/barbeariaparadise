@@ -40,12 +40,12 @@ const Header = () => {
               <Link
                 key={link.path}
                 to={link.path}
-                className={`text-sm font-medium transition-colors ${
+                className={`text-sm font-medium transition-colors uppercase tracking-wide ${
                   link.featured 
-                    ? "px-4 py-2 border border-foreground rounded-md hover:bg-foreground hover:text-background" 
+                    ? "px-4 py-2 bg-primary text-primary-foreground rounded-full hover:bg-primary/90" 
                     : "hover:text-primary"
                 } ${
-                  isActive(link.path) ? "text-primary" : "text-foreground/80"
+                  isActive(link.path) && !link.featured ? "text-primary" : "text-foreground/80"
                 }`}
               >
                 {link.name}
@@ -81,7 +81,7 @@ const Header = () => {
                   key={link.path}
                   to={link.path}
                   onClick={() => setIsMenuOpen(false)}
-                  className={`text-base font-medium transition-colors hover:text-primary ${
+                  className={`text-base font-medium transition-colors hover:text-primary uppercase tracking-wide ${
                     isActive(link.path) ? "text-primary" : "text-foreground/80"
                   }`}
                 >

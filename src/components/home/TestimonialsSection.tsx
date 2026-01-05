@@ -50,7 +50,7 @@ const TestimonialsSection = () => {
         {/* Header */}
         <div className="text-center mb-16">
           <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
-            O Que Dizem <span className="text-gradient-gold">Nossos Clientes</span>
+            O QUE DIZEM <span className="text-primary">NOSSOS CLIENTES</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             A satisfação de quem confia no nosso trabalho.
@@ -62,7 +62,7 @@ const TestimonialsSection = () => {
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="p-6 rounded-xl bg-card border border-border hover:border-primary/50 transition-all duration-300"
+              className="p-6 rounded-xl bg-card border border-border hover:border-primary/50 transition-all duration-300 shadow-card"
             >
               {/* Quote Icon */}
               <Quote size={24} className="text-primary/30 mb-4" />

@@ -1,13 +1,20 @@
 import { Button } from "@/components/ui/button";
-import { MessageCircle, Scissors } from "lucide-react";
+import { Calendar, Scissors } from "lucide-react";
 import heroImage from "@/assets/hero-barbershop.jpg";
+
 const HeroSection = () => {
   const bookingLink = "https://agendamentos.bestbarbers.app/barbershop/paradise";
-  return <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+  
+  return (
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0">
-        <img src={heroImage} alt="Barbearia Paradise - Ambiente Premium" className="w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-gradient-hero" />
+        <img 
+          src={heroImage} 
+          alt="Barbearia Paradise - Ambiente Premium" 
+          className="w-full h-full object-cover" 
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-foreground/70 via-foreground/40 to-foreground/80" />
       </div>
 
       {/* Content */}
@@ -16,34 +23,32 @@ const HeroSection = () => {
           {/* Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/20 border border-primary/30 mb-8 animate-fade-up">
             <Scissors size={16} className="text-primary" />
-            <span className="text-sm font-medium text-primary">Barbearia Premium</span>
+            <span className="text-sm font-medium text-primary uppercase tracking-wide">Barbearia Premium</span>
           </div>
 
           {/* Main Heading */}
-          <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-foreground mb-6 animate-fade-up delay-100">
-            Seu Estilo,{" "}
-            <span className="text-gradient-gold">Nosso Ritual</span>
+          <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-background mb-6 animate-fade-up delay-100">
+            SEU ESTILO,{" "}
+            <span className="text-primary">NOSSO RITUAL</span>
           </h1>
 
           {/* Subheading */}
-          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 animate-fade-up delay-200">
+          <p className="text-lg md:text-xl text-background/80 max-w-2xl mx-auto mb-10 animate-fade-up delay-200">
             Transformamos cada visita em uma experiência única. Profissionais especializados, 
             ambiente premium e resultados impecáveis.
           </p>
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-up delay-300">
-            <Button variant="whatsapp" size="xl" asChild>
+            <Button variant="hero" size="xl" asChild>
               <a href={bookingLink} target="_blank" rel="noopener noreferrer">
-                <MessageCircle size={20} />
-                
-                Agendar 
-              
+                <Calendar size={20} />
+                AGENDAR AGORA
               </a>
             </Button>
-            <Button variant="heroOutline" size="xl" asChild>
+            <Button variant="heroOutline" size="xl" className="text-background border-background/60 hover:bg-background/10" asChild>
               <a href="#servicos">
-                Ver Serviços
+                VER SERVIÇOS
               </a>
             </Button>
           </div>
@@ -56,6 +61,8 @@ const HeroSection = () => {
           <div className="w-1.5 h-3 bg-primary rounded-full animate-pulse" />
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default HeroSection;
