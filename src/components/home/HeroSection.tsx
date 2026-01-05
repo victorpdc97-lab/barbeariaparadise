@@ -1,19 +1,12 @@
 import { Button } from "@/components/ui/button";
 import { MessageCircle, Scissors } from "lucide-react";
 import heroImage from "@/assets/hero-barbershop.jpg";
-
 const HeroSection = () => {
   const whatsappLink = "https://wa.me/5500000000000?text=Olá,%20quero%20agendar%20um%20horário%20na%20Barbearia%20Paradise.";
-
-  return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+  return <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0">
-        <img
-          src={heroImage}
-          alt="Barbearia Paradise - Ambiente Premium"
-          className="w-full h-full object-cover"
-        />
+        <img src={heroImage} alt="Barbearia Paradise - Ambiente Premium" className="w-full h-full object-cover" />
         <div className="absolute inset-0 bg-gradient-hero" />
       </div>
 
@@ -43,7 +36,9 @@ const HeroSection = () => {
             <Button variant="whatsapp" size="xl" asChild>
               <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
                 <MessageCircle size={20} />
+                
                 Agendar no WhatsApp
+              
               </a>
             </Button>
             <Button variant="heroOutline" size="xl" asChild>
@@ -61,8 +56,6 @@ const HeroSection = () => {
           <div className="w-1.5 h-3 bg-primary rounded-full animate-pulse" />
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default HeroSection;
