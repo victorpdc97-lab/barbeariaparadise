@@ -19,7 +19,7 @@ const Header = () => {
 
   const isActive = (path: string) => location.pathname === path;
 
-  const whatsappLink = "https://wa.me/5500000000000?text=Olá,%20quero%20agendar%20um%20horário%20na%20Barbearia%20Paradise.";
+  const bookingLink = "https://agendamentos.bestbarbers.app/barbershop/paradise";
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
@@ -56,7 +56,7 @@ const Header = () => {
           {/* CTA Button */}
           <div className="hidden md:block">
             <Button variant="hero" size="default" asChild>
-              <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
+              <a href={bookingLink} target="_blank" rel="noopener noreferrer">
                 Agendar Agora
               </a>
             </Button>
@@ -89,7 +89,7 @@ const Header = () => {
                 </Link>
               ))}
               <Button variant="hero" size="lg" className="mt-2" asChild>
-                <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
+                <a href={bookingLink} target="_blank" rel="noopener noreferrer">
                   Agendar Agora
                 </a>
               </Button>
