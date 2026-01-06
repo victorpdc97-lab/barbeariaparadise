@@ -21,7 +21,7 @@ const services = [{
   badge: "Entretenimento"
 }, {
   title: "Manicure, Pedicure e Massagista",
-  description: "Cuidados completos para suas mãos e pés em um ambiente relaxante.",
+  description: "Relaxe com nossos serviços de manicure, pedicure e massagem para renovar corpo e mente.",
   image: manicurePedicure,
   badge: "Beleza"
 }];
