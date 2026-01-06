@@ -1,18 +1,11 @@
 import { Link } from "react-router-dom";
 import { Scissors } from "lucide-react";
 import heroImage from "@/assets/hero-barbearia.jpg";
-
 const HeroSection = () => {
   const bookingLink = "https://agendamentos.bestbarbers.app/barbershop/paradise";
-
-  return (
-    <section className="hero-section min-h-[85vh] flex items-center justify-center overflow-hidden relative">
+  return <section className="hero-section min-h-[85vh] flex items-center justify-center overflow-hidden relative">
       {/* Background Image */}
-      <img 
-        src={heroImage} 
-        alt="Interior da Paradise Barber" 
-        className="absolute inset-0 w-full h-full object-cover"
-      />
+      <img src={heroImage} alt="Interior da Paradise Barber" className="absolute inset-0 w-full h-full object-cover" />
       
       {/* Dark Overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70" />
@@ -38,9 +31,7 @@ const HeroSection = () => {
 
       {/* Content */}
       <div className="relative z-10 container-clean py-20 text-center">
-        <span className="inline-block px-5 py-2.5 rounded-full bg-white/15 backdrop-blur-sm text-sm font-medium mb-8 text-white opacity-0 animate-fade-up">
-          ✂️ Barbearia Premium em BH
-        </span>
+        
         
         <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 opacity-0 animate-fade-up delay-100 tracking-tight">
           SUA MELHOR<br />
@@ -53,24 +44,14 @@ const HeroSection = () => {
         </p>
 
         <div className="flex flex-wrap items-center justify-center gap-4 opacity-0 animate-fade-up delay-300">
-          <a 
-            href={bookingLink} 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center px-8 py-4 rounded-full font-semibold text-base transition-all bg-white text-primary hover:bg-white/90 shadow-lg hover:shadow-xl hover:scale-105"
-          >
+          <a href={bookingLink} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center px-8 py-4 rounded-full font-semibold text-base transition-all bg-white text-primary hover:bg-white/90 shadow-lg hover:shadow-xl hover:scale-105">
             Agendar Agora
           </a>
-          <Link 
-            to="/servicos" 
-            className="inline-flex items-center justify-center px-8 py-4 rounded-full font-semibold text-base transition-all bg-transparent border-2 border-white/40 text-white hover:bg-white/10 hover:border-white/60"
-          >
+          <Link to="/servicos" className="inline-flex items-center justify-center px-8 py-4 rounded-full font-semibold text-base transition-all bg-transparent border-2 border-white/40 text-white hover:bg-white/10 hover:border-white/60">
             Ver Serviços
           </Link>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default HeroSection;
