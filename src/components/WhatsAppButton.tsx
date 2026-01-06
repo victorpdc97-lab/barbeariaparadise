@@ -1,7 +1,7 @@
 import { MessageCircle } from "lucide-react";
 
 const WhatsAppButton = () => {
-  const bookingLink = "https://agendamentos.bestbarbers.app/barbershop/paradise";
+  const bookingLink = "https://wa.me/553186595481";
 
   return (
     <a
