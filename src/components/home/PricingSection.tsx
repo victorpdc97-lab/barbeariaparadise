@@ -6,7 +6,7 @@ const PricingSection = () => {
   const services = [
     { name: "Corte", price: "R$ 65,00", duration: "30 min" },
     { name: "Barba", price: "R$ 50,00", duration: "30 min" },
-    { name: "Corte + Barba", price: "R$ 115,00", duration: "40 min", featured: true },
+    { name: "Corte + Barba", price: "R$ 115,00", duration: "50 min", featured: true },
     { name: "Acabamento", price: "R$ 20,00", duration: "15 min" },
     { name: "Sobrancelha Navalha", price: "R$ 20,00", duration: "15 min" },
     { name: "Pigmentação de Barba (a partir de)", price: "R$ 30,00", duration: "15 min" },
