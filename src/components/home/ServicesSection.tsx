@@ -17,7 +17,7 @@ const services = [
     badge: "Premium",
   },
   {
-    title: "Combo Completo",
+    title: "Sinuca",
     description: "Cabelo + barba + hidratação. A experiência completa Paradise.",
     image: serviceCombo,
     badge: "Recomendado",
