@@ -15,7 +15,7 @@ const PageTransition = () => {
       const timer = setTimeout(() => {
         setDisplayLocation(location);
         setIsAnimating(false);
-      }, 600);
+      }, 1000);
 
       return () => clearTimeout(timer);
     }
@@ -27,9 +27,9 @@ const PageTransition = () => {
     <div className="fixed inset-0 z-[100] pointer-events-none flex items-center justify-center">
       {/* Background overlay */}
       <div 
-        className="absolute inset-0 bg-background transition-opacity duration-300"
+        className="absolute inset-0 bg-background transition-opacity duration-500"
         style={{
-          animation: "fadeInOut 600ms ease-in-out forwards"
+          animation: "fadeInOut 1000ms ease-in-out forwards"
         }}
       />
       
@@ -39,15 +39,15 @@ const PageTransition = () => {
         alt=""
         className="relative z-10 w-24 h-24 object-contain"
         style={{
-          animation: "logoAnimation 600ms ease-in-out forwards"
+          animation: "logoAnimation 1000ms ease-in-out forwards"
         }}
       />
 
       <style>{`
         @keyframes fadeInOut {
           0% { opacity: 0; }
-          30% { opacity: 1; }
-          70% { opacity: 1; }
+          15% { opacity: 1; }
+          85% { opacity: 1; }
           100% { opacity: 0; }
         }
         
@@ -56,11 +56,11 @@ const PageTransition = () => {
             opacity: 0; 
             transform: scale(0.5) rotate(-180deg); 
           }
-          30% { 
+          15% { 
             opacity: 1; 
             transform: scale(1) rotate(0deg); 
           }
-          70% { 
+          85% { 
             opacity: 1; 
             transform: scale(1) rotate(0deg); 
           }
