@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Crown } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import logoParadise from "@/assets/logo-paradise-barber.png";
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -77,7 +77,7 @@ const Header = () => {
         {isMenuOpen && <div className="lg:hidden py-6 border-t border-border animate-fade-in">
             <nav className="flex flex-col gap-1">
               {navLinks.map(link => link.highlighted ? <Link key={link.path} to={link.path} onClick={() => setIsMenuOpen(false)} className={`flex items-center gap-2 py-3 px-4 rounded-lg text-base font-medium transition-all ${isActive(link.path) ? "bg-primary text-primary-foreground" : "bg-primary/10 text-primary border border-primary/30"}`}>
-                    <Crown size={18} />
+                    
                     {link.name}
                     {link.badge && <span className="ml-auto px-2 py-0.5 text-xs font-bold bg-primary text-primary-foreground rounded animate-pulse">
                         {link.badge}
