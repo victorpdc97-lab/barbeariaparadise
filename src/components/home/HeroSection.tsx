@@ -1,8 +1,13 @@
 import { Link } from "react-router-dom";
 import { Scissors } from "lucide-react";
 import heroImage from "@/assets/barbearia-3.jpg";
+import { useTypewriter } from "@/hooks/useTypewriter";
+
 const HeroSection = () => {
   const bookingLink = "https://agendamentos.bestbarbers.app/barbershop/paradise";
+  
+  const { displayedText: line1, isComplete: line1Complete } = useTypewriter("SUA MELHOR", 80, 300);
+  const { displayedText: line2, isComplete: line2Complete } = useTypewriter("VERSÃO", 80, 1200);
   return <section className="hero-section min-h-[85vh] flex items-center justify-center overflow-hidden relative">
       {/* Background Image */}
       <img src={heroImage} alt="Interior da Paradise Barber" className="absolute inset-0 w-full h-full object-cover" />
@@ -33,9 +38,10 @@ const HeroSection = () => {
       <div className="relative z-10 container-clean py-20 text-center">
         
         
-        <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 opacity-0 animate-fade-up delay-100 tracking-tight">
-          SUA MELHOR<br />
-          <span className="text-white/85">VERSÃO</span>
+        <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 tracking-tight min-h-[1.2em] md:min-h-[2.4em]">
+          {line1}<br />
+          <span className="text-white/85">{line2}</span>
+          {!line2Complete && <span className="animate-pulse ml-1">|</span>}
         </h1>
         
         <p className="text-lg md:text-xl text-white/80 max-w-2xl mx-auto mb-12 opacity-0 animate-fade-up delay-200 leading-relaxed">
