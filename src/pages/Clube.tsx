@@ -136,7 +136,7 @@ const Clube = () => {
               <img 
                 src={modeloElBigodon} 
                 alt="Modelo barbeiro" 
-                className="max-h-[500px] object-contain drop-shadow-2xl"
+                className="h-[700px] object-contain drop-shadow-2xl scale-150 origin-bottom"
               />
             </div>
           </div>
