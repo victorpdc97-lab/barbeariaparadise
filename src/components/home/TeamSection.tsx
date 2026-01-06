@@ -58,12 +58,18 @@ const TeamSection = () => {
               style={{ animationDelay: `${(index + 2) * 0.1}s` }}
             >
               {/* Image */}
-              <div className="aspect-[4/5] overflow-hidden">
+              <div className="aspect-[4/5] overflow-hidden bg-muted relative">
+                {/* Teal overlay */}
+                <div className="absolute inset-0 bg-primary/10 mix-blend-multiply z-10 
+                                transition-opacity duration-500 group-hover:opacity-0" />
                 <img
                   src={member.image}
                   alt={member.name}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  className="w-full h-full object-cover object-top grayscale 
+                             transition-all duration-500 group-hover:grayscale-0 group-hover:scale-105"
                 />
+                {/* Subtle inner border */}
+                <div className="absolute inset-0 ring-1 ring-inset ring-black/5 z-20" />
               </div>
 
               {/* Info */}
