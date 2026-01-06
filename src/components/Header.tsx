@@ -27,14 +27,14 @@ const Header = () => {
   const bookingLink = "https://agendamentos.bestbarbers.app/barbershop/paradise";
 
   return (
-    <header className={`nav-cinema transition-all duration-300 ${
-      isScrolled ? "bg-background/95 border-b border-border/50" : "bg-transparent"
+    <header className={`nav-clean transition-all duration-300 ${
+      isScrolled ? "bg-background/98 shadow-sm" : "bg-white/80 backdrop-blur-md"
     }`}>
-      <div className="container-cinema">
+      <div className="container-clean">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center">
-            <span className="font-display text-2xl lg:text-3xl tracking-wider text-foreground">
+            <span className="font-display text-2xl lg:text-3xl tracking-wider text-primary">
               PARADISE
             </span>
           </Link>
@@ -45,8 +45,10 @@ const Header = () => {
               <Link
                 key={link.path}
                 to={link.path}
-                className={`nav-link ${
-                  isActive(link.path) ? "text-foreground" : ""
+                className={`text-sm font-medium transition-colors ${
+                  isActive(link.path) 
+                    ? "text-primary" 
+                    : "text-foreground/70 hover:text-primary"
                 }`}
               >
                 {link.name}
@@ -87,8 +89,8 @@ const Header = () => {
                   onClick={() => setIsMenuOpen(false)}
                   className={`py-3 px-4 rounded-lg text-base font-medium transition-colors ${
                     isActive(link.path) 
-                      ? "bg-muted text-foreground" 
-                      : "text-muted-foreground hover:text-foreground hover:bg-muted"
+                      ? "bg-primary/10 text-primary" 
+                      : "text-muted-foreground hover:text-primary hover:bg-primary/5"
                   }`}
                 >
                   {link.name}

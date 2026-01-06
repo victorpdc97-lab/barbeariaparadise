@@ -23,14 +23,13 @@ const testimonials = [
 
 const TestimonialsSection = () => {
   return (
-    <section className="section-cinema bg-background">
-      <div className="container-cinema">
+    <section className="section-clean bg-background">
+      <div className="container-clean">
         {/* Header */}
-        <div className="mb-16">
-          <p className="eyebrow mb-4 opacity-0 animate-fade-up">Depoimentos</p>
-          <h2 className="headline-section opacity-0 animate-fade-up delay-100">
-            O QUE DIZEM<br />
-            <span className="text-muted-foreground">SOBRE NÓS</span>
+        <div className="text-center mb-16">
+          <span className="eyebrow mb-4 block opacity-0 animate-fade-up">Depoimentos</span>
+          <h2 className="headline-section text-foreground opacity-0 animate-fade-up delay-100">
+            O QUE DIZEM SOBRE NÓS
           </h2>
         </div>
 
@@ -42,18 +41,15 @@ const TestimonialsSection = () => {
               className="testimonial-card opacity-0 animate-fade-up"
               style={{ animationDelay: `${(index + 2) * 0.1}s` }}
             >
-              {/* Quote Icon */}
-              <Quote className="w-10 h-10 text-muted-foreground/30 mb-6" />
-
               {/* Stars */}
               <div className="flex gap-1 mb-6">
                 {[...Array(testimonial.rating)].map((_, i) => (
-                  <Star key={i} size={16} className="fill-[hsl(var(--gold))] text-[hsl(var(--gold))]" />
+                  <Star key={i} size={16} className="fill-primary text-primary" />
                 ))}
               </div>
 
               {/* Quote */}
-              <p className="text-foreground/90 leading-relaxed mb-8">
+              <p className="text-foreground leading-relaxed mb-8">
                 "{testimonial.text}"
               </p>
 
@@ -62,7 +58,7 @@ const TestimonialsSection = () => {
                 <p className="font-semibold text-foreground">
                   {testimonial.name}
                 </p>
-                <p className="text-sm text-muted-foreground">
+                <p className="text-sm text-primary">
                   {testimonial.role}
                 </p>
               </div>
