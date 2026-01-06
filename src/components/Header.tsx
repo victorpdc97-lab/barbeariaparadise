@@ -33,7 +33,7 @@ const Header = () => {
     name: "Dia do Noivo",
     path: "/dia-do-noivo",
     highlighted: true,
-    badge: "💍"
+    badge: " 💍"
   }, {
     name: "Contato",
     path: "/contato",
