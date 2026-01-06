@@ -3,33 +3,82 @@ import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import { Button } from "@/components/ui/button";
 import { Clock } from "lucide-react";
-
-const services = [
-  { name: "Manicure (Masculino)", price: "R$ 30,00", duration: "00:30" },
-  { name: "Pedicure (Masculino)", price: "R$ 30,00", duration: "00:30" },
-  { name: "Manicure (Feminino)", price: "R$ 35,00", duration: "00:40" },
-  { name: "Pedicure (Feminino)", price: "R$ 35,00", duration: "00:40" },
-  { name: "Quick massage", price: "R$ 40,00", duration: "00:15" },
-  { name: "Depilação cera região (a partir de)", price: "R$ 45,00", duration: "00:15" },
-  { name: "Spa dos pés", price: "R$ 60,00", duration: "01:00" },
-  { name: "Massagem (Relaxante)", price: "R$ 130,00", duration: "01:00" },
-  { name: "Massagem (Reflexologia)", price: "R$ 150,00", duration: "01:00" },
-  { name: "Massagem (Modeladora)", price: "R$ 180,00", duration: "01:00" },
-  { name: "Drenagem Linfática", price: "R$ 180,00", duration: "01:00" },
-  { name: "Clean face", price: "R$ 150,00", duration: "00:50" },
-  { name: "Esfoliação Corporal", price: "R$ 200,00", duration: "01:00" },
-  { name: "Limpeza de Pele (Costas)", price: "R$ 200,00", duration: "01:00" },
-  { name: "Microagulhamento", price: "R$ 250,00", duration: "00:40" },
-  { name: "4 Massagens (Relaxantes)", price: "R$ 450,00", duration: "01:00" },
-  { name: "4 Massagens (Reflexologia)", price: "R$ 520,00", duration: "01:00" },
-  { name: "4 Massagens (Modeladora)", price: "R$ 620,00", duration: "01:00" },
-];
-
+const services = [{
+  name: "Manicure (Masculino)",
+  price: "R$ 30,00",
+  duration: "00:30"
+}, {
+  name: "Pedicure (Masculino)",
+  price: "R$ 30,00",
+  duration: "00:30"
+}, {
+  name: "Manicure (Feminino)",
+  price: "R$ 35,00",
+  duration: "00:40"
+}, {
+  name: "Pedicure (Feminino)",
+  price: "R$ 35,00",
+  duration: "00:40"
+}, {
+  name: "Quick massage",
+  price: "R$ 40,00",
+  duration: "00:15"
+}, {
+  name: "Depilação cera região (a partir de)",
+  price: "R$ 45,00",
+  duration: "00:15"
+}, {
+  name: "Spa dos pés",
+  price: "R$ 60,00",
+  duration: "01:00"
+}, {
+  name: "Massagem (Relaxante)",
+  price: "R$ 130,00",
+  duration: "01:00"
+}, {
+  name: "Massagem (Reflexologia)",
+  price: "R$ 150,00",
+  duration: "01:00"
+}, {
+  name: "Massagem (Modeladora)",
+  price: "R$ 180,00",
+  duration: "01:00"
+}, {
+  name: "Drenagem Linfática",
+  price: "R$ 180,00",
+  duration: "01:00"
+}, {
+  name: "Clean face",
+  price: "R$ 150,00",
+  duration: "00:50"
+}, {
+  name: "Esfoliação Corporal",
+  price: "R$ 200,00",
+  duration: "01:00"
+}, {
+  name: "Limpeza de Pele (Costas)",
+  price: "R$ 200,00",
+  duration: "01:00"
+}, {
+  name: "Microagulhamento",
+  price: "R$ 250,00",
+  duration: "00:40"
+}, {
+  name: "4 Massagens (Relaxantes)",
+  price: "R$ 450,00",
+  duration: "01:00"
+}, {
+  name: "4 Massagens (Reflexologia)",
+  price: "R$ 520,00",
+  duration: "01:00"
+}, {
+  name: "4 Massagens (Modeladora)",
+  price: "R$ 620,00",
+  duration: "01:00"
+}];
 const EsteticsistaPage = () => {
   const bookingLink = "https://agendamentos.bestbarbers.app/barbershop/paradise";
-
-  return (
-    <div className="min-h-screen bg-background">
+  return <div className="min-h-screen bg-background">
       <Header />
       
       <main className="pt-24">
@@ -53,13 +102,7 @@ const EsteticsistaPage = () => {
           <div className="container-narrow">
             <div className="max-w-3xl mx-auto">
               <div className="vintage-card">
-                {services.map((service, index) => (
-                  <div
-                    key={service.name}
-                    className={`flex items-center justify-between p-5 ${
-                      index !== services.length - 1 ? "border-b border-border/50" : ""
-                    } hover:bg-muted/30 transition-colors`}
-                  >
+                {services.map((service, index) => <div key={service.name} className={`flex items-center justify-between p-5 ${index !== services.length - 1 ? "border-b border-border/50" : ""} hover:bg-muted/30 transition-colors`}>
                     <div className="flex-1">
                       <span className="text-foreground font-light tracking-wide">
                         {service.name}
@@ -72,16 +115,13 @@ const EsteticsistaPage = () => {
                     <span className="font-display text-xl text-foreground tracking-wider">
                       {service.price}
                     </span>
-                  </div>
-                ))}
+                  </div>)}
               </div>
 
               {/* CTA Button */}
               <div className="text-center mt-12">
                 <Button size="lg" className="px-12" asChild>
-                  <a href={bookingLink} target="_blank" rel="noopener noreferrer">
-                    AGENDAR AGORA
-                  </a>
+                  
                 </Button>
               </div>
             </div>
@@ -108,8 +148,6 @@ const EsteticsistaPage = () => {
 
       <Footer />
       <WhatsAppButton />
-    </div>
-  );
+    </div>;
 };
-
 export default EsteticsistaPage;
