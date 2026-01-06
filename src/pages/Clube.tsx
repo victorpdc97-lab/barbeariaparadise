@@ -6,6 +6,7 @@ import DownloadAppModal from "@/components/DownloadAppModal";
 import { Check, Crown, Calendar, Sparkles, Percent, X, Smartphone } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import barbershopInterior from "@/assets/barbershop-interior.jpg";
+import modeloElBigodon from "@/assets/modelo-el-bigodon.png";
 import { detectOS, APP_STORE_URL, PLAY_STORE_URL } from "@/lib/detectOS";
 
 const Clube = () => {
@@ -109,24 +110,35 @@ const Clube = () => {
         </div>
 
         <div className="relative z-10 container-clean py-20 lg:py-32">
-          <div className="max-w-3xl mx-auto text-center">
-            
-            <h1 className="headline-hero text-white mb-6 opacity-0 animate-fade-up delay-100">
-              JÁ PENSOU EM<br />
-              <span className="text-white/90">ASSINAR UMA BARBEARIA?</span>
-            </h1>
-            
-            <p className="text-lg text-white/80 max-w-xl mx-auto mb-10 opacity-0 animate-fade-up delay-200">
-              Com o Clube Paradise, você paga um valor fixo por mês e corta o cabelo 
-              e/ou barba quantas vezes quiser. Sem limites!
-            </p>
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Text Content */}
+            <div className="text-center lg:text-left">
+              <h1 className="headline-hero text-white mb-6 opacity-0 animate-fade-up delay-100">
+                JÁ PENSOU EM<br />
+                <span className="text-white/90">ASSINAR UMA BARBEARIA?</span>
+              </h1>
+              
+              <p className="text-lg text-white/80 max-w-xl mx-auto lg:mx-0 mb-10 opacity-0 animate-fade-up delay-200">
+                Com o Clube Paradise, você paga um valor fixo por mês e corta o cabelo 
+                e/ou barba quantas vezes quiser. Sem limites!
+              </p>
 
-            <button 
-              onClick={handleSubscribe}
-              className="inline-flex items-center justify-center px-8 py-4 rounded-full font-semibold text-base transition-all bg-white text-primary hover:bg-white/90 shadow-lg opacity-0 animate-fade-up delay-300"
-            >
-              Assinar Agora
-            </button>
+              <button 
+                onClick={handleSubscribe}
+                className="inline-flex items-center justify-center px-8 py-4 rounded-full font-semibold text-base transition-all bg-white text-primary hover:bg-white/90 shadow-lg opacity-0 animate-fade-up delay-300"
+              >
+                Assinar Agora
+              </button>
+            </div>
+
+            {/* Model Image */}
+            <div className="hidden lg:flex justify-center lg:justify-end opacity-0 animate-fade-up delay-200">
+              <img 
+                src={modeloElBigodon} 
+                alt="Modelo barbeiro" 
+                className="max-h-[500px] object-contain drop-shadow-2xl"
+              />
+            </div>
           </div>
         </div>
       </section>
