@@ -6,8 +6,8 @@ import { useTypewriter } from "@/hooks/useTypewriter";
 const HeroSection = () => {
   const bookingLink = "https://agendamentos.bestbarbers.app/barbershop/paradise";
   
-  const { displayedText: line1, isComplete: line1Complete } = useTypewriter("SUA MELHOR", 80, 300);
-  const { displayedText: line2, isComplete: line2Complete } = useTypewriter("VERSÃO", 80, 1200);
+  const { displayedText: line1, isComplete: line1Complete } = useTypewriter("SUA MELHOR", 120, 300);
+  const { displayedText: line2, isComplete: line2Complete } = useTypewriter("VERSÃO", 120, 1800);
   return <section className="hero-section min-h-[85vh] flex items-center justify-center overflow-hidden relative">
       {/* Background Image */}
       <img src={heroImage} alt="Interior da Paradise Barber" className="absolute inset-0 w-full h-full object-cover" />
