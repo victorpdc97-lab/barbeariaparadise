@@ -20,7 +20,7 @@ const services = [{
   image: serviceCombo,
   badge: "Entretenimento"
 }, {
-  title: "Manicure e Pedicure",
+  title: "Manicure, Pedicure e Massagista",
   description: "Cuidados completos para suas mãos e pés em um ambiente relaxante.",
   image: manicurePedicure,
   badge: "Beleza"
