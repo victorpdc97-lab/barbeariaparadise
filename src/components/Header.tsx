@@ -55,9 +55,7 @@ const Header = () => {
             {navLinks.map(link => link.highlighted ? <Link key={link.path} to={link.path} className={`flex items-center gap-1.5 px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${isActive(link.path) ? "bg-primary text-primary-foreground" : "bg-primary/10 text-primary border border-primary/30 hover:bg-primary hover:text-primary-foreground"}`}>
                   <Crown size={16} />
                   {link.name}
-                  {link.badge && <span className="ml-1 px-1.5 py-0.5 text-[10px] font-bold bg-primary text-primary-foreground rounded animate-pulse">
-                      {link.badge}
-                    </span>}
+                  {link.badge}
                 </Link> : <Link key={link.path} to={link.path} className={`text-sm font-medium transition-colors ${isActive(link.path) ? "text-primary" : "text-foreground/70 hover:text-primary"}`}>
                   {link.name}
                 </Link>)}
