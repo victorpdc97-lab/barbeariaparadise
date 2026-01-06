@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import serviceHaircut from "@/assets/service-haircut.jpg";
 import serviceBeard from "@/assets/service-beard.jpg";
 import serviceCombo from "@/assets/service-combo.jpg";
+import manicurePedicure from "@/assets/manicure-pedicure.png";
+
 const services = [{
   title: "Consultoria de Moda",
   description: "Consultores especializados em moda que elaboram looks sob medida para cada ocasião.",
@@ -17,6 +19,11 @@ const services = [{
   description: "Experiência completa Paradise.",
   image: serviceCombo,
   badge: "Entretenimento"
+}, {
+  title: "Manicure e Pedicure",
+  description: "Cuidados completos para suas mãos e pés em um ambiente relaxante.",
+  image: manicurePedicure,
+  badge: "Beleza"
 }];
 const ServicesSection = () => {
   return <section className="section-clean bg-background">
