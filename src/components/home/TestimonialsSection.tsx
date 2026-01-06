@@ -9,7 +9,7 @@ const testimonials = [
   },
   {
     name: "João Pedro",
-    role: "Cliente VIP",
+    role: "Membro do Clube",
     text: "Atendimento impecável. O corte ficou exatamente como eu queria. Sempre saio satisfeito!",
     rating: 5,
   },
