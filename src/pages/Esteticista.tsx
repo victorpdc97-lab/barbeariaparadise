@@ -23,6 +23,9 @@ const services = [
   { name: "4 Massagens (Relaxantes)", price: "R$ 450,00", duration: "01:00" },
   { name: "4 Massagens (Reflexologia)", price: "R$ 520,00", duration: "01:00" },
   { name: "4 Massagens (Modeladora)", price: "R$ 620,00", duration: "01:00" },
+  { name: "Corte (Clube de Assinatura)", price: "Serviço pelo clube", duration: "00:30" },
+  { name: "Corte + Barba (Clube de Assinatura)", price: "Serviço pelo clube", duration: "00:50" },
+  { name: "Barba (Clube de Assinatura)", price: "Serviço pelo clube", duration: "00:30" },
 ];
 
 const EsteticsistaPage = () => {
