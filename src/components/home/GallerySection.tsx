@@ -3,6 +3,7 @@ import galleryBar from "@/assets/gallery-bar.jpg";
 import galleryBanheiro from "@/assets/gallery-banheiro.jpg";
 import galleryLoja from "@/assets/gallery-loja.jpg";
 import galleryOutlet from "@/assets/gallery-outlet.jpg";
+import galleryLogoMadeira from "@/assets/gallery-logo-madeira.jpg";
 
 const galleryImages = [
   { src: galleryBarbearia, alt: "Área de corte", span: "col-span-2 row-span-2" },
@@ -10,6 +11,7 @@ const galleryImages = [
   { src: galleryBanheiro, alt: "Banheiro", span: "" },
   { src: galleryLoja, alt: "Loja de roupas", span: "col-span-2" },
   { src: galleryOutlet, alt: "Outlet", span: "" },
+  { src: galleryLogoMadeira, alt: "Logo Paradise na madeira", span: "" },
 ];
 
 const GallerySection = () => {
