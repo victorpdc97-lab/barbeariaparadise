@@ -22,6 +22,10 @@ const Header = () => {
     path: "/servicos",
     highlighted: false
   }, {
+    name: "Esteticista",
+    path: "/esteticista",
+    highlighted: false
+  }, {
     name: "Clube",
     path: "/clube",
     highlighted: true,
@@ -31,10 +35,6 @@ const Header = () => {
     path: "/dia-do-noivo",
     highlighted: true,
     badge: "💍"
-  }, {
-    name: "Sobre",
-    path: "/sobre",
-    highlighted: false
   }, {
     name: "Contato",
     path: "/contato",
