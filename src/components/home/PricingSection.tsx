@@ -4,12 +4,12 @@ const PricingSection = () => {
   const bookingLink = "https://agendamentos.bestbarbers.app/barbershop/paradise";
 
   const services = [
-    { name: "Corte Masculino", price: "R$ 50", duration: "45 min" },
-    { name: "Barba Completa", price: "R$ 35", duration: "30 min" },
-    { name: "Cabelo + Barba", price: "R$ 75", duration: "1h 15min", featured: true },
-    { name: "Acabamento", price: "R$ 25", duration: "15 min" },
-    { name: "Design de Sobrancelha", price: "R$ 20", duration: "15 min" },
-    { name: "Pigmentação de Barba", price: "R$ 80", duration: "1h" },
+    { name: "Corte", price: "R$ 65,00", duration: "30 min" },
+    { name: "Barba", price: "R$ 50,00", duration: "30 min" },
+    { name: "Corte + Barba", price: "R$ 115,00", duration: "40 min", featured: true },
+    { name: "Acabamento", price: "R$ 20,00", duration: "15 min" },
+    { name: "Sobrancelha Navalha", price: "R$ 20,00", duration: "15 min" },
+    { name: "Pigmentação de Barba (a partir de)", price: "R$ 30,00", duration: "15 min" },
   ];
 
   return (
