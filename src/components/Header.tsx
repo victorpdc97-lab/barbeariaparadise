@@ -28,8 +28,7 @@ const Header = () => {
   }, {
     name: "Clube",
     path: "/clube",
-    highlighted: true,
-    badge: "VIP"
+    highlighted: true
   }, {
     name: "Dia do Noivo",
     path: "/dia-do-noivo",
