@@ -1,28 +1,36 @@
-import barber1 from "@/assets/barber-portrait-1.jpg";
-import barber2 from "@/assets/barber-portrait-2.jpg";
-import barber3 from "@/assets/barber-portrait-3.jpg";
+import teamJonathan from "@/assets/team-jonathan.png";
+import teamKelwin from "@/assets/team-kelwin.png";
+import teamLucas from "@/assets/team-lucas.jpg";
+import teamTariki from "@/assets/team-tariki.jpg";
 
 const team = [
   {
-    name: "Rafael Costa",
-    role: "Barbeiro Master",
-    specialty: "Especialista em Degradê",
-    description: "Mais de 10 anos transformando cortes em arte. Especialista em técnicas modernas.",
-    image: barber1,
+    name: "Jonathan",
+    role: "Barbeiro",
+    specialty: "Cortes Modernos",
+    description: "Especialista em técnicas modernas e cortes personalizados.",
+    image: teamJonathan,
   },
   {
-    name: "Lucas Mendes",
-    role: "Barbeiro Senior",
-    specialty: "Especialista em Barba",
-    description: "Mestre no ritual da navalha. Barba perfeita é sua especialidade.",
-    image: barber2,
+    name: "Kelwin",
+    role: "Barbeiro",
+    specialty: "Degradê & Barba",
+    description: "Mestre em degradês perfeitos e acabamentos impecáveis.",
+    image: teamKelwin,
   },
   {
-    name: "Carlos Silva",
-    role: "Fundador & CEO",
+    name: "Lucas",
+    role: "Barbeiro",
     specialty: "Cortes Clássicos",
-    description: "Fundador da Paradise, une tradição e inovação em cada atendimento.",
-    image: barber3,
+    description: "Une tradição e estilo em cada atendimento.",
+    image: teamLucas,
+  },
+  {
+    name: "Tariki",
+    role: "Barbeiro",
+    specialty: "Especialista em Barba",
+    description: "Mestre no ritual da navalha e barba perfeita.",
+    image: teamTariki,
   },
 ];
 
@@ -42,7 +50,7 @@ const TeamSection = () => {
         </div>
 
         {/* Team Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {team.map((member, index) => (
             <div
               key={member.name}
