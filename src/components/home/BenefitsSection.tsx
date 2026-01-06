@@ -1,7 +1,7 @@
 import { Scissors, Clock, Award, Check } from "lucide-react";
 
 const stats = [
-  { icon: Clock, value: "5+", label: "Anos de Experiência" },
+  { icon: Clock, value: "10+", label: "Anos de Experiência" },
   { icon: Scissors, value: "10k+", label: "Clientes Atendidos" },
   { icon: Award, value: "100%", label: "Satisfação" },
 ];
