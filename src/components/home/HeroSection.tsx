@@ -1,17 +1,59 @@
 import { Link } from "react-router-dom";
 import { Scissors } from "lucide-react";
 import heroImage from "@/assets/hero-barbearia.jpg";
+
+// Floating particles component
+const FloatingParticles = () => {
+  const particles = Array.from({ length: 15 }, (_, i) => ({
+    id: i,
+    left: `${Math.random() * 100}%`,
+    size: Math.random() * 4 + 2,
+    delay: Math.random() * 20,
+    duration: Math.random() * 10 + 15,
+    opacity: Math.random() * 0.2 + 0.1,
+  }));
+
+  return (
+    <div className="absolute inset-0 overflow-hidden pointer-events-none">
+      {particles.map((particle) => (
+        <div
+          key={particle.id}
+          className="absolute rounded-full bg-white"
+          style={{
+            left: particle.left,
+            bottom: '-10px',
+            width: `${particle.size}px`,
+            height: `${particle.size}px`,
+            opacity: particle.opacity,
+            animation: `float ${particle.duration}s ease-in-out infinite`,
+            animationDelay: `${particle.delay}s`,
+          }}
+        />
+      ))}
+    </div>
+  );
+};
+
 const HeroSection = () => {
   const bookingLink = "https://agendamentos.bestbarbers.app/barbershop/paradise";
   return <section className="hero-section min-h-[85vh] flex items-center justify-center overflow-hidden relative">
-      {/* Background Image */}
-      <img src={heroImage} alt="Interior da Paradise Barber" className="absolute inset-0 w-full h-full object-cover" />
+      {/* Background Image with Ken Burns Effect */}
+      <div className="absolute inset-0 overflow-hidden">
+        <img 
+          src={heroImage} 
+          alt="Interior da Paradise Barber" 
+          className="absolute inset-0 w-full h-full object-cover animate-ken-burns" 
+        />
+      </div>
       
-      {/* Dark Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70" />
+      {/* Animated Dark Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70 animate-breathe" />
+      
+      {/* Floating Particles */}
+      <FloatingParticles />
       
       {/* Background Decorative Elements */}
-      <div className="absolute inset-0 overflow-hidden">
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {/* Gradient circles */}
         <div className="absolute top-20 left-10 w-64 h-64 bg-white/5 rounded-full blur-3xl" />
         <div className="absolute bottom-20 right-10 w-80 h-80 bg-white/5 rounded-full blur-3xl" />
