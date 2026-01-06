@@ -5,7 +5,7 @@ import WhatsAppButton from "@/components/WhatsAppButton";
 import DownloadAppModal from "@/components/DownloadAppModal";
 import { Check, Crown, Calendar, Sparkles, Percent, X, Smartphone } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import barbershopInterior from "@/assets/barbershop-interior.jpg";
+import clubeHeroModel from "@/assets/clube-hero-model.png";
 import { detectOS, APP_STORE_URL, PLAY_STORE_URL } from "@/lib/detectOS";
 
 const Clube = () => {
@@ -102,31 +102,41 @@ const Clube = () => {
       
       {/* Hero Section */}
       <section className="hero-section hero-gradient relative overflow-hidden">
-        {/* Background Image with Overlay */}
-        <div className="absolute inset-0">
-          <img src={barbershopInterior} alt="" className="w-full h-full object-cover opacity-20" />
-          <div className="absolute inset-0 bg-gradient-to-r from-primary/90 to-secondary/90" />
-        </div>
+        {/* Background with Gradient */}
+        <div className="absolute inset-0 bg-gradient-to-r from-primary to-secondary" />
 
-        <div className="relative z-10 container-clean py-20 lg:py-32">
-          <div className="max-w-3xl mx-auto text-center">
+        <div className="relative z-10 container-clean py-16 lg:py-24">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             
-            <h1 className="headline-hero text-white mb-6 opacity-0 animate-fade-up delay-100">
-              JÁ PENSOU EM<br />
-              <span className="text-white/90">ASSINAR UMA BARBEARIA?</span>
-            </h1>
-            
-            <p className="text-lg text-white/80 max-w-xl mx-auto mb-10 opacity-0 animate-fade-up delay-200">
-              Com o Clube Paradise, você paga um valor fixo por mês e corta o cabelo 
-              e/ou barba quantas vezes quiser. Sem limites!
-            </p>
+            {/* Left Column - Text and CTA */}
+            <div className="text-left">
+              <h1 className="headline-hero text-white mb-6 opacity-0 animate-fade-up delay-100">
+                JÁ PENSOU EM<br />
+                <span className="text-white/90">ASSINAR UMA BARBEARIA?</span>
+              </h1>
+              
+              <p className="text-lg text-white/80 max-w-xl mb-10 opacity-0 animate-fade-up delay-200">
+                Com o Clube Paradise, você paga um valor fixo por mês e corta o cabelo 
+                e/ou barba quantas vezes quiser. Sem limites!
+              </p>
 
-            <button 
-              onClick={handleSubscribe}
-              className="inline-flex items-center justify-center px-8 py-4 rounded-full font-semibold text-base transition-all bg-white text-primary hover:bg-white/90 shadow-lg opacity-0 animate-fade-up delay-300"
-            >
-              Assinar Agora
-            </button>
+              <button 
+                onClick={handleSubscribe}
+                className="inline-flex items-center justify-center px-8 py-4 rounded-full font-semibold text-base transition-all bg-white text-primary hover:bg-white/90 shadow-lg opacity-0 animate-fade-up delay-300"
+              >
+                Assinar Agora
+              </button>
+            </div>
+            
+            {/* Right Column - Model Image */}
+            <div className="relative flex justify-center lg:justify-end opacity-0 animate-fade-up delay-200">
+              <img 
+                src={clubeHeroModel} 
+                alt="Modelo Paradise Barber" 
+                className="max-h-[400px] lg:max-h-[550px] w-auto object-contain drop-shadow-2xl"
+              />
+            </div>
+            
           </div>
         </div>
       </section>
