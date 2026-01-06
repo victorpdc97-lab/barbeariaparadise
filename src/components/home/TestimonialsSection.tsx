@@ -3,7 +3,7 @@ import { Star, Quote } from "lucide-react";
 const testimonials = [
   {
     name: "Marcos Silva",
-    role: "Cliente desde 2022",
+    role: "Cliente desde 2020",
     text: "Melhor barbearia da cidade. Ambiente incrível e profissionais de primeira! O atendimento é impecável.",
     rating: 5,
   },
