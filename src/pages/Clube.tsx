@@ -77,19 +77,19 @@ const Clube = () => {
 
   const faqs = [{
     question: "Como funciona?",
-    answer: "O Clube Paradise é um serviço de assinatura recorrente para os amantes da Barbearia Paradise, dividido em 2 opções: Premium e Basic."
+    answer: "O Clube Paradise é um serviço de assinatura recorrente para os amantes da Barbearia Paradise, dividido em 2 opções: Premium e Basic. Para assinar, basta baixar nosso app (disponível na App Store e Google Play) e fazer sua assinatura diretamente por lá."
+  }, {
+    question: "Como faço para assinar?",
+    answer: "A assinatura é feita exclusivamente pelo nosso aplicativo. Baixe o app Paradise na App Store (iPhone) ou Google Play (Android), crie sua conta e escolha o plano que melhor atende suas necessidades."
   }, {
     question: "Possui limite de uso?",
     answer: "Planos Premium: quantas vezes quiser de segunda a sábado. Planos Basic: quantas vezes quiser, apenas de segunda a quarta."
   }, {
     question: "Quais as formas de pagamento?",
-    answer: "A mensalidade da assinatura é realizada apenas via cartão de crédito, sem prejudicar o limite."
+    answer: "A mensalidade da assinatura é realizada apenas via cartão de crédito através do app, sem prejudicar o limite."
   }, {
     question: "Possui taxa de adesão/fidelidade?",
     answer: "Sem cobranças adicionais. Você pode entrar e sair quando quiser sem pagar nada a mais!"
-  }, {
-    question: "A assinatura é feita apenas pelo site?",
-    answer: "A assinatura é feita exclusivamente pelo nosso aplicativo. Baixe o app e assine diretamente por lá!"
   }, {
     question: "Terceiros podem utilizar o meu plano?",
     answer: "Não. A assinatura é individual e intransferível."
