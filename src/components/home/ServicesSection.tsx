@@ -6,7 +6,7 @@ const services = [{
   title: "Consultoria de Moda",
   description: "Consultores especializados em moda que elaboram looks sob medida para cada ocasião.",
   image: serviceHaircut,
-  badge: "Popular"
+  badge: "Looks"
 }, {
   title: "Vestiário para Banho",
   description: "Desfrute de um banho relaxante.",
