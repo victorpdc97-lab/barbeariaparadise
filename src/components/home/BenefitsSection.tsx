@@ -2,7 +2,7 @@ import { Scissors, Clock, Award, Check } from "lucide-react";
 
 const stats = [
   { icon: Clock, value: "10 anos+", label: "Experiência Barbeiros" },
-  { icon: Scissors, value: "10k+", label: "Clientes Atendidos" },
+  { icon: Scissors, value: "1000+", label: "Clientes Atendidos" },
   { icon: Award, value: "100%", label: "Satisfação" },
 ];
 
