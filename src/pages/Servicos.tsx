@@ -3,35 +3,90 @@ import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import { Button } from "@/components/ui/button";
 import { Clock } from "lucide-react";
-
-const services = [
-  { name: "Corte", price: "R$ 65,00", duration: "00:30" },
-  { name: "Barba", price: "R$ 50,00", duration: "00:30" },
-  { name: "Corte + Barba", price: "R$ 115,00", duration: "00:40" },
-  { name: "Selagem (a partir de)", price: "R$ 100,00", duration: "00:30" },
-  { name: "Acabamento", price: "R$ 20,00", duration: "00:15" },
-  { name: "Depilação Cera", price: "R$ 25,00", duration: "00:20" },
-  { name: "Sobrancelha Navalha", price: "R$ 20,00", duration: "00:15" },
-  { name: "Sobrancelha Pinça", price: "R$ 30,00", duration: "00:30" },
-  { name: "Hidratação Cabelo", price: "R$ 35,00", duration: "00:30" },
-  { name: "Hidratação Barba", price: "R$ 35,00", duration: "00:30" },
-  { name: "Escova", price: "R$ 25,00", duration: "00:15" },
-  { name: "Camuflagem (a partir de)", price: "R$ 40,00", duration: "00:30" },
-  { name: "Pigmentação de Barba (a partir de)", price: "R$ 30,00", duration: "00:15" },
-  { name: "Tintura (a partir de)", price: "R$ 60,00", duration: "01:30" },
-  { name: "Luzes (a partir de)", price: "R$ 80,00", duration: "01:30" },
-  { name: "Platinado (a partir de)", price: "R$ 200,00", duration: "02:00" },
-  { name: "Banho Vestiário Paradise", price: "R$ 15,00", duration: "00:15" },
-  { name: "Máscara de Limpeza", price: "R$ 25,00", duration: "00:15" },
-  { name: "Corte Feminino Curto (a partir de)", price: "R$ 90,00", duration: "01:15" },
-  { name: "Abordagem Visagismo", price: "R$ 120,00", duration: "01:00" },
-];
-
+const services = [{
+  name: "Corte",
+  price: "R$ 65,00",
+  duration: "00:30"
+}, {
+  name: "Barba",
+  price: "R$ 50,00",
+  duration: "00:30"
+}, {
+  name: "Corte + Barba",
+  price: "R$ 115,00",
+  duration: "00:40"
+}, {
+  name: "Selagem (a partir de)",
+  price: "R$ 100,00",
+  duration: "00:30"
+}, {
+  name: "Acabamento",
+  price: "R$ 20,00",
+  duration: "00:15"
+}, {
+  name: "Depilação Cera",
+  price: "R$ 25,00",
+  duration: "00:20"
+}, {
+  name: "Sobrancelha Navalha",
+  price: "R$ 20,00",
+  duration: "00:15"
+}, {
+  name: "Sobrancelha Pinça",
+  price: "R$ 30,00",
+  duration: "00:30"
+}, {
+  name: "Hidratação Cabelo",
+  price: "R$ 35,00",
+  duration: "00:30"
+}, {
+  name: "Hidratação Barba",
+  price: "R$ 35,00",
+  duration: "00:30"
+}, {
+  name: "Escova",
+  price: "R$ 25,00",
+  duration: "00:15"
+}, {
+  name: "Camuflagem (a partir de)",
+  price: "R$ 40,00",
+  duration: "00:30"
+}, {
+  name: "Pigmentação de Barba (a partir de)",
+  price: "R$ 30,00",
+  duration: "00:15"
+}, {
+  name: "Tintura (a partir de)",
+  price: "R$ 60,00",
+  duration: "01:30"
+}, {
+  name: "Luzes (a partir de)",
+  price: "R$ 80,00",
+  duration: "01:30"
+}, {
+  name: "Platinado (a partir de)",
+  price: "R$ 200,00",
+  duration: "02:00"
+}, {
+  name: "Banho Vestiário Paradise",
+  price: "R$ 15,00",
+  duration: "00:15"
+}, {
+  name: "Máscara de Limpeza",
+  price: "R$ 25,00",
+  duration: "00:15"
+}, {
+  name: "Corte Feminino Curto (a partir de)",
+  price: "R$ 90,00",
+  duration: "01:15"
+}, {
+  name: "Abordagem Visagismo",
+  price: "R$ 120,00",
+  duration: "01:00"
+}];
 const ServicosPage = () => {
   const bookingLink = "https://agendamentos.bestbarbers.app/barbershop/paradise";
-
-  return (
-    <div className="min-h-screen bg-background">
+  return <div className="min-h-screen bg-background">
       <Header />
       
       <main className="pt-24">
@@ -52,13 +107,7 @@ const ServicosPage = () => {
           <div className="container-narrow">
             <div className="max-w-3xl mx-auto">
               <div className="vintage-card">
-                {services.map((service, index) => (
-                  <div
-                    key={service.name}
-                    className={`flex items-center justify-between p-5 ${
-                      index !== services.length - 1 ? "border-b border-border/50" : ""
-                    } hover:bg-muted/30 transition-colors`}
-                  >
+                {services.map((service, index) => <div key={service.name} className={`flex items-center justify-between p-5 ${index !== services.length - 1 ? "border-b border-border/50" : ""} hover:bg-muted/30 transition-colors`}>
                     <div className="flex-1">
                       <span className="text-foreground font-light tracking-wide">
                         {service.name}
@@ -71,16 +120,13 @@ const ServicosPage = () => {
                     <span className="font-display text-xl text-foreground tracking-wider">
                       {service.price}
                     </span>
-                  </div>
-                ))}
+                  </div>)}
               </div>
 
               {/* CTA Button */}
               <div className="text-center mt-12">
                 <Button size="lg" className="px-12" asChild>
-                  <a href={bookingLink} target="_blank" rel="noopener noreferrer">
-                    AGENDAR AGORA
-                  </a>
+                  
                 </Button>
               </div>
             </div>
@@ -107,8 +153,6 @@ const ServicosPage = () => {
 
       <Footer />
       <WhatsAppButton />
-    </div>
-  );
+    </div>;
 };
-
 export default ServicosPage;
