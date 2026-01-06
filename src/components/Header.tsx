@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Search, ShoppingBag } from "lucide-react";
+import { Menu, X } from "lucide-react";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -24,78 +24,89 @@ const Header = () => {
   ];
 
   const isActive = (path: string) => location.pathname === path;
+  const bookingLink = "https://agendamentos.bestbarbers.app/barbershop/paradise";
 
   return (
-    <>
-      <header className={`nav-apple transition-all duration-300 ${
-        isScrolled ? "bg-background/90" : "bg-background/80"
-      }`}>
-        <div className="container-apple-wide">
-          <div className="flex items-center justify-between h-11">
-            {/* Logo */}
-            <Link to="/" className="flex items-center">
-              <span className="font-semibold text-xl tracking-tight">Paradise</span>
-            </Link>
+    <header className={`nav-cinema transition-all duration-300 ${
+      isScrolled ? "bg-background/95 border-b border-border/50" : "bg-transparent"
+    }`}>
+      <div className="container-cinema">
+        <div className="flex items-center justify-between h-16 lg:h-20">
+          {/* Logo */}
+          <Link to="/" className="flex items-center">
+            <span className="font-display text-2xl lg:text-3xl tracking-wider text-foreground">
+              PARADISE
+            </span>
+          </Link>
 
-            {/* Desktop Navigation */}
-            <nav className="hidden lg:flex items-center gap-8">
+          {/* Desktop Navigation */}
+          <nav className="hidden lg:flex items-center gap-10">
+            {navLinks.map((link) => (
+              <Link
+                key={link.path}
+                to={link.path}
+                className={`nav-link ${
+                  isActive(link.path) ? "text-foreground" : ""
+                }`}
+              >
+                {link.name}
+              </Link>
+            ))}
+          </nav>
+
+          {/* CTA Button */}
+          <div className="flex items-center gap-4">
+            <a 
+              href={bookingLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hidden lg:flex btn-primary"
+            >
+              Agendar
+            </a>
+            
+            {/* Mobile Menu Button */}
+            <button
+              className="lg:hidden text-foreground p-2"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              aria-label="Toggle menu"
+            >
+              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
+        </div>
+
+        {/* Mobile Navigation */}
+        {isMenuOpen && (
+          <div className="lg:hidden py-6 border-t border-border animate-fade-in">
+            <nav className="flex flex-col gap-1">
               {navLinks.map((link) => (
                 <Link
                   key={link.path}
                   to={link.path}
-                  className={`nav-link-apple ${
-                    isActive(link.path) ? "text-foreground" : ""
+                  onClick={() => setIsMenuOpen(false)}
+                  className={`py-3 px-4 rounded-lg text-base font-medium transition-colors ${
+                    isActive(link.path) 
+                      ? "bg-muted text-foreground" 
+                      : "text-muted-foreground hover:text-foreground hover:bg-muted"
                   }`}
                 >
                   {link.name}
                 </Link>
               ))}
-            </nav>
-
-            {/* Right Icons */}
-            <div className="flex items-center gap-4">
-              <button className="nav-link-apple p-1">
-                <Search size={16} />
-              </button>
-              <button className="nav-link-apple p-1">
-                <ShoppingBag size={16} />
-              </button>
-              
-              {/* Mobile Menu Button */}
-              <button
-                className="lg:hidden text-foreground/80 p-1"
-                onClick={() => setIsMenuOpen(!isMenuOpen)}
-                aria-label="Toggle menu"
+              <a 
+                href={bookingLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary mt-4 text-center"
               >
-                {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
-              </button>
-            </div>
+                Agendar Agora
+              </a>
+            </nav>
           </div>
-
-          {/* Mobile Navigation */}
-          {isMenuOpen && (
-            <div className="lg:hidden py-4 border-t border-border/50 animate-fade-in">
-              <nav className="flex flex-col">
-                {navLinks.map((link) => (
-                  <Link
-                    key={link.path}
-                    to={link.path}
-                    onClick={() => setIsMenuOpen(false)}
-                    className={`py-3 text-sm font-normal transition-colors ${
-                      isActive(link.path) 
-                        ? "text-foreground" 
-                        : "text-foreground/60 hover:text-foreground"
-                    }`}
-                  >
-                    {link.name}
-                  </Link>
-                ))}
-              </nav>
-            </div>
-          )}
-        </div>
-      </header>
-    </>
+        )}
+      </div>
+    </header>
   );
 };
 

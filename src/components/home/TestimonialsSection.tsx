@@ -1,32 +1,36 @@
-import { Star } from "lucide-react";
+import { Star, Quote } from "lucide-react";
 
 const testimonials = [
   {
     name: "Marcos Silva",
-    text: "Melhor barbearia da cidade. Ambiente incrível e profissionais de primeira!",
+    role: "Cliente desde 2022",
+    text: "Melhor barbearia da cidade. Ambiente incrível e profissionais de primeira! O atendimento é impecável.",
     rating: 5,
   },
   {
     name: "João Pedro",
-    text: "Atendimento impecável. O corte ficou exatamente como eu queria.",
+    role: "Cliente VIP",
+    text: "Atendimento impecável. O corte ficou exatamente como eu queria. Sempre saio satisfeito!",
     rating: 5,
   },
   {
     name: "André Costa",
-    text: "O corte ficou perfeito. Recomendo demais para quem busca qualidade!",
+    role: "Membro do Clube",
+    text: "O corte ficou perfeito. Recomendo demais para quem busca qualidade! Virei cliente fiel.",
     rating: 5,
   },
 ];
 
 const TestimonialsSection = () => {
   return (
-    <section className="section-apple bg-background">
-      <div className="container-apple">
+    <section className="section-cinema bg-background">
+      <div className="container-cinema">
         {/* Header */}
-        <div className="text-center mb-16">
-          <p className="eyebrow-apple mb-4 animate-fade-up">Depoimentos</p>
-          <h2 className="headline-apple animate-fade-up delay-100">
-            O que nossos<br />clientes dizem.
+        <div className="mb-16">
+          <p className="eyebrow mb-4 opacity-0 animate-fade-up">Depoimentos</p>
+          <h2 className="headline-section opacity-0 animate-fade-up delay-100">
+            O QUE DIZEM<br />
+            <span className="text-muted-foreground">SOBRE NÓS</span>
           </h2>
         </div>
 
@@ -35,25 +39,33 @@ const TestimonialsSection = () => {
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="bg-card rounded-3xl p-8 text-center animate-fade-up"
+              className="testimonial-card opacity-0 animate-fade-up"
               style={{ animationDelay: `${(index + 2) * 0.1}s` }}
             >
+              {/* Quote Icon */}
+              <Quote className="w-10 h-10 text-muted-foreground/30 mb-6" />
+
               {/* Stars */}
-              <div className="flex justify-center gap-1 mb-6">
+              <div className="flex gap-1 mb-6">
                 {[...Array(testimonial.rating)].map((_, i) => (
-                  <Star key={i} size={18} className="fill-[hsl(45,100%,50%)] text-[hsl(45,100%,50%)]" />
+                  <Star key={i} size={16} className="fill-[hsl(var(--gold))] text-[hsl(var(--gold))]" />
                 ))}
               </div>
 
               {/* Quote */}
-              <p className="text-foreground/80 leading-relaxed mb-6 text-lg">
+              <p className="text-foreground/90 leading-relaxed mb-8">
                 "{testimonial.text}"
               </p>
 
               {/* Author */}
-              <p className="font-semibold text-foreground">
-                {testimonial.name}
-              </p>
+              <div className="border-t border-border pt-6">
+                <p className="font-semibold text-foreground">
+                  {testimonial.name}
+                </p>
+                <p className="text-sm text-muted-foreground">
+                  {testimonial.role}
+                </p>
+              </div>
             </div>
           ))}
         </div>

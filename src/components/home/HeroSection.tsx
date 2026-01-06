@@ -5,44 +5,50 @@ const HeroSection = () => {
   const bookingLink = "https://agendamentos.bestbarbers.app/barbershop/paradise";
 
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center text-center pt-11 overflow-hidden">
-      {/* Background */}
+    <section className="hero-fullscreen">
+      {/* Background Video/Image */}
       <div className="absolute inset-0">
         <img 
           src={heroImage} 
           alt="Paradise Barbearia" 
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-black/40" />
+        <div className="hero-overlay" />
       </div>
 
       {/* Content */}
-      <div className="relative z-10 container-apple text-white">
-        <p className="eyebrow-apple text-white/70 mb-4 animate-fade-up">
-          Barbearia Paradise
-        </p>
-        
-        <h1 className="headline-apple text-white mb-6 animate-fade-up delay-100">
-          Tradição encontra<br />estilo moderno.
-        </h1>
-        
-        <p className="subheadline-apple text-white/80 max-w-2xl mx-auto mb-8 animate-fade-up delay-200">
-          Uma experiência única em cortes masculinos e barba, inspirada nas clássicas barbearias nova-iorquinas.
-        </p>
+      <div className="relative z-10 container-cinema">
+        <div className="max-w-4xl">
+          <h1 className="headline-hero text-foreground mb-8 opacity-0 animate-fade-up">
+            BARBEARIA<br />
+            <span className="text-muted-foreground">SEM LIMITES</span>
+          </h1>
+          
+          <p className="body-text max-w-xl mb-10 opacity-0 animate-fade-up delay-200">
+            Tradição encontra estilo moderno. Uma experiência única em cortes masculinos 
+            e barba, inspirada nas clássicas barbearias nova-iorquinas.
+          </p>
 
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-up delay-300">
-          <a 
-            href={bookingLink} 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="btn-apple-primary"
-          >
-            Agendar agora
-          </a>
-          <Link to="/servicos" className="link-apple text-white hover:text-white/80">
-            Ver serviços
-          </Link>
+          <div className="flex flex-wrap items-center gap-4 opacity-0 animate-fade-up delay-300">
+            <a 
+              href={bookingLink} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="btn-primary"
+            >
+              Agendar Agora
+            </a>
+            <Link to="/servicos" className="btn-outline">
+              Ver Serviços
+            </Link>
+          </div>
         </div>
+      </div>
+
+      {/* Scroll Indicator */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-0 animate-fade-in delay-500">
+        <span className="text-xs text-muted-foreground uppercase tracking-widest">Scroll</span>
+        <div className="w-px h-10 bg-gradient-to-b from-muted-foreground to-transparent" />
       </div>
     </section>
   );
