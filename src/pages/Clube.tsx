@@ -133,7 +133,7 @@ const Clube = () => {
               <img 
                 src={clubeHeroModel} 
                 alt="Modelo Paradise Barber" 
-                className="max-h-[400px] lg:max-h-[550px] w-auto object-contain drop-shadow-2xl"
+                className="max-h-[480px] lg:max-h-[660px] w-auto object-contain drop-shadow-2xl"
               />
             </div>
             
