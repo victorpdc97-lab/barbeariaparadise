@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
+import logoParadise from "@/assets/logo-paradise-barber.png";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -34,9 +35,11 @@ const Header = () => {
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center">
-            <span className="font-display text-2xl lg:text-3xl tracking-wider text-primary">
-              PARADISE
-            </span>
+            <img 
+              src={logoParadise} 
+              alt="Paradise Barber" 
+              className="h-10 lg:h-12 w-auto"
+            />
           </Link>
 
           {/* Desktop Navigation */}
