@@ -1,11 +1,22 @@
 import { Link } from "react-router-dom";
 import { Scissors } from "lucide-react";
+import heroImage from "@/assets/hero-barbearia.jpg";
 
 const HeroSection = () => {
   const bookingLink = "https://agendamentos.bestbarbers.app/barbershop/paradise";
 
   return (
-    <section className="hero-section hero-gradient min-h-[85vh] flex items-center justify-center overflow-hidden">
+    <section className="hero-section min-h-[85vh] flex items-center justify-center overflow-hidden relative">
+      {/* Background Image */}
+      <img 
+        src={heroImage} 
+        alt="Interior da Paradise Barber" 
+        className="absolute inset-0 w-full h-full object-cover"
+      />
+      
+      {/* Dark Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70" />
+      
       {/* Background Decorative Elements */}
       <div className="absolute inset-0 overflow-hidden">
         {/* Gradient circles */}
