@@ -1,9 +1,9 @@
-import { Scissors, Clock, Award, Users, Sparkles } from "lucide-react";
+import { Scissors, Clock, Award, Check } from "lucide-react";
 
 const stats = [
-  { icon: Clock, value: "24", label: "Horas por Semana" },
-  { icon: Scissors, value: "5-7", label: "Dias de Agenda" },
-  { icon: Award, value: "Premium", label: "Qualidade" },
+  { icon: Clock, value: "5+", label: "Anos de Experiência" },
+  { icon: Scissors, value: "10k+", label: "Clientes Atendidos" },
+  { icon: Award, value: "100%", label: "Satisfação" },
 ];
 
 const process = [
@@ -27,62 +27,58 @@ const process = [
     title: "Finalização",
     description: "Produtos premium e styling perfeito",
   },
-  {
-    step: "05",
-    title: "Satisfação",
-    description: "Resultado garantido ou ajustamos na hora",
-  },
 ];
 
 const BenefitsSection = () => {
   return (
-    <section className="section-cinema bg-background">
-      <div className="container-cinema">
+    <section className="section-clean bg-gradient-soft">
+      <div className="container-clean">
         {/* Header */}
-        <div className="mb-16">
-          <p className="eyebrow mb-4 opacity-0 animate-fade-up">Nos Bastidores</p>
-          <h2 className="headline-section opacity-0 animate-fade-up delay-100">
-            COMO CRIAMOS<br />
-            <span className="text-muted-foreground">A MAGIA</span>
+        <div className="text-center mb-16">
+          <span className="eyebrow mb-4 block opacity-0 animate-fade-up">Nosso Processo</span>
+          <h2 className="headline-section text-foreground opacity-0 animate-fade-up delay-100">
+            COMO FUNCIONA
           </h2>
-          <p className="body-text max-w-xl mt-6 opacity-0 animate-fade-up delay-200">
-            Assista nosso processo se desenrolar passo a passo
+          <p className="body-text max-w-xl mx-auto mt-6 opacity-0 animate-fade-up delay-200">
+            Uma experiência simples e agradável do início ao fim
           </p>
         </div>
 
         {/* Process Timeline */}
         <div className="relative mb-20">
           {/* Timeline line */}
-          <div className="hidden lg:block absolute top-8 left-0 right-0 h-px bg-border" />
+          <div className="hidden lg:block absolute top-10 left-[calc(12.5%)] right-[calc(12.5%)] h-0.5 bg-primary/20" />
           
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {process.map((item, index) => (
               <div 
                 key={item.step}
-                className="relative opacity-0 animate-fade-up"
+                className="relative text-center opacity-0 animate-fade-up"
                 style={{ animationDelay: `${(index + 2) * 0.1}s` }}
               >
                 {/* Step number */}
-                <div className="w-16 h-16 rounded-full bg-card border-2 border-border flex items-center justify-center mb-6 mx-auto lg:mx-0">
-                  <span className="font-display text-xl text-foreground">{item.step}</span>
+                <div className="w-20 h-20 rounded-full bg-primary text-primary-foreground flex items-center justify-center mb-6 mx-auto shadow-lg relative z-10">
+                  <span className="font-display text-2xl">{item.step}</span>
                 </div>
                 
-                <h3 className="headline-card mb-2 text-center lg:text-left">{item.title}</h3>
-                <p className="text-sm text-muted-foreground text-center lg:text-left">{item.description}</p>
+                <h3 className="headline-card text-foreground mb-2">{item.title}</h3>
+                <p className="text-sm text-muted-foreground">{item.description}</p>
               </div>
             ))}
           </div>
         </div>
 
         {/* Stats */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {stats.map((stat, index) => (
             <div 
               key={stat.label}
               className="stat-item opacity-0 animate-fade-up"
               style={{ animationDelay: `${(index + 5) * 0.1}s` }}
             >
-              <stat.icon className="w-8 h-8 text-muted-foreground mx-auto mb-4" />
+              <div className="icon-container mx-auto mb-4">
+                <stat.icon className="w-6 h-6" />
+              </div>
               <div className="stat-value">{stat.value}</div>
               <div className="stat-label">{stat.label}</div>
             </div>

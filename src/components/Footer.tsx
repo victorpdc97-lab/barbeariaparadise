@@ -19,13 +19,13 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-card border-t border-border">
-      <div className="container-cinema py-16">
+    <footer className="bg-background border-t border-border">
+      <div className="container-clean py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand */}
           <div className="lg:col-span-2">
             <Link to="/" className="inline-block mb-6">
-              <span className="font-display text-3xl tracking-wider text-foreground">
+              <span className="font-display text-3xl tracking-wider text-primary">
                 PARADISE
               </span>
             </Link>
@@ -38,7 +38,7 @@ const Footer = () => {
                 href="https://instagram.com" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-muted flex items-center justify-center hover:bg-muted-foreground/20 transition-colors"
+                className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-primary-foreground transition-colors"
               >
                 <Instagram size={18} />
               </a>
@@ -46,7 +46,7 @@ const Footer = () => {
                 href="https://wa.me/5531999999999" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-muted flex items-center justify-center hover:bg-muted-foreground/20 transition-colors"
+                className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-primary-foreground transition-colors"
               >
                 <MessageCircle size={18} />
               </a>
@@ -55,15 +55,15 @@ const Footer = () => {
 
           {/* Navigation */}
           <div>
-            <h4 className="font-display text-lg tracking-wide text-foreground mb-6">
-              NAVEGAÇÃO
+            <h4 className="font-semibold text-foreground mb-6">
+              Navegação
             </h4>
             <ul className="space-y-3">
               {links.navigation.map((link) => (
                 <li key={link.name}>
                   <Link 
                     to={link.path} 
-                    className="text-muted-foreground hover:text-foreground transition-colors"
+                    className="text-muted-foreground hover:text-primary transition-colors"
                   >
                     {link.name}
                   </Link>
@@ -74,15 +74,15 @@ const Footer = () => {
 
           {/* Services */}
           <div>
-            <h4 className="font-display text-lg tracking-wide text-foreground mb-6">
-              SERVIÇOS
+            <h4 className="font-semibold text-foreground mb-6">
+              Serviços
             </h4>
             <ul className="space-y-3">
               {links.services.map((link) => (
                 <li key={link.name}>
                   <Link 
                     to={link.path} 
-                    className="text-muted-foreground hover:text-foreground transition-colors"
+                    className="text-muted-foreground hover:text-primary transition-colors"
                   >
                     {link.name}
                   </Link>
@@ -98,10 +98,10 @@ const Footer = () => {
             © {new Date().getFullYear()} Barbearia Paradise. Todos os direitos reservados.
           </p>
           <div className="flex gap-6">
-            <Link to="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+            <Link to="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">
               Privacidade
             </Link>
-            <Link to="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+            <Link to="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">
               Termos
             </Link>
           </div>

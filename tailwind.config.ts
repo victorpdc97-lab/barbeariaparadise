@@ -61,8 +61,17 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
-        "red-accent": "hsl(var(--red-accent))",
-        gold: "hsl(var(--gold))",
+        teal: {
+          DEFAULT: "hsl(var(--teal-primary))",
+          dark: "hsl(var(--teal-dark))",
+          support: "hsl(var(--teal-support))",
+        },
+        green: {
+          DEFAULT: "hsl(var(--green-secondary))",
+          support: "hsl(var(--green-support))",
+        },
+        mint: "hsl(var(--mint))",
+        beige: "hsl(var(--beige-highlight))",
       },
       borderRadius: {
         lg: "var(--radius)",
