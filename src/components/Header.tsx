@@ -22,7 +22,7 @@ const Header = () => {
     path: "/servicos",
     highlighted: false
   }, {
-    name: "Esteticista",
+    name: "Estética",
     path: "/esteticista",
     highlighted: false
   }, {
