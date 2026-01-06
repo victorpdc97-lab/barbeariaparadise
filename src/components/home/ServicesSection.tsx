@@ -3,7 +3,7 @@ import serviceHaircut from "@/assets/service-haircut.jpg";
 import serviceBeard from "@/assets/service-beard.jpg";
 import serviceCombo from "@/assets/service-combo.jpg";
 const services = [{
-  title: "Corte Masculino",
+  title: "Consultoria de Moda",
   description: "Precisão em cada detalhe. Cortes modernos com técnicas clássicas.",
   image: serviceHaircut,
   badge: "Popular"
