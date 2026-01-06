@@ -11,7 +11,7 @@ const services = [
     badge: "Popular",
   },
   {
-    title: "Barba Completa",
+    title: "Vestiário para Banho",
     description: "O ritual clássico da navalha. Tratamento premium para sua barba.",
     image: serviceBeard,
     badge: "Premium",
