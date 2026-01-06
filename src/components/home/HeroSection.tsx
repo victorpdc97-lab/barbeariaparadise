@@ -1,24 +1,17 @@
 import { Link } from "react-router-dom";
 import { Scissors } from "lucide-react";
 import heroImage from "@/assets/hero-barbearia.jpg";
-
 const HeroSection = () => {
   const bookingLink = "https://agendamentos.bestbarbers.app/barbershop/paradise";
   return <section className="hero-section min-h-[85vh] flex items-center justify-center overflow-hidden relative">
-      {/* Background Image with Ken Burns Effect */}
-      <div className="absolute inset-0 overflow-hidden">
-        <img 
-          src={heroImage} 
-          alt="Interior da Paradise Barber" 
-          className="absolute inset-0 w-full h-full object-cover animate-ken-burns" 
-        />
-      </div>
+      {/* Background Image */}
+      <img src={heroImage} alt="Interior da Paradise Barber" className="absolute inset-0 w-full h-full object-cover" />
       
-      {/* Animated Dark Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70 animate-breathe" />
+      {/* Dark Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70" />
       
       {/* Background Decorative Elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+      <div className="absolute inset-0 overflow-hidden">
         {/* Gradient circles */}
         <div className="absolute top-20 left-10 w-64 h-64 bg-white/5 rounded-full blur-3xl" />
         <div className="absolute bottom-20 right-10 w-80 h-80 bg-white/5 rounded-full blur-3xl" />
