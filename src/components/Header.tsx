@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Crown } from "lucide-react";
 import logoParadise from "@/assets/logo-paradise-barber.png";
 
 const Header = () => {
@@ -17,11 +17,11 @@ const Header = () => {
   }, []);
 
   const navLinks = [
-    { name: "Home", path: "/" },
-    { name: "Serviços", path: "/servicos" },
-    { name: "Clube", path: "/clube" },
-    { name: "Sobre", path: "/sobre" },
-    { name: "Contato", path: "/contato" },
+    { name: "Home", path: "/", highlighted: false },
+    { name: "Serviços", path: "/servicos", highlighted: false },
+    { name: "Clube", path: "/clube", highlighted: true, badge: "VIP" },
+    { name: "Sobre", path: "/sobre", highlighted: false },
+    { name: "Contato", path: "/contato", highlighted: false },
   ];
 
   const isActive = (path: string) => location.pathname === path;
@@ -45,17 +45,37 @@ const Header = () => {
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-10">
             {navLinks.map((link) => (
-              <Link
-                key={link.path}
-                to={link.path}
-                className={`text-sm font-medium transition-colors ${
-                  isActive(link.path) 
-                    ? "text-primary" 
-                    : "text-foreground/70 hover:text-primary"
-                }`}
-              >
-                {link.name}
-              </Link>
+              link.highlighted ? (
+                <Link
+                  key={link.path}
+                  to={link.path}
+                  className={`flex items-center gap-1.5 px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
+                    isActive(link.path)
+                      ? "bg-primary text-primary-foreground"
+                      : "bg-primary/10 text-primary border border-primary/30 hover:bg-primary hover:text-primary-foreground"
+                  }`}
+                >
+                  <Crown size={16} />
+                  {link.name}
+                  {link.badge && (
+                    <span className="ml-1 px-1.5 py-0.5 text-[10px] font-bold bg-primary text-primary-foreground rounded animate-pulse">
+                      {link.badge}
+                    </span>
+                  )}
+                </Link>
+              ) : (
+                <Link
+                  key={link.path}
+                  to={link.path}
+                  className={`text-sm font-medium transition-colors ${
+                    isActive(link.path) 
+                      ? "text-primary" 
+                      : "text-foreground/70 hover:text-primary"
+                  }`}
+                >
+                  {link.name}
+                </Link>
+              )
             ))}
           </nav>
 
@@ -86,18 +106,39 @@ const Header = () => {
           <div className="lg:hidden py-6 border-t border-border animate-fade-in">
             <nav className="flex flex-col gap-1">
               {navLinks.map((link) => (
-                <Link
-                  key={link.path}
-                  to={link.path}
-                  onClick={() => setIsMenuOpen(false)}
-                  className={`py-3 px-4 rounded-lg text-base font-medium transition-colors ${
-                    isActive(link.path) 
-                      ? "bg-primary/10 text-primary" 
-                      : "text-muted-foreground hover:text-primary hover:bg-primary/5"
-                  }`}
-                >
-                  {link.name}
-                </Link>
+                link.highlighted ? (
+                  <Link
+                    key={link.path}
+                    to={link.path}
+                    onClick={() => setIsMenuOpen(false)}
+                    className={`flex items-center gap-2 py-3 px-4 rounded-lg text-base font-medium transition-all ${
+                      isActive(link.path)
+                        ? "bg-primary text-primary-foreground"
+                        : "bg-primary/10 text-primary border border-primary/30"
+                    }`}
+                  >
+                    <Crown size={18} />
+                    {link.name}
+                    {link.badge && (
+                      <span className="ml-auto px-2 py-0.5 text-xs font-bold bg-primary text-primary-foreground rounded animate-pulse">
+                        {link.badge}
+                      </span>
+                    )}
+                  </Link>
+                ) : (
+                  <Link
+                    key={link.path}
+                    to={link.path}
+                    onClick={() => setIsMenuOpen(false)}
+                    className={`py-3 px-4 rounded-lg text-base font-medium transition-colors ${
+                      isActive(link.path) 
+                        ? "bg-primary/10 text-primary" 
+                        : "text-muted-foreground hover:text-primary hover:bg-primary/5"
+                    }`}
+                  >
+                    {link.name}
+                  </Link>
+                )
               ))}
               <a 
                 href={bookingLink}
