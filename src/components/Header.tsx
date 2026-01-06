@@ -20,6 +20,7 @@ const Header = () => {
     { name: "Home", path: "/", highlighted: false },
     { name: "Serviços", path: "/servicos", highlighted: false },
     { name: "Clube", path: "/clube", highlighted: true, badge: "VIP" },
+    { name: "Dia do Noivo", path: "/dia-do-noivo", highlighted: true, badge: "💍" },
     { name: "Sobre", path: "/sobre", highlighted: false },
     { name: "Contato", path: "/contato", highlighted: false },
   ];
