@@ -2,56 +2,62 @@ const PricingSection = () => {
   const bookingLink = "https://agendamentos.bestbarbers.app/barbershop/paradise";
 
   const services = [
-    { name: "Corte Masculino", price: "R$ 50" },
-    { name: "Barba Completa", price: "R$ 35" },
-    { name: "Cabelo + Barba", price: "R$ 75" },
-    { name: "Acabamento", price: "R$ 25" },
-    { name: "Design de Sobrancelha", price: "R$ 20" },
-    { name: "Pigmentação de Barba", price: "R$ 80" },
+    { name: "Corte Masculino", price: "R$ 50", duration: "45 min" },
+    { name: "Barba Completa", price: "R$ 35", duration: "30 min" },
+    { name: "Cabelo + Barba", price: "R$ 75", duration: "1h 15min" },
+    { name: "Acabamento", price: "R$ 25", duration: "15 min" },
+    { name: "Design de Sobrancelha", price: "R$ 20", duration: "15 min" },
+    { name: "Pigmentação de Barba", price: "R$ 80", duration: "1h" },
   ];
 
   return (
-    <section className="section-apple bg-background">
-      <div className="container-apple">
-        {/* Header */}
-        <div className="text-center mb-16">
-          <p className="eyebrow-apple mb-4 animate-fade-up">Serviços</p>
-          <h2 className="headline-apple animate-fade-up delay-100">
-            Valores que cabem<br />no seu bolso.
-          </h2>
-        </div>
-
-        {/* Pricing Table */}
-        <div className="max-w-xl mx-auto">
-          <div className="bg-card rounded-3xl overflow-hidden">
-            {services.map((service, index) => (
-              <div
-                key={service.name}
-                className={`flex items-center justify-between px-8 py-5 ${
-                  index !== services.length - 1 ? "border-b border-border" : ""
-                } hover:bg-muted/50 transition-colors animate-fade-up`}
-                style={{ animationDelay: `${(index + 2) * 0.05}s` }}
-              >
-                <span className="text-foreground font-medium">
-                  {service.name}
-                </span>
-                <span className="text-muted-foreground font-semibold text-lg">
-                  {service.price}
-                </span>
-              </div>
-            ))}
-          </div>
-
-          {/* CTA */}
-          <div className="text-center mt-10 animate-fade-up delay-400">
+    <section className="section-cinema bg-secondary">
+      <div className="container-cinema">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
+          {/* Left - Content */}
+          <div>
+            <p className="eyebrow mb-4 opacity-0 animate-fade-up">Tabela de Preços</p>
+            <h2 className="headline-section mb-6 opacity-0 animate-fade-up delay-100">
+              VALORES<br />
+              <span className="text-muted-foreground">TRANSPARENTES</span>
+            </h2>
+            <p className="body-text mb-10 opacity-0 animate-fade-up delay-200">
+              Qualidade premium com preços acessíveis. Cada serviço é executado com 
+              a excelência que você merece.
+            </p>
+            
             <a 
               href={bookingLink} 
               target="_blank" 
               rel="noopener noreferrer"
-              className="btn-apple-primary"
+              className="btn-primary opacity-0 animate-fade-up delay-300"
             >
-              Agendar agora
+              Agendar Agora
             </a>
+          </div>
+
+          {/* Right - Pricing Table */}
+          <div className="card-cinema opacity-0 animate-fade-up delay-200">
+            {services.map((service, index) => (
+              <div
+                key={service.name}
+                className={`flex items-center justify-between px-6 py-5 ${
+                  index !== services.length - 1 ? "border-b border-border" : ""
+                } hover:bg-muted/50 transition-colors`}
+              >
+                <div>
+                  <span className="text-foreground font-medium block">
+                    {service.name}
+                  </span>
+                  <span className="text-xs text-muted-foreground">
+                    {service.duration}
+                  </span>
+                </div>
+                <span className="font-display text-xl text-foreground">
+                  {service.price}
+                </span>
+              </div>
+            ))}
           </div>
         </div>
       </div>

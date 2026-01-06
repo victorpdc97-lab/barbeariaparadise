@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,73 +7,73 @@
 
 @layer base {
   :root {
-    /* Apple-inspired Light Theme */
-    --background: 0 0% 100%;
-    --foreground: 0 0% 7%;
-
-    --card: 0 0% 98%;
-    --card-foreground: 0 0% 7%;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 7%;
-
-    --primary: 0 0% 7%;
-    --primary-foreground: 0 0% 100%;
-
-    --secondary: 0 0% 96%;
-    --secondary-foreground: 0 0% 7%;
-
-    --muted: 0 0% 96%;
-    --muted-foreground: 0 0% 45%;
-
-    --accent: 0 0% 96%;
-    --accent-foreground: 0 0% 7%;
-
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 100%;
-
-    --border: 0 0% 90%;
-    --input: 0 0% 90%;
-    --ring: 0 0% 7%;
-
-    --radius: 0.75rem;
-
-    /* Apple Blue */
-    --apple-blue: 211 100% 50%;
-    --apple-blue-hover: 211 100% 45%;
-
-    /* Sidebar */
-    --sidebar-background: 0 0% 100%;
-    --sidebar-foreground: 0 0% 7%;
-    --sidebar-primary: 0 0% 7%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 0 0% 96%;
-    --sidebar-accent-foreground: 0 0% 7%;
-    --sidebar-border: 0 0% 90%;
-    --sidebar-ring: 0 0% 7%;
-  }
-
-  .dark {
-    /* Apple-inspired Dark Theme */
-    --background: 0 0% 0%;
+    /* Dark Cinema Theme */
+    --background: 0 0% 4%;
     --foreground: 0 0% 98%;
 
-    --card: 0 0% 7%;
+    --card: 0 0% 8%;
     --card-foreground: 0 0% 98%;
 
-    --popover: 0 0% 7%;
+    --popover: 0 0% 8%;
     --popover-foreground: 0 0% 98%;
 
     --primary: 0 0% 98%;
-    --primary-foreground: 0 0% 7%;
+    --primary-foreground: 0 0% 4%;
 
     --secondary: 0 0% 12%;
     --secondary-foreground: 0 0% 98%;
 
-    --muted: 0 0% 12%;
+    --muted: 0 0% 15%;
     --muted-foreground: 0 0% 60%;
 
-    --accent: 0 0% 12%;
+    --accent: 0 72% 51%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 18%;
+    --input: 0 0% 18%;
+    --ring: 0 72% 51%;
+
+    --radius: 0.75rem;
+
+    /* Accent Colors */
+    --red-accent: 0 72% 51%;
+    --red-accent-hover: 0 72% 45%;
+    --gold: 45 90% 55%;
+
+    /* Sidebar */
+    --sidebar-background: 0 0% 6%;
+    --sidebar-foreground: 0 0% 98%;
+    --sidebar-primary: 0 0% 98%;
+    --sidebar-primary-foreground: 0 0% 4%;
+    --sidebar-accent: 0 0% 12%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 0 0% 18%;
+    --sidebar-ring: 0 72% 51%;
+  }
+
+  .dark {
+    --background: 0 0% 4%;
+    --foreground: 0 0% 98%;
+
+    --card: 0 0% 8%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 0 0% 8%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 4%;
+
+    --secondary: 0 0% 12%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 60%;
+
+    --accent: 0 72% 51%;
     --accent-foreground: 0 0% 98%;
 
     --destructive: 0 62% 50%;
@@ -80,16 +81,16 @@
 
     --border: 0 0% 18%;
     --input: 0 0% 18%;
-    --ring: 0 0% 98%;
+    --ring: 0 72% 51%;
 
-    --sidebar-background: 0 0% 7%;
+    --sidebar-background: 0 0% 6%;
     --sidebar-foreground: 0 0% 98%;
     --sidebar-primary: 0 0% 98%;
-    --sidebar-primary-foreground: 0 0% 7%;
+    --sidebar-primary-foreground: 0 0% 4%;
     --sidebar-accent: 0 0% 12%;
     --sidebar-accent-foreground: 0 0% 98%;
     --sidebar-border: 0 0% 18%;
-    --sidebar-ring: 0 0% 98%;
+    --sidebar-ring: 0 72% 51%;
   }
 }
 
@@ -111,90 +112,151 @@
 }
 
 @layer components {
-  /* Apple-style container */
-  .container-apple {
+  /* Container */
+  .container-cinema {
+    @apply max-w-[1400px] mx-auto px-6 lg:px-12;
+  }
+
+  .container-narrow {
     @apply max-w-[980px] mx-auto px-6;
   }
 
-  .container-apple-wide {
-    @apply max-w-[1200px] mx-auto px-6;
+  /* Section padding */
+  .section-cinema {
+    @apply py-20 md:py-28 lg:py-36;
   }
 
-  /* Apple-style section padding */
-  .section-apple {
-    @apply py-20 md:py-28 lg:py-32;
+  /* Typography */
+  .headline-hero {
+    @apply text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-display font-bold tracking-tight leading-[0.9] uppercase;
   }
 
-  /* Apple-style text styles */
-  .headline-apple {
-    @apply text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight leading-tight;
+  .headline-section {
+    @apply text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-display font-bold tracking-tight leading-[1] uppercase;
   }
 
-  .subheadline-apple {
-    @apply text-xl md:text-2xl lg:text-[28px] font-normal text-muted-foreground leading-relaxed;
+  .headline-card {
+    @apply text-xl md:text-2xl font-display font-bold tracking-tight uppercase;
   }
 
-  .eyebrow-apple {
-    @apply text-xs md:text-sm font-medium uppercase tracking-widest text-muted-foreground;
+  .eyebrow {
+    @apply text-xs md:text-sm font-medium uppercase tracking-[0.2em] text-muted-foreground;
   }
 
-  /* Apple-style link */
-  .link-apple {
-    @apply text-[hsl(var(--apple-blue))] hover:underline font-normal inline-flex items-center gap-1.5 text-lg md:text-xl;
+  .body-text {
+    @apply text-base md:text-lg text-muted-foreground leading-relaxed;
   }
 
-  .link-apple::after {
-    content: "›";
-    @apply text-xl transition-transform;
+  /* Navigation */
+  .nav-cinema {
+    @apply fixed top-0 left-0 right-0 z-50 backdrop-blur-xl bg-background/80;
   }
 
-  .link-apple:hover::after {
-    transform: translateX(3px);
+  .nav-link {
+    @apply text-sm font-medium text-foreground/70 hover:text-foreground transition-colors;
   }
 
-  /* Apple-style cards */
-  .card-apple {
-    @apply bg-card rounded-3xl overflow-hidden;
+  /* Cards */
+  .card-cinema {
+    @apply bg-card border border-border rounded-2xl overflow-hidden transition-all duration-300 hover:border-muted-foreground/30;
   }
 
-  /* Apple-style button */
-  .btn-apple {
-    @apply inline-flex items-center justify-center px-7 py-3 rounded-full font-medium text-lg transition-all;
+  .card-glass {
+    @apply bg-card/50 backdrop-blur-xl border border-border/50 rounded-2xl;
   }
 
-  .btn-apple-primary {
-    @apply btn-apple bg-[hsl(var(--apple-blue))] text-white hover:bg-[hsl(var(--apple-blue-hover))];
+  /* Buttons */
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-6 py-3 rounded-full font-medium text-sm transition-all;
+    @apply bg-[hsl(var(--red-accent))] text-white hover:bg-[hsl(var(--red-accent-hover))];
   }
 
-  .btn-apple-secondary {
-    @apply btn-apple bg-transparent border-2 border-[hsl(var(--apple-blue))] text-[hsl(var(--apple-blue))] hover:bg-[hsl(var(--apple-blue))] hover:text-white;
+  .btn-outline {
+    @apply inline-flex items-center justify-center px-6 py-3 rounded-full font-medium text-sm transition-all;
+    @apply bg-transparent border border-foreground/30 text-foreground hover:bg-foreground/10;
   }
 
-  /* Tile grid */
-  .tile-grid {
-    @apply grid gap-3;
+  .btn-ghost {
+    @apply inline-flex items-center justify-center px-4 py-2 rounded-lg font-medium text-sm transition-all;
+    @apply text-muted-foreground hover:text-foreground hover:bg-muted;
   }
 
-  /* Feature tile */
-  .tile {
-    @apply relative overflow-hidden flex flex-col items-center justify-center text-center p-8 md:p-12 min-h-[500px] md:min-h-[580px];
+  /* Hero */
+  .hero-fullscreen {
+    @apply relative min-h-screen flex items-end pb-20 lg:pb-32 overflow-hidden;
   }
 
-  .tile-content {
-    @apply relative z-10;
+  .hero-overlay {
+    @apply absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent;
   }
 
-  .tile-bg {
-    @apply absolute inset-0 w-full h-full object-cover;
+  /* Grid layouts */
+  .grid-services {
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4;
   }
 
-  /* Nav Apple style */
-  .nav-apple {
-    @apply fixed top-0 left-0 right-0 z-50 backdrop-blur-xl bg-background/80 border-b border-border/50;
+  /* Badge */
+  .badge-accent {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-medium tracking-wide uppercase;
+    @apply bg-[hsl(var(--red-accent))]/10 text-[hsl(var(--red-accent))] border border-[hsl(var(--red-accent))]/30;
   }
 
-  .nav-link-apple {
-    @apply text-xs font-normal text-foreground/80 hover:text-foreground transition-colors;
+  /* Divider */
+  .divider {
+    @apply w-full h-px bg-border;
+  }
+
+  /* Process step */
+  .process-step {
+    @apply relative pl-8 before:absolute before:left-0 before:top-0 before:w-6 before:h-6 before:rounded-full before:border-2 before:border-muted-foreground;
+  }
+
+  /* Wanted poster style */
+  .wanted-card {
+    @apply bg-card border-2 border-border rounded-xl overflow-hidden;
+    @apply hover:border-[hsl(var(--red-accent))]/50 transition-all duration-300;
+  }
+
+  .wanted-header {
+    @apply text-center py-3 bg-muted border-b border-border;
+    @apply text-2xl font-display font-bold tracking-[0.1em] text-foreground;
+  }
+
+  /* Service card */
+  .service-card {
+    @apply relative overflow-hidden rounded-2xl cursor-pointer;
+    @apply bg-card border border-border hover:border-muted-foreground/30 transition-all duration-300;
+  }
+
+  .service-card-content {
+    @apply absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-background via-background/90 to-transparent;
+  }
+
+  /* Stats */
+  .stat-item {
+    @apply text-center p-6 bg-card rounded-2xl border border-border;
+  }
+
+  .stat-value {
+    @apply text-3xl md:text-4xl font-display font-bold text-foreground mb-2;
+  }
+
+  .stat-label {
+    @apply text-sm text-muted-foreground uppercase tracking-wide;
+  }
+
+  /* Testimonial */
+  .testimonial-card {
+    @apply bg-card border border-border rounded-2xl p-6 md:p-8;
+  }
+
+  /* Link with arrow */
+  .link-arrow {
+    @apply inline-flex items-center gap-2 text-foreground font-medium transition-all hover:gap-3;
+  }
+
+  .link-arrow::after {
+    content: "→";
   }
 }
 
@@ -227,6 +289,17 @@
     }
   }
 
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(100%);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
   .animate-fade-up {
     animation: fadeUp 0.8s ease-out forwards;
   }
@@ -239,8 +312,23 @@
     animation: scaleIn 0.6s ease-out forwards;
   }
 
+  .animate-slide-up {
+    animation: slideUp 0.8s ease-out forwards;
+  }
+
   .delay-100 { animation-delay: 0.1s; }
   .delay-200 { animation-delay: 0.2s; }
   .delay-300 { animation-delay: 0.3s; }
   .delay-400 { animation-delay: 0.4s; }
+  .delay-500 { animation-delay: 0.5s; }
+
+  /* Text gradient */
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-foreground to-muted-foreground;
+  }
+
+  /* Glow effect */
+  .glow-red {
+    box-shadow: 0 0 40px hsl(var(--red-accent) / 0.3);
+  }
 }
