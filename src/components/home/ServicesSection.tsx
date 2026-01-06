@@ -12,7 +12,7 @@ const services = [
   },
   {
     title: "Vestiário para Banho",
-    description: "O ritual clássico da navalha. Tratamento premium para sua barba.",
+    description: "Desfrute de um banho relaxante.",
     image: serviceBeard,
     badge: "Premium",
   },
