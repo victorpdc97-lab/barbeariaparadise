@@ -16,7 +16,7 @@ const services = [{
   title: "Sinuca",
   description: "Experiência completa Paradise.",
   image: serviceCombo,
-  badge: "Recomendado"
+  badge: "Entretenimento"
 }];
 const ServicesSection = () => {
   return <section className="section-clean bg-background">
