@@ -11,7 +11,7 @@ const services = [{
   title: "Vestiário para Banho",
   description: "Desfrute de um banho relaxante.",
   image: serviceBeard,
-  badge: "Premium"
+  badge: "Relax"
 }, {
   title: "Sinuca",
   description: "Experiência completa Paradise.",
