@@ -4,7 +4,7 @@ import serviceBeard from "@/assets/service-beard.jpg";
 import serviceCombo from "@/assets/service-combo.jpg";
 const services = [{
   title: "Consultoria de Moda",
-  description: "Precisão em cada detalhe. Cortes modernos com técnicas clássicas.",
+  description: "Consultores especializados em moda que elaboram looks sob medida para cada ocasião.",
   image: serviceHaircut,
   badge: "Popular"
 }, {
