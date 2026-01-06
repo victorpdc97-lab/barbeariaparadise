@@ -29,7 +29,7 @@ const Clube = () => {
     {
       name: "Clube Paradise",
       subtitle: "Basic",
-      tag: "Limitado",
+      tag: "Ilimitado",
       availability: "Segunda a Quarta",
       featured: false,
       options: [
