@@ -28,7 +28,7 @@ const PricingSection = () => {
             </p>
             
             <ul className="space-y-3 mb-10 opacity-0 animate-fade-up delay-300">
-              {["Produtos de alta qualidade", "Ambiente climatizado", "Atendimento personalizado", "Café e água disponíveis"].map((item) => (
+              {["Produtos de alta qualidade", "Ambiente climatizado", "Atendimento personalizado", "Café, água e lanche disponíveis"].map((item) => (
                 <li key={item} className="flex items-center gap-3">
                   <div className="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center">
                     <Check size={12} className="text-primary" />
