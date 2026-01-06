@@ -86,7 +86,7 @@ const EsteticsistaPage = () => {
         <section className="section-padding bg-secondary">
           <div className="container-narrow text-center">
             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-foreground tracking-wider mb-6">
-              ESTETICISTA
+              Estética
             </h1>
             <div className="divider-ornament max-w-md mx-auto">
               <span className="text-muted-foreground text-sm tracking-widest">BEM-ESTAR</span>
