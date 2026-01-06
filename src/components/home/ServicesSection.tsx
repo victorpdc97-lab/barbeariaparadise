@@ -18,7 +18,7 @@ const services = [
   },
   {
     title: "Sinuca",
-    description: "Cabelo + barba + hidratação. A experiência completa Paradise.",
+    description: "Experiência completa Paradise.",
     image: serviceCombo,
     badge: "Recomendado",
   },
