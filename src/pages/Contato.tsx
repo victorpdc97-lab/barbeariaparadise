@@ -170,7 +170,7 @@ const ContatoPage = () => {
                       INSTAGRAM
                     </h3>
                     <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors font-light">
-                      @barbearia.paradise
+                      @barbeariaparadise
                     </a>
                   </div>
                 </div>
