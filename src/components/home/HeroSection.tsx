@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Scissors } from "lucide-react";
-import heroImage from "@/assets/hero-barbearia.jpg";
+import heroImage from "@/assets/barbearia-3.jpg";
 const HeroSection = () => {
   const bookingLink = "https://agendamentos.bestbarbers.app/barbershop/paradise";
   return <section className="hero-section min-h-[85vh] flex items-center justify-center overflow-hidden relative">
