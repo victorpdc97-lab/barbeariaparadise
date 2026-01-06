@@ -6,7 +6,6 @@ import DownloadAppModal from "@/components/DownloadAppModal";
 import { Check, Crown, Calendar, Sparkles, Percent, X, Smartphone } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import barbershopInterior from "@/assets/barbershop-interior.jpg";
-import clubeBarberMan from "@/assets/clube-barber-man.png";
 import { detectOS, APP_STORE_URL, PLAY_STORE_URL } from "@/lib/detectOS";
 
 const Clube = () => {
@@ -109,24 +108,15 @@ const Clube = () => {
           <div className="absolute inset-0 bg-gradient-to-r from-primary/90 to-secondary/90" />
         </div>
 
-        {/* Barber Man Image - Left Side */}
-        <div className="absolute left-0 bottom-0 z-10 hidden lg:block">
-          <img 
-            src={clubeBarberMan} 
-            alt="Barbeiro" 
-            className="h-[400px] xl:h-[500px] w-auto object-contain object-bottom"
-          />
-        </div>
-
         <div className="relative z-10 container-clean py-20 lg:py-32">
-          <div className="max-w-3xl mx-auto text-center lg:ml-auto lg:mr-0 lg:text-left lg:pl-48">
+          <div className="max-w-3xl mx-auto text-center">
             
             <h1 className="headline-hero text-white mb-6 opacity-0 animate-fade-up delay-100">
               JÁ PENSOU EM<br />
               <span className="text-white/90">ASSINAR UMA BARBEARIA?</span>
             </h1>
             
-            <p className="text-lg text-white/80 max-w-xl mb-10 opacity-0 animate-fade-up delay-200">
+            <p className="text-lg text-white/80 max-w-xl mx-auto mb-10 opacity-0 animate-fade-up delay-200">
               Com o Clube Paradise, você paga um valor fixo por mês e corta o cabelo 
               e/ou barba quantas vezes quiser. Sem limites!
             </p>
