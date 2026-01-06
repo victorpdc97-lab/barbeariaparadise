@@ -1,15 +1,15 @@
-import barberAtWork from "@/assets/barber-at-work.jpg";
-import beardTrim from "@/assets/beard-trim.jpg";
-import fadeHaircut from "@/assets/fade-haircut.jpg";
-import barbershopInterior from "@/assets/barbershop-interior.jpg";
-import heroImage from "@/assets/hero-barbershop.jpg";
+import galleryInterior from "@/assets/gallery-interior.jpg";
+import galleryFade from "@/assets/gallery-fade.jpg";
+import galleryBeardWork from "@/assets/gallery-beard-work.jpg";
+import galleryBarberAction from "@/assets/gallery-barber-action.jpg";
+import galleryView from "@/assets/gallery-view.jpg";
 
 const galleryImages = [
-  { src: barbershopInterior, alt: "Ambiente interno", span: "col-span-2 row-span-2" },
-  { src: fadeHaircut, alt: "Corte degradê", span: "" },
-  { src: beardTrim, alt: "Barba", span: "" },
-  { src: barberAtWork, alt: "Barbeiro trabalhando", span: "col-span-2" },
-  { src: heroImage, alt: "Vista da barbearia", span: "" },
+  { src: galleryInterior, alt: "Ambiente interno", span: "col-span-2 row-span-2" },
+  { src: galleryFade, alt: "Corte degradê", span: "" },
+  { src: galleryBeardWork, alt: "Barba", span: "" },
+  { src: galleryBarberAction, alt: "Barbeiro trabalhando", span: "col-span-2" },
+  { src: galleryView, alt: "Vista da barbearia", span: "" },
 ];
 
 const GallerySection = () => {

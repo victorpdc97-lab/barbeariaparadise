@@ -1,25 +1,25 @@
 import { Link } from "react-router-dom";
-import beardTrim from "@/assets/beard-trim.jpg";
-import fadeHaircut from "@/assets/fade-haircut.jpg";
-import barbershopInterior from "@/assets/barbershop-interior.jpg";
+import serviceHaircut from "@/assets/service-haircut.jpg";
+import serviceBeard from "@/assets/service-beard.jpg";
+import serviceCombo from "@/assets/service-combo.jpg";
 
 const services = [
   {
     title: "Corte Masculino",
     description: "Precisão em cada detalhe. Cortes modernos com técnicas clássicas.",
-    image: fadeHaircut,
+    image: serviceHaircut,
     badge: "Popular",
   },
   {
     title: "Barba Completa",
     description: "O ritual clássico da navalha. Tratamento premium para sua barba.",
-    image: beardTrim,
+    image: serviceBeard,
     badge: "Premium",
   },
   {
     title: "Combo Completo",
     description: "Cabelo + barba + hidratação. A experiência completa Paradise.",
-    image: barbershopInterior,
+    image: serviceCombo,
     badge: "Recomendado",
   },
 ];
