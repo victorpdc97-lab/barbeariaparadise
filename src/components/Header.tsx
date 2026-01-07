@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import logoParadise from "@/assets/logo-paradise-barber.png";
-import ringIcon from "@/assets/ring-icon.png";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -39,7 +38,7 @@ const Header = () => {
     { name: "Serviços", path: "/servicos", highlighted: false },
     { name: "Estética", path: "/esteticista", highlighted: false },
     { name: "Clube", path: "/clube", highlighted: true },
-    { name: "Dia do Noivo", path: "/dia-do-noivo", highlighted: true, iconImage: ringIcon },
+    { name: "Dia do Noivo", path: "/dia-do-noivo", highlighted: true, badge: " 💍" },
     { name: "Contato", path: "/contato", highlighted: false },
   ];
 
@@ -78,9 +77,7 @@ const Header = () => {
                     }`}
                   >
                     {link.name}
-                    {link.iconImage && (
-                      <img src={link.iconImage} alt="" className="w-4 h-4 inline-block" />
-                    )}
+                    {link.badge}
                   </Link>
                 ) : (
                   <Link
@@ -166,8 +163,10 @@ const Header = () => {
             >
               <span className="flex items-center justify-center gap-2">
                 {link.name}
-                {link.iconImage && (
-                  <img src={link.iconImage} alt="" className="w-5 h-5 inline-block" />
+                {link.badge && (
+                  <span className="px-2 py-0.5 text-xs font-bold bg-primary text-primary-foreground rounded-full animate-pulse">
+                    {link.badge}
+                  </span>
                 )}
               </span>
             </Link>
