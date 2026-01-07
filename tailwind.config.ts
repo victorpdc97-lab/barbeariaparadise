@@ -14,8 +14,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ["Barlow Condensed", "system-ui", "-apple-system", "sans-serif"],
-        display: ["Archivo Black", "system-ui", "sans-serif"],
+        sans: ["Inter", "system-ui", "-apple-system", "sans-serif"],
+        display: ["Bebas Neue", "system-ui", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",
