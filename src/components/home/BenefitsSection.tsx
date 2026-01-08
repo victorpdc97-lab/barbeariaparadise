@@ -10,7 +10,7 @@ const process = [
   {
     step: "01",
     title: "Agendamento",
-    description: "Reserve seu horário online ou pelo WhatsApp",
+    description: "Reserve seu horário online ou pelo App",
   },
   {
     step: "02",
