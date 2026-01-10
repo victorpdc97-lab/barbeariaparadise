@@ -36,7 +36,7 @@ const Footer = () => {
       <div className="container-clean py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand */}
-          <div className="lg:col-span-2">
+          <div className="lg:col-span-3">
             <Link to="/" className="inline-block mb-6">
               <span className="font-display text-3xl tracking-wider text-primary">
                 PARADISE
@@ -57,7 +57,7 @@ const Footer = () => {
           </div>
 
           {/* Navigation */}
-          <div>
+          <div className="lg:text-right">
             <h4 className="font-semibold text-foreground mb-6">
               Navegação
             </h4>
@@ -66,16 +66,6 @@ const Footer = () => {
                   <Link to={link.path} className="text-muted-foreground hover:text-primary transition-colors">
                     {link.name}
                   </Link>
-                </li>)}
-            </ul>
-          </div>
-
-          {/* Services */}
-          <div>
-            
-            <ul className="space-y-3">
-              {links.services.map(link => <li key={link.name}>
-                  
                 </li>)}
             </ul>
           </div>
