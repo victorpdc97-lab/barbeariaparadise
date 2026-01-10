@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { Instagram, MessageCircle } from "lucide-react";
 const Footer = () => {
-  const links = {
+  const links: { navigation: Array<{ name: string; path: string; external?: boolean }>; services: Array<{ name: string; path: string }> } = {
     navigation: [{
       name: "Home",
       path: "/"
@@ -12,8 +12,9 @@ const Footer = () => {
       name: "Clube",
       path: "/clube"
     }, {
-      name: "Sobre",
-      path: "/sobre"
+      name: "Dia do Noivo",
+      path: "https://barbeariaparadise.com.br/dia-do-noivo",
+      external: true
     }, {
       name: "Contato",
       path: "/contato"
@@ -63,9 +64,15 @@ const Footer = () => {
             </h4>
             <ul className="space-y-3">
               {links.navigation.map(link => <li key={link.name}>
-                  <Link to={link.path} className="text-muted-foreground hover:text-primary transition-colors">
-                    {link.name}
-                  </Link>
+                  {link.external ? (
+                    <a href={link.path} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+                      {link.name}
+                    </a>
+                  ) : (
+                    <Link to={link.path} className="text-muted-foreground hover:text-primary transition-colors">
+                      {link.name}
+                    </Link>
+                  )}
                 </li>)}
             </ul>
           </div>
