@@ -1,25 +1,38 @@
 import { Link } from "react-router-dom";
 import { Instagram, MessageCircle } from "lucide-react";
-
 const Footer = () => {
   const links = {
-    navigation: [
-      { name: "Home", path: "/" },
-      { name: "Serviços", path: "/servicos" },
-      { name: "Clube", path: "/clube" },
-      { name: "Sobre", path: "/sobre" },
-      { name: "Contato", path: "/contato" },
-    ],
-    services: [
-      { name: "Corte Masculino", path: "/servicos" },
-      { name: "Barba Completa", path: "/servicos" },
-      { name: "Combo", path: "/servicos" },
-      { name: "Esteticista", path: "/esteticista" },
-    ],
+    navigation: [{
+      name: "Home",
+      path: "/"
+    }, {
+      name: "Serviços",
+      path: "/servicos"
+    }, {
+      name: "Clube",
+      path: "/clube"
+    }, {
+      name: "Sobre",
+      path: "/sobre"
+    }, {
+      name: "Contato",
+      path: "/contato"
+    }],
+    services: [{
+      name: "Corte Masculino",
+      path: "/servicos"
+    }, {
+      name: "Barba Completa",
+      path: "/servicos"
+    }, {
+      name: "Combo",
+      path: "/servicos"
+    }, {
+      name: "Esteticista",
+      path: "/esteticista"
+    }]
   };
-
-  return (
-    <footer className="bg-background border-t border-border">
+  return <footer className="bg-background border-t border-border">
       <div className="container-clean py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand */}
@@ -34,20 +47,10 @@ const Footer = () => {
               masculinos e barba em Belo Horizonte.
             </p>
             <div className="flex gap-4">
-              <a 
-                href="https://www.instagram.com/barbeariaparadise/" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-primary-foreground transition-colors"
-              >
+              <a href="https://www.instagram.com/barbeariaparadise/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-primary-foreground transition-colors">
                 <Instagram size={18} />
               </a>
-              <a 
-                href="https://wa.me/553186595481" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-primary-foreground transition-colors"
-              >
+              <a href="https://wa.me/553186595481" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-primary-foreground transition-colors">
                 <MessageCircle size={18} />
               </a>
             </div>
@@ -59,35 +62,21 @@ const Footer = () => {
               Navegação
             </h4>
             <ul className="space-y-3">
-              {links.navigation.map((link) => (
-                <li key={link.name}>
-                  <Link 
-                    to={link.path} 
-                    className="text-muted-foreground hover:text-primary transition-colors"
-                  >
+              {links.navigation.map(link => <li key={link.name}>
+                  <Link to={link.path} className="text-muted-foreground hover:text-primary transition-colors">
                     {link.name}
                   </Link>
-                </li>
-              ))}
+                </li>)}
             </ul>
           </div>
 
           {/* Services */}
           <div>
-            <h4 className="font-semibold text-foreground mb-6">
-              Serviços
-            </h4>
+            
             <ul className="space-y-3">
-              {links.services.map((link) => (
-                <li key={link.name}>
-                  <Link 
-                    to={link.path} 
-                    className="text-muted-foreground hover:text-primary transition-colors"
-                  >
-                    {link.name}
-                  </Link>
-                </li>
-              ))}
+              {links.services.map(link => <li key={link.name}>
+                  
+                </li>)}
             </ul>
           </div>
         </div>
@@ -107,8 +96,6 @@ const Footer = () => {
           </div>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;
