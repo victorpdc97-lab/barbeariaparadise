@@ -12,6 +12,9 @@ const Footer = () => {
       name: "Clube",
       path: "/clube"
     }, {
+      name: "Estética",
+      path: "/esteticista"
+    }, {
       name: "Dia do Noivo",
       path: "https://barbeariaparadise.com.br/dia-do-noivo",
       external: true
