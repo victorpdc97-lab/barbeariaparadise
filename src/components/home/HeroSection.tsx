@@ -2,12 +2,16 @@ import { Link } from "react-router-dom";
 import { Scissors } from "lucide-react";
 import heroImage from "@/assets/barbearia-3.jpg";
 import { useTypewriter } from "@/hooks/useTypewriter";
-
 const HeroSection = () => {
   const bookingLink = "https://agendamentos.bestbarbers.app/barbershop/paradise";
-  
-  const { displayedText: line1, isComplete: line1Complete } = useTypewriter("SUA MELHOR", 120, 300);
-  const { displayedText: line2, isComplete: line2Complete } = useTypewriter("VERSÃO", 120, 1800);
+  const {
+    displayedText: line1,
+    isComplete: line1Complete
+  } = useTypewriter("SUA MELHOR", 120, 300);
+  const {
+    displayedText: line2,
+    isComplete: line2Complete
+  } = useTypewriter("VERSÃO", 120, 1800);
   return <section className="hero-section min-h-[85vh] flex items-center justify-center overflow-hidden relative">
       {/* Background Image */}
       <img src={heroImage} alt="Interior da Paradise Barber" className="absolute inset-0 w-full h-full object-cover" />
@@ -45,8 +49,82 @@ const HeroSection = () => {
         </h1>
         
         <p className="text-lg md:text-xl text-white/80 max-w-2xl mx-auto mb-12 opacity-0 animate-fade-up delay-200 leading-relaxed">
-          Tradição encontra estilo moderno. Uma experiência única em cortes masculinos 
-          e barba, com profissionais especializados e ambiente acolhedor.
+          Onde tradição e modernidade se encontram. Uma experiência única em cortes masculinos e barba, com profissionais especializados e ambiente acolhedor.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         </p>
 
         <div className="flex flex-wrap items-center justify-center gap-4 opacity-0 animate-fade-up delay-300">
