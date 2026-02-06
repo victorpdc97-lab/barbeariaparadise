@@ -21,7 +21,7 @@ const TeamSection = () => {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
           {team.map((member, index) => (
-            <div key={member.name} className={`group opacity-0 animate-fade-up ${index % 2 === 1 ? "sm:mt-8" : ""}`} style={{ animationDelay: `${(index + 2) * 0.1}s` }}>
+            <div key={member.name} className="group opacity-0 animate-fade-up" style={{ animationDelay: `${(index + 2) * 0.1}s` }}>
               <div className="aspect-[3/4] overflow-hidden rounded-lg mb-4 relative">
                 <img src={member.image} alt={member.name} className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105" />
                 <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end justify-center pb-6">
