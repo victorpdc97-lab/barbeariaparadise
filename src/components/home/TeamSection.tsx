@@ -24,9 +24,6 @@ const TeamSection = () => {
             <div key={member.name} className="group opacity-0 animate-fade-up" style={{ animationDelay: `${(index + 2) * 0.1}s` }}>
               <div className="aspect-[3/4] overflow-hidden rounded-lg mb-4 relative">
                 <img src={member.image} alt={member.name} className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105" />
-                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end justify-center pb-6">
-                  <a href={member.instagram} target="_blank" rel="noopener noreferrer" className="text-white/80 text-sm hover:text-white transition-colors">@paradise</a>
-                </div>
               </div>
               <div>
                 <p className="text-xs tracking-[0.15em] uppercase text-muted-foreground mb-1">{member.specialty}</p>
