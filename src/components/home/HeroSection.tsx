@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import heroImage from "@/assets/barbearia-3.jpg";
+import { AnimatedText } from "@/components/ui/animated-underline-text-one";
 
 const HeroSection = () => {
   const bookingLink = "https://agendamentos.bestbarbers.app/barbershop/paradise";
@@ -23,7 +24,12 @@ const HeroSection = () => {
           
           <h1 className="headline-hero text-white mb-6 opacity-0 animate-fade-up delay-100">
             Sua melhor<br />
-            <span className="italic text-white/90">versão</span>
+            <AnimatedText
+              text="versão"
+              textClassName="italic text-white/90"
+              underlineClassName="h-3 text-white/70"
+              underlineDuration={1.5}
+            />
           </h1>
           
           <p className="text-base md:text-lg text-white/70 max-w-lg mb-10 opacity-0 animate-fade-up delay-200 leading-relaxed">
