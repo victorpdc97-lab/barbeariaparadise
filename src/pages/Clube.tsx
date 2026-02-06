@@ -66,7 +66,7 @@ const Clube = () => {
             </div>
             <div className="relative flex justify-center lg:justify-end mt-16 lg:mt-24 opacity-0 animate-fade-up delay-200">
               <div className="absolute inset-0 scale-125 bg-[radial-gradient(ellipse_at_center,_rgba(255,255,255,0.08)_0%,_transparent_70%)] pointer-events-none" />
-              <img src={clubeHeroModel} alt="Modelo Paradise Barber" className="relative z-10 max-h-[480px] lg:max-h-[600px] w-auto object-contain drop-shadow-2xl" />
+              <img src={clubeHeroModel} alt="Modelo Paradise Barber" className="relative z-10 max-h-[480px] lg:max-h-[600px] w-auto object-contain drop-shadow-2xl" style={{ maskImage: 'linear-gradient(to bottom, black 60%, transparent 100%)', WebkitMaskImage: 'linear-gradient(to bottom, black 60%, transparent 100%)' }} />
             </div>
           </div>
         </div>
