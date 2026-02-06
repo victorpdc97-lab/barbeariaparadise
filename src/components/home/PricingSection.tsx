@@ -1,80 +1,61 @@
-import { Check } from "lucide-react";
-
 const PricingSection = () => {
   const bookingLink = "https://agendamentos.bestbarbers.app/barbershop/paradise";
 
   const services = [
-    { name: "Corte", price: "R$ 65,00", duration: "30 min" },
-    { name: "Barba", price: "R$ 50,00", duration: "30 min" },
-    { name: "Corte + Barba", price: "R$ 115,00", duration: "50 min", featured: true },
-    { name: "Acabamento", price: "R$ 20,00", duration: "15 min" },
-    { name: "Sobrancelha Navalha", price: "R$ 20,00", duration: "15 min" },
-    { name: "Pigmentação de Barba (a partir de)", price: "R$ 30,00", duration: "15 min" },
+    { name: "Corte", price: "R$ 65", duration: "30 min" },
+    { name: "Barba", price: "R$ 50", duration: "30 min" },
+    { name: "Corte + Barba", price: "R$ 115", duration: "50 min", featured: true },
+    { name: "Acabamento", price: "R$ 20", duration: "15 min" },
+    { name: "Sobrancelha Navalha", price: "R$ 20", duration: "15 min" },
+    { name: "Pigmentação de Barba", price: "a partir de R$ 30", duration: "15 min" },
   ];
 
   return (
-    <section className="section-clean bg-gradient-soft">
-      <div className="container-clean">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
-          {/* Left - Content */}
-          <div>
-            <span className="eyebrow mb-4 block opacity-0 animate-fade-up">Tabela de Preços</span>
-            <h2 className="headline-section text-foreground mb-6 opacity-0 animate-fade-up delay-100">
-              VALORES TRANSPARENTES
+    <section className="section-tight bg-gradient-soft relative grain">
+      <div className="container-clean relative z-10">
+        <div className="max-w-2xl mx-auto">
+          {/* Header */}
+          <div className="text-center mb-10 opacity-0 animate-fade-up">
+            <p className="eyebrow mb-4">Tabela de Preços</p>
+            <h2 className="headline-section text-foreground">
+              Valores transparentes
             </h2>
-            <p className="body-text mb-8 opacity-0 animate-fade-up delay-200">
-              Qualidade premium com preços acessíveis. Cada serviço é executado com 
-              a excelência que você merece.
-            </p>
-            
-            <ul className="space-y-3 mb-10 opacity-0 animate-fade-up delay-300">
-              {["Produtos de alta qualidade", "Ambiente climatizado", "Atendimento personalizado", "Café, água e lanche disponíveis"].map((item) => (
-                <li key={item} className="flex items-center gap-3">
-                  <div className="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center">
-                    <Check size={12} className="text-primary" />
-                  </div>
-                  <span className="text-foreground">{item}</span>
-                </li>
-              ))}
-            </ul>
-            
-            <a 
-              href={bookingLink} 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="btn-primary opacity-0 animate-fade-up delay-400"
-            >
-              Agendar Agora
-            </a>
           </div>
 
-          {/* Right - Pricing Table */}
-          <div className="card-clean bg-white opacity-0 animate-fade-up delay-200">
+          {/* Pricing Table */}
+          <div className="card-clean bg-card opacity-0 animate-fade-up delay-100">
             {services.map((service, index) => (
               <div
                 key={service.name}
-                className={`flex items-center justify-between px-6 py-5 ${
+                className={`flex items-center justify-between px-6 py-5 transition-colors hover:bg-muted/50 ${
                   index !== services.length - 1 ? "border-b border-border" : ""
-                } ${service.featured ? "bg-primary/5" : ""} hover:bg-primary/5 transition-colors`}
+                }`}
               >
-                <div className="flex items-center gap-3">
-                  {service.featured && (
-                    <span className="w-2 h-2 rounded-full bg-primary flex-shrink-0" />
-                  )}
-                  <div>
-                    <span className="text-foreground font-medium block">
-                      {service.name}
-                    </span>
-                    <span className="text-xs text-muted-foreground">
-                      {service.duration}
-                    </span>
-                  </div>
+                <div>
+                  <span className={`text-foreground block ${service.featured ? "font-semibold" : "font-normal"}`}>
+                    {service.name}
+                  </span>
+                  <span className="text-xs text-muted-foreground">
+                    {service.duration}
+                  </span>
                 </div>
-                <span className="text-xl font-bold text-primary">
+                <span className={`font-display text-xl ${service.featured ? "text-[hsl(var(--gold))]" : "text-foreground"}`}>
                   {service.price}
                 </span>
               </div>
             ))}
+          </div>
+
+          {/* CTA */}
+          <div className="text-center mt-8 opacity-0 animate-fade-up delay-300">
+            <a
+              href={bookingLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary"
+            >
+              Agendar Agora
+            </a>
           </div>
         </div>
       </div>

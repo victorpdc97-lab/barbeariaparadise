@@ -1,88 +1,85 @@
-import { Scissors, Clock, Award, Check } from "lucide-react";
+import galleryInterior from "@/assets/gallery-interior.jpg";
 
-const stats = [
-  { icon: Clock, value: "10 anos+", label: "Experiência Barbeiros" },
-  { icon: Scissors, value: "1000+", label: "Clientes Atendidos" },
-  { icon: Award, value: "100%", label: "Satisfação" },
-];
-
-const process = [
+const steps = [
   {
-    step: "01",
     title: "Agendamento",
-    description: "Reserve seu horário online ou pelo App",
+    description: "Reserve pelo app ou site em segundos. Escolha seu barbeiro, horário e serviço preferido.",
   },
   {
-    step: "02",
     title: "Consultoria",
-    description: "Conversa inicial para entender seu estilo",
+    description: "Conversa inicial para entender seu estilo, formato do rosto e rotina de cuidados.",
   },
   {
-    step: "03",
     title: "Execução",
-    description: "Corte com técnicas modernas e clássicas",
+    description: "Corte com técnicas modernas e clássicas, usando produtos premium selecionados.",
   },
   {
-    step: "04",
     title: "Finalização",
-    description: "Produtos premium e styling perfeito",
+    description: "Styling perfeito, dicas personalizadas e um café para fechar a experiência.",
   },
 ];
 
 const BenefitsSection = () => {
   return (
-    <section className="section-clean bg-gradient-soft">
-      <div className="container-clean">
-        {/* Header */}
-        <div className="text-center mb-16">
-          <span className="eyebrow mb-4 block opacity-0 animate-fade-up">Nosso Processo</span>
-          <h2 className="headline-section text-foreground opacity-0 animate-fade-up delay-100">
-            COMO FUNCIONA
-          </h2>
-          <p className="body-text max-w-xl mx-auto mt-6 opacity-0 animate-fade-up delay-200">
-            Uma experiência simples e agradável do início ao fim
-          </p>
-        </div>
+    <section className="section-clean bg-background relative grain">
+      <div className="container-clean relative z-10">
+        <div className="grid lg:grid-cols-2 gap-16 items-start">
+          {/* Left — narrative with inline stats */}
+          <div className="opacity-0 animate-fade-up">
+            <div className="gold-line mb-5" />
+            <h2 className="headline-section text-foreground mb-8">
+              Mais de uma década<br />
+              <span className="italic">cuidando do seu estilo</span>
+            </h2>
+            
+            <p className="body-text mb-8 leading-loose">
+              Com mais de <strong className="text-foreground">10 anos de experiência</strong> e{" "}
+              <strong className="text-foreground">milhares de clientes atendidos</strong>, 
+              a Paradise se tornou referência em Belo Horizonte. Nossa nota de{" "}
+              <strong className="text-foreground">4.9 no Google</strong> reflete o compromisso 
+              com cada detalhe — do atendimento ao acabamento final.
+            </p>
 
-        {/* Process Timeline */}
-        <div className="relative mb-20">
-          {/* Timeline line */}
-          <div className="hidden lg:block absolute top-10 left-[calc(12.5%)] right-[calc(12.5%)] h-0.5 bg-primary/20" />
-          
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            {process.map((item, index) => (
-              <div 
-                key={item.step}
-                className="relative text-center opacity-0 animate-fade-up"
-                style={{ animationDelay: `${(index + 2) * 0.1}s` }}
-              >
-                {/* Step number */}
-                <div className="w-20 h-20 rounded-full bg-primary text-primary-foreground flex items-center justify-center mb-6 mx-auto shadow-lg relative z-10">
-                  <span className="font-display text-2xl">{item.step}</span>
-                </div>
-                
-                <h3 className="headline-card text-foreground mb-2">{item.title}</h3>
-                <p className="text-sm text-muted-foreground">{item.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Stats */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {stats.map((stat, index) => (
-            <div 
-              key={stat.label}
-              className="stat-item opacity-0 animate-fade-up"
-              style={{ animationDelay: `${(index + 5) * 0.1}s` }}
-            >
-              <div className="icon-container mx-auto mb-4">
-                <stat.icon className="w-6 h-6" />
-              </div>
-              <div className="stat-value">{stat.value}</div>
-              <div className="stat-label">{stat.label}</div>
+            {/* Photo accent */}
+            <div className="rounded-lg overflow-hidden aspect-[16/9] opacity-0 animate-fade-up delay-200">
+              <img
+                src={galleryInterior}
+                alt="Interior da barbearia"
+                className="w-full h-full object-cover"
+              />
             </div>
-          ))}
+          </div>
+
+          {/* Right — vertical timeline */}
+          <div className="opacity-0 animate-fade-up delay-200">
+            <p className="eyebrow mb-8">Como funciona</p>
+            
+            <div className="space-y-0">
+              {steps.map((step, index) => (
+                <div key={step.title} className="flex gap-6 group">
+                  {/* Timeline line */}
+                  <div className="flex flex-col items-center">
+                    <div className="w-8 h-8 rounded-full border border-[hsl(var(--gold))] flex items-center justify-center text-xs font-medium text-[hsl(var(--gold))] group-hover:bg-[hsl(var(--gold))] group-hover:text-foreground transition-all duration-300 flex-shrink-0">
+                      {index + 1}
+                    </div>
+                    {index < steps.length - 1 && (
+                      <div className="w-px h-full bg-border min-h-[60px]" />
+                    )}
+                  </div>
+                  
+                  {/* Content */}
+                  <div className="pb-10">
+                    <h3 className="font-display text-xl font-semibold text-foreground mb-1.5">
+                      {step.title}
+                    </h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      {step.description}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </section>

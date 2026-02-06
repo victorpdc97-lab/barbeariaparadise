@@ -16,12 +16,10 @@ const Header = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Close menu when route changes
   useEffect(() => {
     setIsMenuOpen(false);
   }, [location.pathname]);
 
-  // Prevent body scroll when menu is open
   useEffect(() => {
     if (isMenuOpen) {
       document.body.style.overflow = 'hidden';
@@ -34,12 +32,12 @@ const Header = () => {
   }, [isMenuOpen]);
 
   const navLinks = [
-    { name: "Home", path: "/", highlighted: false },
-    { name: "Serviços", path: "/servicos", highlighted: false },
-    { name: "Estética", path: "/esteticista", highlighted: false },
-    { name: "Clube", path: "/clube", highlighted: true },
-    { name: "Dia do Noivo", path: "/dia-do-noivo", highlighted: true, badge: " 💍" },
-    { name: "Contato", path: "/contato", highlighted: false },
+    { name: "Home", path: "/" },
+    { name: "Serviços", path: "/servicos" },
+    { name: "Estética", path: "/esteticista" },
+    { name: "Clube", path: "/clube" },
+    { name: "Dia do Noivo", path: "/dia-do-noivo" },
+    { name: "Contato", path: "/contato" },
   ];
 
   const isActive = (path: string) => location.pathname === path;
@@ -48,8 +46,10 @@ const Header = () => {
   return (
     <>
       <header
-        className={`nav-clean transition-all duration-300 ${
-          isScrolled ? "bg-background/98 shadow-sm" : "bg-white/80 backdrop-blur-md"
+        className={`nav-clean ${
+          isScrolled
+            ? "bg-background/90 backdrop-blur-xl shadow-[0_1px_0_hsl(var(--border))]"
+            : "bg-transparent"
         }`}
       >
         <div className="container-clean">
@@ -59,40 +59,28 @@ const Header = () => {
               <img
                 src={logoParadise}
                 alt="Paradise Barber"
-                className="h-24 lg:h-30 w-auto object-contain brightness-0"
+                className="h-24 lg:h-28 w-auto object-contain brightness-0"
               />
             </Link>
 
             {/* Desktop Navigation */}
-            <nav className="hidden lg:flex items-center gap-10">
-              {navLinks.map((link) =>
-                link.highlighted ? (
-                  <Link
-                    key={link.path}
-                    to={link.path}
-                    className={`flex items-center gap-1.5 px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
-                      isActive(link.path)
-                        ? "bg-primary text-primary-foreground"
-                        : "bg-primary/10 text-primary border border-primary/30 hover:bg-primary hover:text-primary-foreground"
-                    }`}
-                  >
-                    {link.name}
-                    {link.badge}
-                  </Link>
-                ) : (
-                  <Link
-                    key={link.path}
-                    to={link.path}
-                    className={`text-sm font-medium transition-colors ${
-                      isActive(link.path)
-                        ? "text-primary"
-                        : "text-foreground/70 hover:text-primary"
-                    }`}
-                  >
-                    {link.name}
-                  </Link>
-                )
-              )}
+            <nav className="hidden lg:flex items-center gap-8">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.path}
+                  to={link.path}
+                  className={`text-sm font-medium tracking-wide transition-colors duration-300 ${
+                    isActive(link.path)
+                      ? "text-foreground"
+                      : "text-muted-foreground hover:text-foreground"
+                  }`}
+                >
+                  {link.name}
+                  {isActive(link.path) && (
+                    <span className="block h-0.5 mt-0.5 bg-[hsl(var(--gold))] rounded-full" />
+                  )}
+                </Link>
+              ))}
             </nav>
 
             {/* CTA Button */}
@@ -101,14 +89,14 @@ const Header = () => {
                 href={bookingLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hidden lg:flex btn-primary"
+                className="hidden lg:flex btn-primary text-sm px-8 py-3"
               >
-                Agendar
+                Agendar Horário
               </a>
 
               {/* Mobile Menu Button */}
               <button
-                className="lg:hidden relative z-50 text-foreground p-2 transition-transform duration-300"
+                className="lg:hidden relative z-50 text-foreground p-2"
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
                 aria-label="Toggle menu"
               >
@@ -116,13 +104,13 @@ const Header = () => {
                   <Menu
                     size={24}
                     className={`absolute inset-0 transition-all duration-300 ${
-                      isMenuOpen ? "opacity-0 rotate-90 scale-0" : "opacity-100 rotate-0 scale-100"
+                      isMenuOpen ? "opacity-0 rotate-90 scale-0" : "opacity-100"
                     }`}
                   />
                   <X
                     size={24}
                     className={`absolute inset-0 transition-all duration-300 ${
-                      isMenuOpen ? "opacity-100 rotate-0 scale-100" : "opacity-0 -rotate-90 scale-0"
+                      isMenuOpen ? "opacity-100" : "opacity-0 -rotate-90 scale-0"
                     }`}
                   />
                 </div>
@@ -134,58 +122,45 @@ const Header = () => {
 
       {/* Mobile Navigation Overlay */}
       <div
-        className={`fixed inset-0 bg-background/95 backdrop-blur-lg z-40 lg:hidden transition-all duration-500 ${
+        className={`fixed inset-0 bg-background/98 backdrop-blur-lg z-40 lg:hidden transition-all duration-500 ${
           isMenuOpen ? "opacity-100 visible" : "opacity-0 invisible"
         }`}
       >
-        <nav className="flex flex-col items-center justify-center h-full gap-2 px-8">
+        <nav className="flex flex-col items-center justify-center h-full gap-1 px-8">
           {navLinks.map((link, index) => (
             <Link
               key={link.path}
               to={link.path}
               onClick={() => setIsMenuOpen(false)}
-              className={`w-full max-w-sm py-4 px-6 rounded-xl text-lg font-medium text-center transition-all duration-300 ${
-                isMenuOpen
-                  ? "opacity-100 translate-y-0"
-                  : "opacity-0 translate-y-4"
+              className={`w-full max-w-xs py-4 text-center font-display text-2xl tracking-wide transition-all duration-300 ${
+                isMenuOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
               } ${
-                link.highlighted
-                  ? isActive(link.path)
-                    ? "bg-primary text-primary-foreground"
-                    : "bg-primary/10 text-primary border border-primary/30"
-                  : isActive(link.path)
-                  ? "bg-muted text-foreground"
-                  : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
+                isActive(link.path)
+                  ? "text-foreground"
+                  : "text-muted-foreground"
               }`}
               style={{
-                transitionDelay: isMenuOpen ? `${index * 75}ms` : "0ms",
+                transitionDelay: isMenuOpen ? `${index * 60}ms` : "0ms",
               }}
             >
-              <span className="flex items-center justify-center gap-2">
-                {link.name}
-                {link.badge && (
-                  <span className="px-2 py-0.5 text-xs font-bold bg-primary text-primary-foreground rounded-full animate-pulse">
-                    {link.badge}
-                  </span>
-                )}
-              </span>
+              {link.name}
             </Link>
           ))}
+          
+          <div className="gold-line-long my-6 opacity-50" />
           
           <a
             href={bookingLink}
             target="_blank"
             rel="noopener noreferrer"
-            className={`w-full max-w-sm mt-6 py-4 px-6 rounded-xl text-lg font-semibold text-center bg-primary text-primary-foreground transition-all duration-300 ${
-              isMenuOpen
-                ? "opacity-100 translate-y-0"
-                : "opacity-0 translate-y-4"
+            className={`btn-primary mt-2 px-12 py-4 text-base transition-all duration-300 ${
+              isMenuOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
             }`}
             style={{
-              transitionDelay: isMenuOpen ? `${navLinks.length * 75}ms` : "0ms",
+              transitionDelay: isMenuOpen ? `${navLinks.length * 60}ms` : "0ms",
             }}
           >
-            Agendar Agora
+            Agendar Horário
           </a>
         </nav>
       </div>
