@@ -57,22 +57,17 @@ const ServicosPage = () => {
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      
       <main className="pt-24">
-        {/* Hero */}
         <section className="py-16 md:py-20 bg-foreground">
           <div className="container-narrow text-center">
             <div className="gold-line mx-auto mb-6" />
             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-semibold text-primary-foreground tracking-tight mb-4">
               Barba & Cabelo
             </h1>
-            <p className="text-primary-foreground/60 text-sm">
-              Nossos serviços e valores
-            </p>
+            <p className="text-primary-foreground/60 text-sm">Nossos serviços e valores</p>
           </div>
         </section>
 
-        {/* Services by Category */}
         <section className="py-14 md:py-20 bg-background">
           <div className="container-narrow">
             <div className="max-w-3xl mx-auto space-y-12">
@@ -82,27 +77,17 @@ const ServicosPage = () => {
                     <h2 className="font-display text-2xl text-foreground">{category.title}</h2>
                     <div className="flex-1 h-px bg-border" />
                   </div>
-                  
                   <div className="space-y-0">
                     {category.services.map((service, index) => (
-                      <div
-                        key={service.name}
-                        className={`flex items-center justify-between py-4 ${
-                          index !== category.services.length - 1 ? "border-b border-border/50" : ""
-                        } hover:bg-muted/30 transition-colors px-4 -mx-4 rounded-sm`}
-                      >
+                      <div key={service.name} className={`flex items-center justify-between py-4 ${index !== category.services.length - 1 ? "border-b border-border/50" : ""} hover:bg-muted/30 transition-colors px-4 -mx-4 rounded-sm`}>
                         <div className="flex-1">
-                          <span className={`text-foreground ${service.featured ? "font-medium" : "font-light"} tracking-wide`}>
-                            {service.name}
-                          </span>
+                          <span className={`text-foreground ${service.featured ? "font-medium" : "font-light"} tracking-wide`}>{service.name}</span>
                           <div className="flex items-center gap-1 text-muted-foreground text-xs mt-0.5">
                             <Clock size={11} />
                             {service.duration}
                           </div>
                         </div>
-                        <span className={`font-display text-lg ${service.featured ? "text-[hsl(var(--gold))]" : "text-foreground"}`}>
-                          {service.price}
-                        </span>
+                        <span className={`font-display text-lg text-foreground ${service.featured ? "font-bold" : ""}`}>{service.price}</span>
                       </div>
                     ))}
                   </div>
@@ -112,27 +97,14 @@ const ServicosPage = () => {
           </div>
         </section>
 
-        {/* CTA */}
         <section className="py-16 bg-foreground">
           <div className="container-narrow text-center">
-            <h2 className="font-display text-3xl md:text-4xl text-primary-foreground mb-4">
-              Pronto para transformar seu visual?
-            </h2>
-            <p className="text-primary-foreground/60 text-sm max-w-md mx-auto mb-8">
-              Agende seu horário e venha viver a experiência Paradise.
-            </p>
-            <a
-              href={bookingLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-primary"
-            >
-              Agendar Horário
-            </a>
+            <h2 className="font-display text-3xl md:text-4xl text-primary-foreground mb-4">Pronto para transformar seu visual?</h2>
+            <p className="text-primary-foreground/60 text-sm max-w-md mx-auto mb-8">Agende seu horário e venha viver a experiência Paradise.</p>
+            <a href={bookingLink} target="_blank" rel="noopener noreferrer" className="btn-primary">Agendar Horário</a>
           </div>
         </section>
       </main>
-
       <Footer />
       <WhatsAppButton />
     </div>

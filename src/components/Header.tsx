@@ -77,7 +77,7 @@ const Header = () => {
                 >
                   {link.name}
                   {isActive(link.path) && (
-                    <span className="block h-0.5 mt-0.5 bg-[hsl(var(--gold))] rounded-full" />
+                    <span className="block h-0.5 mt-0.5 bg-foreground rounded-full" />
                   )}
                 </Link>
               ))}
