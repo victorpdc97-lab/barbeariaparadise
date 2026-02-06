@@ -5,6 +5,7 @@ import WhatsAppButton from "@/components/WhatsAppButton";
 import DownloadAppModal from "@/components/DownloadAppModal";
 import { Check, Crown, Calendar, Sparkles, Percent, X, Smartphone } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import PricingCards from "@/components/ui/pricing-component";
 import clubeHeroModel from "@/assets/clube-hero-model.png";
 import { detectOS, APP_STORE_URL, PLAY_STORE_URL } from "@/lib/detectOS";
 import { ParticleButton } from "@/components/ui/particle-button";
@@ -76,37 +77,8 @@ const Clube = () => {
             <p className="eyebrow mb-4">Escolha seu plano</p>
             <h2 className="headline-section text-foreground">O plano ideal para você</h2>
           </div>
-          <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-            {plans.map((plan, index) => (
-              <div key={plan.subtitle} className={`relative rounded-lg p-8 border-2 transition-all duration-500 opacity-0 animate-fade-up ${plan.featured ? "border-foreground shadow-lg" : "border-border hover:border-foreground/30"}`} style={{ animationDelay: `${(index + 2) * 0.1}s` }}>
-                {plan.featured && (
-                  <div className="absolute -top-3 left-6">
-                    <span className="inline-flex items-center gap-1.5 px-4 py-1.5 text-xs font-medium tracking-wider uppercase bg-foreground text-primary-foreground rounded-sm">
-                      <Crown size={12} /> Mais Popular
-                    </span>
-                  </div>
-                )}
-                <div className="mb-6 mt-2">
-                  <span className="text-xs font-medium px-3 py-1.5 rounded-sm bg-muted text-muted-foreground">{plan.tag}</span>
-                </div>
-                <div className="mb-6">
-                  <p className="text-sm text-muted-foreground">{plan.name}</p>
-                  <h3 className="font-display text-3xl text-foreground">{plan.subtitle}</h3>
-                </div>
-                <div className="space-y-3 mb-6">
-                  {plan.options.map((option) => (
-                    <div key={option.service} className="flex items-center justify-between py-3 border-b border-border last:border-0">
-                      <span className="text-muted-foreground text-sm">{option.service}</span>
-                      <span className="font-display text-lg text-foreground">{option.price}<span className="text-xs font-sans text-muted-foreground">/mês</span></span>
-                    </div>
-                  ))}
-                </div>
-                <div className="flex items-center gap-2 mb-6 text-xs text-muted-foreground">
-                  <Calendar size={14} /> {plan.availability}
-                </div>
-                <ParticleButton onClick={handleSubscribe} className={`w-full justify-center ${plan.featured ? "btn-primary" : "btn-outline"} py-4`} variant={plan.featured ? "default" : "outline"}>Assinar</ParticleButton>
-              </div>
-            ))}
+          <div className="opacity-0 animate-fade-up delay-200">
+            <PricingCards onSubscribe={handleSubscribe} />
           </div>
         </div>
       </section>
