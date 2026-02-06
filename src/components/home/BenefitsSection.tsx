@@ -1,4 +1,4 @@
-import galleryInterior from "@/assets/gallery-interior.jpg";
+
 
 const steps = [
   { title: "Agendamento", description: "Reserve pelo app ou site em segundos. Escolha seu barbeiro, horário e serviço preferido." },
@@ -25,9 +25,6 @@ const BenefitsSection = () => {
               <strong className="text-foreground">4.9 no Google</strong> reflete o compromisso
               com cada detalhe — do atendimento ao acabamento final.
             </p>
-            <div className="rounded-lg overflow-hidden aspect-[16/9] opacity-0 animate-fade-up delay-200">
-              <img src={galleryInterior} alt="Interior da barbearia" className="w-full h-full object-cover" />
-            </div>
           </div>
 
           <div className="opacity-0 animate-fade-up delay-200">
