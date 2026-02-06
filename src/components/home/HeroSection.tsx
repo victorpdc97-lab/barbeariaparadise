@@ -65,22 +65,6 @@ const HeroSection = () => {
             masculinos e barba, com profissionais especializados.
           </p>
 
-          <div className="flex flex-wrap items-center gap-4 opacity-0 animate-fade-up delay-300">
-            <ParticleButton
-              href={bookingLink}
-              target="_blank"
-              className="btn-primary px-10 py-4 text-base"
-            >
-              Agendar Horário
-            </ParticleButton>
-            <ParticleButton
-              onClick={() => window.location.href = "/servicos"}
-              className="btn-outline border-white/30 text-white hover:border-white/60 px-8 py-4 text-base"
-              variant="outline"
-            >
-              Ver Serviços
-            </ParticleButton>
-          </div>
         </div>
       </div>
     </section>
