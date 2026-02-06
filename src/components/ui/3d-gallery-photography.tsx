@@ -345,7 +345,7 @@ function GalleryScene({
         const worldZ = plane.z - depthRange / 2;
         const img = texture.image as HTMLImageElement | undefined;
         const aspect = img ? img.width / img.height : 1;
-        const scale: [number, number, number] = aspect > 1 ? [5 * aspect, 5, 1] : [5, 5 / aspect, 1];
+        const scale: [number, number, number] = aspect > 1 ? [10 * aspect, 10, 1] : [10, 10 / aspect, 1];
 
         return (
           <ImagePlane
