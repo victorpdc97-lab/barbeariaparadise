@@ -2,6 +2,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import { Clock } from "lucide-react";
+import { ParticleButton } from "@/components/ui/particle-button";
 
 const categories = [
   { title: "Mãos & Pés", services: [
@@ -77,7 +78,7 @@ const EsteticsistaPage = () => {
           <div className="container-narrow text-center">
             <h2 className="font-display text-3xl md:text-4xl text-primary-foreground mb-4">Pronto para relaxar?</h2>
             <p className="text-primary-foreground/60 text-sm max-w-md mx-auto mb-8">Agende seu horário e venha viver a experiência Paradise.</p>
-            <a href={bookingLink} target="_blank" rel="noopener noreferrer" className="btn-primary">Agendar Horário</a>
+            <ParticleButton href={bookingLink} target="_blank" className="btn-primary">Agendar Horário</ParticleButton>
           </div>
         </section>
       </main>

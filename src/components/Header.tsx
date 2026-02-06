@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import logoParadise from "@/assets/logo-paradise-barber.png";
+import { ParticleButton } from "@/components/ui/particle-button";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -85,14 +86,13 @@ const Header = () => {
 
             {/* CTA Button */}
             <div className="flex items-center gap-4">
-              <a
+              <ParticleButton
                 href={bookingLink}
                 target="_blank"
-                rel="noopener noreferrer"
                 className="hidden lg:flex btn-primary text-sm px-8 py-3"
               >
                 Agendar Horário
-              </a>
+              </ParticleButton>
 
               {/* Mobile Menu Button */}
               <button
@@ -149,10 +149,9 @@ const Header = () => {
           
           <div className="gold-line-long my-6 opacity-50" />
           
-          <a
+          <ParticleButton
             href={bookingLink}
             target="_blank"
-            rel="noopener noreferrer"
             className={`btn-primary mt-2 px-12 py-4 text-base transition-all duration-300 ${
               isMenuOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
             }`}
@@ -161,7 +160,7 @@ const Header = () => {
             }}
           >
             Agendar Horário
-          </a>
+          </ParticleButton>
         </nav>
       </div>
     </>

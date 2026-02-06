@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { ParticleButton } from "@/components/ui/particle-button";
 import serviceHaircut from "@/assets/service-haircut.jpg";
 import serviceBeard from "@/assets/service-beard.jpg";
 import serviceCombo from "@/assets/service-combo.jpg";
@@ -37,7 +38,7 @@ const ServicesSection = () => {
         </div>
 
         <div className="text-center mt-10 opacity-0 animate-fade-up delay-400">
-          <Link to="/servicos" className="btn-outline">Ver Todos os Serviços</Link>
+          <ParticleButton href="/servicos" className="btn-outline" variant="outline">Ver Todos os Serviços</ParticleButton>
         </div>
       </div>
     </section>
