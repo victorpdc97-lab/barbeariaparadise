@@ -1,12 +1,12 @@
 
 
-## Alinhar cards da equipe
+## Descer imagem do modelo na página Clube
 
-Remover o deslocamento vertical (staggered/offset) dos cards da seção "Nossa Equipe", fazendo com que todos fiquem alinhados na mesma linha.
+Ajustar a posição vertical da imagem do modelo (blusa xadrez com tesoura) na seção hero da página Clube, movendo-a um pouco para baixo.
 
-### Alteracao
+### Alteração
 
-**Arquivo: `src/components/home/TeamSection.tsx`**
-- Remover a classe condicional `sm:mt-8` que é aplicada nos cards de índice ímpar (linha 27), eliminando o efeito de escalonamento vertical
-- Todos os 4 cards ficarão alinhados no topo do grid
+**Arquivo: `src/pages/Clube.tsx` (linha 68)**
+- Adicionar a classe `mt-8 lg:mt-12` ao elemento `<img>` ou ao seu container `<div>` para empurrar a imagem para baixo
+- Alternativamente, usar `object-position` ou `translate-y` para um ajuste mais sutil
 
