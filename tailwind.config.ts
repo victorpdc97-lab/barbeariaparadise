@@ -14,8 +14,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ["Inter", "system-ui", "-apple-system", "sans-serif"],
-        display: ["Bebas Neue", "system-ui", "sans-serif"],
+        sans: ["DM Sans", "system-ui", "-apple-system", "sans-serif"],
+        display: ["Cormorant Garamond", "Georgia", "serif"],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -61,17 +61,11 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
-        teal: {
-          DEFAULT: "hsl(var(--teal-primary))",
-          dark: "hsl(var(--teal-dark))",
-          support: "hsl(var(--teal-support))",
+        gold: {
+          DEFAULT: "hsl(var(--gold))",
+          light: "hsl(var(--gold-light))",
+          dark: "hsl(var(--gold-dark))",
         },
-        green: {
-          DEFAULT: "hsl(var(--green-secondary))",
-          support: "hsl(var(--green-support))",
-        },
-        mint: "hsl(var(--mint))",
-        beige: "hsl(var(--beige-highlight))",
       },
       borderRadius: {
         lg: "var(--radius)",

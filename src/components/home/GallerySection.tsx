@@ -1,3 +1,5 @@
+import { useState } from "react";
+import { X } from "lucide-react";
 import galleryBarbearia from "@/assets/gallery-barbearia.jpg";
 import galleryBar from "@/assets/gallery-bar.jpg";
 import galleryBanheiro from "@/assets/gallery-banheiro.jpg";
@@ -15,39 +17,59 @@ const galleryImages = [
 ];
 
 const GallerySection = () => {
+  const [lightbox, setLightbox] = useState<number | null>(null);
+
   return (
-    <section className="section-clean bg-gradient-soft">
+    <section className="section-clean bg-background">
       <div className="container-clean">
-        {/* Header */}
-        <div className="text-center mb-16">
-          <span className="eyebrow mb-4 block opacity-0 animate-fade-up">Galeria</span>
-          <h2 className="headline-section text-foreground opacity-0 animate-fade-up delay-100">
-            NOSSO AMBIENTE
+        {/* Header — left aligned */}
+        <div className="mb-12 opacity-0 animate-fade-up">
+          <div className="gold-line mb-5" />
+          <h2 className="headline-section text-foreground">
+            Nosso<br />
+            <span className="italic">ambiente</span>
           </h2>
         </div>
 
-        {/* Gallery Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 auto-rows-[200px] md:auto-rows-[250px]">
+        {/* Masonry-style Grid */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 auto-rows-[180px] md:auto-rows-[220px]">
           {galleryImages.map((image, index) => (
             <div
               key={index}
-              className={`overflow-hidden rounded-2xl group cursor-pointer opacity-0 animate-fade-up shadow-sm hover:shadow-lg transition-shadow ${image.span}`}
-              style={{ animationDelay: `${(index + 2) * 0.08}s` }}
+              className={`overflow-hidden rounded-lg group cursor-pointer opacity-0 animate-fade-up ${image.span}`}
+              style={{ animationDelay: `${(index + 2) * 0.06}s` }}
+              onClick={() => setLightbox(index)}
             >
               <img
                 src={image.src}
                 alt={image.alt}
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
               />
             </div>
           ))}
         </div>
-
-        {/* Quote */}
-        <p className="text-center text-muted-foreground mt-12 opacity-0 animate-fade-up delay-400">
-          Um espaço pensado para sua experiência ser única
-        </p>
       </div>
+
+      {/* Lightbox */}
+      {lightbox !== null && (
+        <div
+          className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4 animate-fade-in"
+          onClick={() => setLightbox(null)}
+        >
+          <button
+            onClick={() => setLightbox(null)}
+            className="absolute top-6 right-6 text-white/70 hover:text-white transition-colors"
+          >
+            <X size={28} />
+          </button>
+          <img
+            src={galleryImages[lightbox].src}
+            alt={galleryImages[lightbox].alt}
+            className="max-w-full max-h-[85vh] object-contain rounded-lg"
+            onClick={(e) => e.stopPropagation()}
+          />
+        </div>
+      )}
     </section>
   );
 };
