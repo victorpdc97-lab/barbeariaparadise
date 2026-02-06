@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import { Instagram, MessageCircle, MapPin, Clock, Phone } from "lucide-react";
+import { MapPin, Clock, Phone } from "lucide-react";
+import { FlipLink } from "@/components/ui/reveal-links";
 
 const Footer = () => {
   const navigation = [
@@ -22,13 +23,9 @@ const Footer = () => {
             <p className="text-primary-foreground/60 text-sm leading-relaxed mb-6">
               Tradição encontra estilo moderno. Uma experiência única em cortes masculinos e barba em Belo Horizonte.
             </p>
-            <div className="flex gap-3">
-              <a href="https://www.instagram.com/barbeariaparadise/" target="_blank" rel="noopener noreferrer" className="w-11 h-11 rounded-sm bg-primary-foreground/10 flex items-center justify-center text-primary-foreground/70 hover:bg-primary-foreground hover:text-foreground transition-all duration-300">
-                <Instagram size={20} />
-              </a>
-              <a href="https://wa.me/553186595481" target="_blank" rel="noopener noreferrer" className="w-11 h-11 rounded-sm bg-primary-foreground/10 flex items-center justify-center text-primary-foreground/70 hover:bg-primary-foreground hover:text-foreground transition-all duration-300">
-                <MessageCircle size={20} />
-              </a>
+            <div className="flex flex-col gap-1 text-sm text-primary-foreground/70">
+              <FlipLink href="https://www.instagram.com/barbeariaparadise/">Instagram</FlipLink>
+              <FlipLink href="https://wa.me/553186595481">WhatsApp</FlipLink>
             </div>
           </div>
 
