@@ -67,7 +67,7 @@ const LocationSection = () => {
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
               title="Localização da Barbearia Paradise"
-              className="min-h-[350px] lg:min-h-[450px]"
+              className="min-h-[350px] lg:min-h-[450px] grayscale"
             />
           </div>
         </div>
