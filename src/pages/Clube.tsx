@@ -64,7 +64,7 @@ const Clube = () => {
                 Assinar Agora
               </ParticleButton>
             </div>
-            <div className="relative flex justify-center lg:justify-end opacity-0 animate-fade-up delay-200">
+            <div className="relative flex justify-center lg:justify-end mt-8 lg:mt-12 opacity-0 animate-fade-up delay-200">
               <img src={clubeHeroModel} alt="Modelo Paradise Barber" className="max-h-[480px] lg:max-h-[600px] w-auto object-contain drop-shadow-2xl" />
             </div>
           </div>
