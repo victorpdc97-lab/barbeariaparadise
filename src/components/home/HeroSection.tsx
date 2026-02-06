@@ -1,20 +1,59 @@
-import { Link } from "react-router-dom";
+import { lazy, Suspense } from "react";
 import heroImage from "@/assets/barbearia-3.jpg";
 import { AnimatedText } from "@/components/ui/animated-underline-text-one";
 import { ParticleButton } from "@/components/ui/particle-button";
+
+import galleryBarbearia from "@/assets/gallery-barbearia.jpg";
+import galleryBar from "@/assets/gallery-bar.jpg";
+import galleryBanheiro from "@/assets/gallery-banheiro.jpg";
+import galleryLoja from "@/assets/gallery-loja.jpg";
+import galleryOutlet from "@/assets/gallery-outlet.jpg";
+import galleryLogoMadeira from "@/assets/gallery-logo-madeira.jpg";
+import barbearia3 from "@/assets/barbearia-3.jpg";
+import barbershopInterior from "@/assets/barbershop-interior.jpg";
+import barberAtWork from "@/assets/barber-at-work.jpg";
+import heroBarbershop from "@/assets/hero-barbershop.jpg";
+
+const InfiniteGallery = lazy(() => import("@/components/ui/3d-gallery-photography"));
+
+const galleryImages = [
+  galleryBarbearia,
+  galleryBar,
+  galleryBanheiro,
+  galleryLoja,
+  galleryOutlet,
+  galleryLogoMadeira,
+  barbearia3,
+  barbershopInterior,
+  barberAtWork,
+  heroBarbershop,
+];
 
 const HeroSection = () => {
   const bookingLink = "https://agendamentos.bestbarbers.app/barbershop/paradise";
 
   return (
     <section className="relative min-h-screen flex items-end overflow-hidden">
-      {/* Background Image */}
-      <img
-        src={heroImage}
-        alt="Interior da Paradise Barber"
-        className="absolute inset-0 w-full h-full object-cover"
-      />
-      
+      {/* 3D Gallery Background */}
+      <Suspense
+        fallback={
+          <img
+            src={heroImage}
+            alt="Interior da Paradise Barber"
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+        }
+      >
+        <div className="absolute inset-0">
+          <InfiniteGallery
+            images={galleryImages}
+            className="w-full h-full"
+            speed={0.8}
+            visibleCount={10}
+          />
+        </div>
+      </Suspense>
+
       {/* Gradient Overlay */}
       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/10" />
 
