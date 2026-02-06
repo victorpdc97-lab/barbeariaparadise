@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import heroImage from "@/assets/barbearia-3.jpg";
 import { AnimatedText } from "@/components/ui/animated-underline-text-one";
+import { ParticleButton } from "@/components/ui/particle-button";
 
 const HeroSection = () => {
   const bookingLink = "https://agendamentos.bestbarbers.app/barbershop/paradise";
@@ -38,20 +39,20 @@ const HeroSection = () => {
           </p>
 
           <div className="flex flex-wrap items-center gap-4 opacity-0 animate-fade-up delay-300">
-            <a
+            <ParticleButton
               href={bookingLink}
               target="_blank"
-              rel="noopener noreferrer"
               className="btn-primary px-10 py-4 text-base"
             >
               Agendar Horário
-            </a>
-            <Link
-              to="/servicos"
+            </ParticleButton>
+            <ParticleButton
+              onClick={() => window.location.href = "/servicos"}
               className="btn-outline border-white/30 text-white hover:border-white/60 px-8 py-4 text-base"
+              variant="outline"
             >
               Ver Serviços
-            </Link>
+            </ParticleButton>
           </div>
         </div>
       </div>

@@ -1,6 +1,7 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import { ParticleButton } from "@/components/ui/particle-button";
 
 import diaNoivo1 from "@/assets/dia-noivo-1.png";
 import diaNoivo2 from "@/assets/dia-noivo-2.png";
@@ -53,14 +54,13 @@ const DiaDoNoivo = () => {
             
             {/* WhatsApp CTA */}
             <div className="mt-8 text-center">
-              <a
+              <ParticleButton
                 href={whatsappLink}
                 target="_blank"
-                rel="noopener noreferrer"
                 className="btn-primary inline-flex items-center gap-2"
               >
                 Fale conosco pelo WhatsApp
-              </a>
+              </ParticleButton>
             </div>
           </div>
         </section>

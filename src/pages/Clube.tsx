@@ -7,6 +7,7 @@ import { Check, Crown, Calendar, Sparkles, Percent, X, Smartphone } from "lucide
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import clubeHeroModel from "@/assets/clube-hero-model.png";
 import { detectOS, APP_STORE_URL, PLAY_STORE_URL } from "@/lib/detectOS";
+import { ParticleButton } from "@/components/ui/particle-button";
 
 const Clube = () => {
   const [showDownloadModal, setShowDownloadModal] = useState(false);
@@ -58,9 +59,9 @@ const Clube = () => {
               <p className="text-base text-primary-foreground/60 max-w-lg mb-10 opacity-0 animate-fade-up delay-200 leading-relaxed">
                 Com o Clube Paradise, você paga um valor fixo por mês e corta o cabelo e/ou barba quantas vezes quiser. Sem limites.
               </p>
-              <button onClick={handleSubscribe} className="inline-flex items-center justify-center px-10 py-4 rounded-sm font-medium text-base transition-all bg-primary-foreground text-foreground hover:bg-primary-foreground/90 opacity-0 animate-fade-up delay-300">
+              <ParticleButton onClick={handleSubscribe} className="inline-flex items-center justify-center px-10 py-4 rounded-sm font-medium text-base transition-all bg-primary-foreground text-foreground hover:bg-primary-foreground/90 opacity-0 animate-fade-up delay-300">
                 Assinar Agora
-              </button>
+              </ParticleButton>
             </div>
             <div className="relative flex justify-center lg:justify-end opacity-0 animate-fade-up delay-200">
               <img src={clubeHeroModel} alt="Modelo Paradise Barber" className="max-h-[480px] lg:max-h-[600px] w-auto object-contain drop-shadow-2xl" />
@@ -103,7 +104,7 @@ const Clube = () => {
                 <div className="flex items-center gap-2 mb-6 text-xs text-muted-foreground">
                   <Calendar size={14} /> {plan.availability}
                 </div>
-                <button onClick={handleSubscribe} className={`w-full justify-center ${plan.featured ? "btn-primary" : "btn-outline"} py-4`}>Assinar</button>
+                <ParticleButton onClick={handleSubscribe} className={`w-full justify-center ${plan.featured ? "btn-primary" : "btn-outline"} py-4`} variant={plan.featured ? "default" : "outline"}>Assinar</ParticleButton>
               </div>
             ))}
           </div>

@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { MapPin, Clock, Phone, Instagram, Send } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { ParticleButton } from "@/components/ui/particle-button";
 
 const ContatoPage = () => {
   const { toast } = useToast();
@@ -57,13 +58,13 @@ const ContatoPage = () => {
                     <label htmlFor="message" className="block text-xs font-medium text-muted-foreground mb-2 tracking-wide uppercase">Mensagem</label>
                     <Textarea id="message" name="message" placeholder="Como podemos ajudar?" value={formData.message} onChange={handleChange} rows={4} className="border-border bg-transparent resize-none focus:border-foreground transition-colors" />
                   </div>
-                  <button type="submit" disabled={isSubmitting} className="btn-primary w-full justify-center gap-2">
+                  <ParticleButton type="submit" disabled={isSubmitting} className="btn-primary w-full justify-center gap-2">
                     {isSubmitting ? "Enviando..." : <><Send size={16} /> Enviar Mensagem</>}
-                  </button>
+                  </ParticleButton>
                 </form>
                 <div className="mt-8 p-5 border border-border rounded-lg">
                   <p className="text-sm text-muted-foreground mb-4">Prefere agendar diretamente?</p>
-                  <a href={bookingLink} target="_blank" rel="noopener noreferrer" className="btn-outline w-full justify-center text-sm">Agendar Horário</a>
+                  <ParticleButton href={bookingLink} target="_blank" className="btn-outline w-full justify-center text-sm" variant="outline">Agendar Horário</ParticleButton>
                 </div>
               </div>
 
