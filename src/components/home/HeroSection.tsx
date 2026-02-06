@@ -3,30 +3,18 @@ import heroImage from "@/assets/barbearia-3.jpg";
 import { AnimatedText } from "@/components/ui/animated-underline-text-one";
 import { ParticleButton } from "@/components/ui/particle-button";
 
-import galleryBarbearia from "@/assets/gallery-barbearia.jpg";
-import galleryBar from "@/assets/gallery-bar.jpg";
-import galleryBanheiro from "@/assets/gallery-banheiro.jpg";
-import galleryLoja from "@/assets/gallery-loja.jpg";
-import galleryOutlet from "@/assets/gallery-outlet.jpg";
-import galleryLogoMadeira from "@/assets/gallery-logo-madeira.jpg";
-import barbearia3 from "@/assets/barbearia-3.jpg";
-import barbershopInterior from "@/assets/barbershop-interior.jpg";
-import barberAtWork from "@/assets/barber-at-work.jpg";
-import heroBarbershop from "@/assets/hero-barbershop.jpg";
+import serviceHaircut from "@/assets/service-haircut.jpg";
+import serviceBeard from "@/assets/service-beard.jpg";
+import serviceCombo from "@/assets/service-combo.jpg";
+import manicurePedicure from "@/assets/manicure-pedicure.png";
 
 const InfiniteGallery = lazy(() => import("@/components/ui/3d-gallery-photography"));
 
 const galleryImages = [
-  galleryBarbearia,
-  galleryBar,
-  galleryBanheiro,
-  galleryLoja,
-  galleryOutlet,
-  galleryLogoMadeira,
-  barbearia3,
-  barbershopInterior,
-  barberAtWork,
-  heroBarbershop,
+  serviceHaircut,
+  serviceBeard,
+  serviceCombo,
+  manicurePedicure,
 ];
 
 const HeroSection = () => {
@@ -49,7 +37,7 @@ const HeroSection = () => {
             images={galleryImages}
             className="w-full h-full"
             speed={0.8}
-            visibleCount={10}
+            visibleCount={6}
           />
         </div>
       </Suspense>
