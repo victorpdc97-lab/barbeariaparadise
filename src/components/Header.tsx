@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import logoParadise from "@/assets/logo-paradise-barber.png";
 import { ParticleButton } from "@/components/ui/particle-button";
+import { MenuVertical } from "@/components/ui/menu-vertical";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -126,41 +127,22 @@ const Header = () => {
           isMenuOpen ? "opacity-100 visible" : "opacity-0 invisible"
         }`}
       >
-        <nav className="flex flex-col items-center justify-center h-full gap-1 px-8">
-          {navLinks.map((link, index) => (
-            <Link
-              key={link.path}
-              to={link.path}
-              onClick={() => setIsMenuOpen(false)}
-              className={`w-full max-w-xs py-4 text-center font-display text-2xl tracking-wide transition-all duration-300 ${
-                isMenuOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-              } ${
-                isActive(link.path)
-                  ? "text-foreground"
-                  : "text-muted-foreground"
-              }`}
-              style={{
-                transitionDelay: isMenuOpen ? `${index * 60}ms` : "0ms",
-              }}
+        <nav className="flex flex-col justify-center h-full px-8 pt-24">
+          <MenuVertical
+            menuItems={navLinks.map(l => ({ label: l.name, href: l.path }))}
+            skew={-3}
+            onItemClick={() => setIsMenuOpen(false)}
+          />
+          
+          <div className="mt-8">
+            <ParticleButton
+              href={bookingLink}
+              target="_blank"
+              className="btn-primary px-12 py-4 text-base"
             >
-              {link.name}
-            </Link>
-          ))}
-          
-          <div className="gold-line-long my-6 opacity-50" />
-          
-          <ParticleButton
-            href={bookingLink}
-            target="_blank"
-            className={`btn-primary mt-2 px-12 py-4 text-base transition-all duration-300 ${
-              isMenuOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-            }`}
-            style={{
-              transitionDelay: isMenuOpen ? `${navLinks.length * 60}ms` : "0ms",
-            }}
-          >
-            Agendar Horário
-          </ParticleButton>
+              Agendar Horário
+            </ParticleButton>
+          </div>
         </nav>
       </div>
     </>
