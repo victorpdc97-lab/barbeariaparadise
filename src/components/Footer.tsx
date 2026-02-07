@@ -20,9 +20,6 @@ const Footer = () => {
             <Link to="/" className="inline-block mb-5">
               <span className="font-display text-3xl text-primary-foreground">Paraíso do Homem Moderno</span>
             </Link>
-            <p className="text-primary-foreground/60 text-sm leading-relaxed mb-6">
-              Tradição encontra estilo moderno. Uma experiência única em cortes masculinos e barba em Belo Horizonte.
-            </p>
             <div className="flex flex-col gap-1 text-sm text-primary-foreground/70">
               <FlipLink href="https://www.instagram.com/barbeariaparadise/">Instagram</FlipLink>
               <FlipLink href="https://wa.me/553186595481">WhatsApp</FlipLink>
