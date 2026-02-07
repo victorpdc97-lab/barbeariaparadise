@@ -1,5 +1,6 @@
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { Smartphone } from "lucide-react";
+import { AppStoreButton, GooglePlayButton } from "@/components/ui/app-store-button";
 
 interface DownloadAppModalProps {
   open: boolean;
@@ -26,11 +27,11 @@ const DownloadAppModal = ({ open, onOpenChange }: DownloadAppModalProps) => {
         </DialogHeader>
 
         <div className="flex flex-col gap-4 mt-6 items-center">
-          <a href={appStoreUrl} target="_blank" rel="noopener noreferrer" className="transition-all duration-300 hover:scale-105 hover:shadow-2xl">
-            <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/pt-br?size=250x83&releaseDate=1280620800" alt="Download na App Store" className="h-[54px] w-auto" />
+          <a href={appStoreUrl} target="_blank" rel="noopener noreferrer">
+            <AppStoreButton className="pointer-events-none" tabIndex={-1} />
           </a>
-          <a href={playStoreUrl} target="_blank" rel="noopener noreferrer" className="transition-all duration-300 hover:scale-105 hover:shadow-2xl">
-            <img src="https://play.google.com/intl/en_us/badges/static/images/badges/pt-br_badge_web_generic.png" alt="Disponível no Google Play" className="h-[54px] w-auto" />
+          <a href={playStoreUrl} target="_blank" rel="noopener noreferrer">
+            <GooglePlayButton className="pointer-events-none" tabIndex={-1} />
           </a>
         </div>
       </DialogContent>
