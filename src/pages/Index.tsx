@@ -2,7 +2,6 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import HeroSection from "@/components/home/HeroSection";
-import SpiralAnimation from "@/components/SpiralAnimation";
 import BenefitsSection from "@/components/home/BenefitsSection";
 import ServicesSection from "@/components/home/ServicesSection";
 import TeamSection from "@/components/home/TeamSection";
@@ -16,7 +15,6 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       <Header />
       <main>
-        <SpiralAnimation />
         <HeroSection />
         <BenefitsSection />
         <ServicesSection />

@@ -1,46 +1,16 @@
-import { lazy, Suspense } from "react";
-import heroImage from "@/assets/barbearia-3.jpg";
 import { AnimatedText } from "@/components/ui/animated-underline-text-one";
 import { ParticleButton } from "@/components/ui/particle-button";
-
-import serviceHaircut from "@/assets/service-haircut.jpg";
-import serviceBeard from "@/assets/service-beard.jpg";
-import serviceCombo from "@/assets/service-combo.jpg";
-import manicurePedicure from "@/assets/manicure-pedicure.png";
-
-const InfiniteGallery = lazy(() => import("@/components/ui/3d-gallery-photography"));
-
-const galleryImages = [
-  serviceHaircut,
-  serviceBeard,
-  serviceCombo,
-  manicurePedicure,
-];
+import SpiralAnimation from "@/components/SpiralAnimation";
 
 const HeroSection = () => {
   const bookingLink = "https://agendamentos.bestbarbers.app/barbershop/paradise";
 
   return (
     <section className="relative min-h-screen flex items-end overflow-hidden">
-      {/* 3D Gallery Background */}
-      <Suspense
-        fallback={
-          <img
-            src={heroImage}
-            alt="Interior da Paradise Barber"
-            className="absolute inset-0 w-full h-full object-cover"
-          />
-        }
-      >
-        <div className="absolute inset-0">
-          <InfiniteGallery
-            images={galleryImages}
-            className="w-full h-full"
-            speed={0.8}
-            visibleCount={6}
-          />
-        </div>
-      </Suspense>
+      {/* Spiral Animation Background */}
+      <div className="absolute inset-0">
+        <SpiralAnimation />
+      </div>
 
       {/* Gradient Overlay */}
       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/10" />
