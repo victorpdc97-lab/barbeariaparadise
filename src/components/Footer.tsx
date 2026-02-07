@@ -18,9 +18,7 @@ const Footer = () => {
         <h3 className="font-display text-3xl text-primary-foreground text-center mb-12">Paraíso do Homem Moderno</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           <div>
-            <Link to="/" className="inline-block mb-5">
-              <span className="font-display text-3xl text-primary-foreground">Paraíso do Homem Moderno</span>
-            </Link>
+            <h4 className="font-display text-lg text-primary-foreground mb-5">Redes Sociais</h4>
             <div className="flex flex-col gap-1 text-sm text-primary-foreground/70">
               <FlipLink href="https://www.instagram.com/barbeariaparadise/">Instagram</FlipLink>
               <FlipLink href="https://wa.me/553186595481">WhatsApp</FlipLink>
