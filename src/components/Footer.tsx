@@ -13,7 +13,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-foreground text-primary-foreground">
+    <footer className="bg-[#000000] text-primary-foreground">
       <div className="container-clean py-16">
         <h3 className="font-display text-3xl text-primary-foreground text-center mb-12">Paraíso do Homem Moderno</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
