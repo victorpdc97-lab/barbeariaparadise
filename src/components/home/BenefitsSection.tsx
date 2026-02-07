@@ -19,11 +19,10 @@ const BenefitsSection = () => {
               <span className="italic">cuidando do seu estilo</span>
             </h2>
             <p className="body-text mb-8 leading-loose">
-              Com mais de <strong className="text-foreground">10 anos de experiência</strong> e{" "}
-              <strong className="text-foreground">milhares de clientes atendidos</strong>,
-              a Paradise se tornou referência em Belo Horizonte. Nossa nota de{" "}
+              A Paradise se tornou referência em Belo Horizonte. Com{" "}
+              <strong className="text-foreground">milhares de clientes atendidos</strong> e nota de{" "}
               <strong className="text-foreground">4.9 no Google</strong> reflete o compromisso
-              com cada detalhe — do atendimento ao acabamento final.
+              com cada detalhe do atendimento ao acabamento final.
             </p>
           </div>
 
