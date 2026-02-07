@@ -15,6 +15,7 @@ const Footer = () => {
   return (
     <footer className="bg-foreground text-primary-foreground">
       <div className="container-clean py-16">
+        <h3 className="font-display text-2xl text-primary-foreground text-center mb-12">Paraíso do Homem Moderno</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           <div>
             <Link to="/" className="inline-block mb-5">
