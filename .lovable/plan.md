@@ -1,13 +1,17 @@
 
 
-## Remover texto "Barbearia Paradise" da SpiralAnimation
+## Corrigir visibilidade da logo no header
 
-Remover o overlay com o texto "Barbearia Paradise" que aparece sobre a animação espiral, já que o componente agora é usado apenas como fundo do hero section.
+A logo não aparece porque a classe `brightness-0` no CSS força a imagem a ficar totalmente preta.
 
-### Alteração
+### Alteracao
 
-**Arquivo: `src/components/SpiralAnimation.tsx`**
+**Arquivo: `src/components/Header.tsx` (linha 68)**
 
-- Remover o `div` com classe `absolute inset-0 flex items-center justify-center z-10 pointer-events-none` que contém o `h1` com o texto "Barbearia Paradise"
-- Manter apenas o canvas da animação
+- Remover a classe `brightness-0` do `<img>` da logo
+- Manter as demais classes de tamanho e layout
+
+### Detalhe tecnico
+
+A classe Tailwind `brightness-0` aplica `filter: brightness(0)`, tornando todos os pixels da imagem pretos. Isso era usado com a logo anterior (provavelmente branca, invertida para preta), mas com a nova logo nao faz sentido.
 
