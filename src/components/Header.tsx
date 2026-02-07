@@ -61,7 +61,7 @@ const Header = () => {
               <img
                 src={logoParadise}
                 alt="Paradise Barber"
-                className="h-36 lg:h-44 w-auto object-contain"
+                className="h-44 lg:h-52 w-auto object-contain"
               />
             </Link>
 
