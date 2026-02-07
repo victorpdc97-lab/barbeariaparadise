@@ -44,7 +44,7 @@ const EsteticsistaPage = () => {
           <div className="container-narrow text-center">
             <div className="gold-line mx-auto mb-6" />
             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-semibold text-primary-foreground tracking-tight mb-4">Estética</h1>
-            <p className="text-primary-foreground/60 text-sm max-w-md mx-auto">Cuide de você com nossos serviços de estética, massagem e bem-estar</p>
+            <p className="text-primary-foreground/60 text-sm max-w-none mx-auto whitespace-nowrap">Cuide de você com nossos serviços de estética, massagem e bem-estar</p>
           </div>
         </section>
 
