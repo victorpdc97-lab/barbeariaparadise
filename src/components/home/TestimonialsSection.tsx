@@ -6,6 +6,7 @@ const testimonials = [
   { name: "João Pedro", role: "Membro do Clube", text: "Depois que assinei o Clube, não consigo imaginar ir a outra barbearia. O custo-benefício é absurdo e a qualidade do corte se mantém consistente toda vez.", rating: 5, source: "Google Reviews" },
   { name: "André Costa", role: "Membro do Clube", text: "O Jonathan é um artista. Expliquei o que eu queria uma vez e desde então ele já sabe exatamente o que fazer. Fora o café e a sinuca, que fazem da espera um prazer.", rating: 5, source: "Google Reviews" },
   { name: "Dr. Luís Reis", role: "Cliente", text: "Excelente atendimento na barbearia! Cada detalhe faz a diferença: do cuidado com os clientes ao atendimento personalizado, tudo impecável. Quero parabenizar toda a equipe incrível: Jonathan, Tariki, Lucas e Kelvin vocês transformam cada visita em uma experiência VIP, do corte ao momento de barbearia. Vale muito a pena conhecer e se sentir cuidado com tanto profissionalismo e dedicação!", rating: 5, source: "Google Reviews" },
+  { name: "Gustavo Couto", role: "Membro do Clube", text: "Definitivamente é a melhor barbearia de BH e região. Tenho o plano de assinatura \"Premium\" e é sensacional, atendimento impecável, sempre corto o cabelo e faço barba com o Jonathan, o cara é fera, o melhor. Recomendo a todos.", rating: 5, source: "Google Reviews" },
 ];
 
 const TestimonialsSection = () => {
