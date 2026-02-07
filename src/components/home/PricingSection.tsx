@@ -16,7 +16,7 @@ const PricingSection = () => {
       <div className="container-clean relative z-10">
         <div className="max-w-2xl mx-auto">
           <div className="text-center mb-10 opacity-0 animate-fade-up">
-            <p className="eyebrow mb-4">Tabela de Preços</p>
+            
             <h2 className="headline-section text-foreground">Valores</h2>
           </div>
 
