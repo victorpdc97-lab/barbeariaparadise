@@ -30,7 +30,7 @@ const Clube = () => {
     { icon: Sparkles, text: "Economia garantida todos os meses" },
     { icon: Calendar, text: "Agenda flexível conforme sua rotina" },
     { icon: X, text: "Sem burocracia ou taxas escondidas" },
-    { icon: Check, text: "Cancele quando quiser" },
+    
     { icon: Percent, text: "10% de desconto em produtos" },
   ];
 
