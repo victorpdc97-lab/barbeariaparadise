@@ -17,7 +17,7 @@ const PricingSection = () => {
         <div className="max-w-2xl mx-auto">
           <div className="text-center mb-10 opacity-0 animate-fade-up">
             <p className="eyebrow mb-4">Tabela de Preços</p>
-            <h2 className="headline-section text-foreground">Valores transparentes</h2>
+            <h2 className="headline-section text-foreground">Valores</h2>
           </div>
 
           <div className="card-clean bg-card opacity-0 animate-fade-up delay-100">
