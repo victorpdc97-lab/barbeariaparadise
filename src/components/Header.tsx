@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
-import logoParadise from "@/assets/logo-paradise-barber.png";
+import logoParadise from "@/assets/logo-paradise-barber-new.png";
 import { ParticleButton } from "@/components/ui/particle-button";
 import { MenuVertical } from "@/components/ui/menu-vertical";
 
