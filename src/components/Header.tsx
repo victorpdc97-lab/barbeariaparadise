@@ -55,7 +55,7 @@ const Header = () => {
         }`}
       >
         <div className="container-clean">
-          <div className="flex items-center justify-between h-16 lg:h-20">
+          <div className="flex items-center justify-between h-24 lg:h-28">
             {/* Logo */}
             <Link to="/" className="flex items-center z-50">
               <img
@@ -71,10 +71,10 @@ const Header = () => {
                 <Link
                   key={link.path}
                   to={link.path}
-                  className={`text-sm font-medium tracking-wide transition-colors duration-300 ${
+                  className={`text-base font-medium tracking-wide transition-colors duration-300 ${
                     isActive(link.path)
-                      ? "text-foreground"
-                      : "text-muted-foreground hover:text-foreground"
+                      ? "text-foreground font-semibold"
+                      : "text-foreground/70 hover:text-foreground"
                   }`}
                 >
                   {link.name}
@@ -127,7 +127,7 @@ const Header = () => {
           isMenuOpen ? "opacity-100 visible" : "opacity-0 invisible"
         }`}
       >
-        <nav className="flex flex-col justify-center h-full px-8 pt-24">
+        <nav className="flex flex-col justify-center h-full px-8 pt-32">
           <MenuVertical
             menuItems={navLinks.map(l => ({ label: l.name, href: l.path }))}
             skew={-3}
