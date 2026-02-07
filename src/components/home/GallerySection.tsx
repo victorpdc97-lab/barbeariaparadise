@@ -11,7 +11,7 @@ const galleryImages = [
   { src: galleryBarbearia, alt: "Área de corte", span: "col-span-2 row-span-2" },
   { src: galleryBar, alt: "Bar e sinuca", span: "" },
   { src: galleryBanheiro, alt: "Banheiro", span: "" },
-  { src: galleryLoja, alt: "Loja de roupas", span: "" },
+  { src: galleryLoja, alt: "Loja de roupas", span: "col-span-2 row-span-2" },
   { src: galleryOutlet, alt: "Outlet", span: "" },
   { src: galleryLogoMadeira, alt: "Logo Paradise na madeira", span: "" },
 ];
