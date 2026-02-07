@@ -2,7 +2,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import { Clock } from "lucide-react";
-import { ParticleButton } from "@/components/ui/particle-button";
+import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
 
 const categories = [
   {
@@ -102,7 +102,7 @@ const ServicosPage = () => {
           <div className="container-narrow text-center">
             <h2 className="font-display text-3xl md:text-4xl text-primary-foreground mb-4">Pronto para transformar seu visual?</h2>
             <p className="text-primary-foreground/60 text-sm max-w-md mx-auto mb-8">Agende seu horário e venha viver a experiência Paradise.</p>
-            <ParticleButton href={bookingLink} target="_blank" className="btn-primary">Agendar Horário</ParticleButton>
+            <InteractiveHoverButton href={bookingLink} target="_blank" text="Agendar Horário" className="w-56 border-white/20 bg-white/5 text-primary-foreground" />
           </div>
         </section>
       </main>

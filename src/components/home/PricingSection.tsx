@@ -1,3 +1,5 @@
+import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
+
 const PricingSection = () => {
   const bookingLink = "https://agendamentos.bestbarbers.app/barbershop/paradise";
   const services = [
@@ -30,8 +32,8 @@ const PricingSection = () => {
             ))}
           </div>
 
-          <div className="text-center mt-8 opacity-0 animate-fade-up delay-300">
-            <a href={bookingLink} target="_blank" rel="noopener noreferrer" className="btn-primary">Agendar Agora</a>
+          <div className="text-center mt-8 opacity-0 animate-fade-up delay-300 flex justify-center">
+            <InteractiveHoverButton href={bookingLink} target="_blank" text="Agendar Agora" className="w-56" />
           </div>
         </div>
       </div>

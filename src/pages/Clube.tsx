@@ -61,9 +61,9 @@ const Clube = () => {
               <p className="text-base text-primary-foreground/60 max-w-lg mb-10 opacity-0 animate-fade-up delay-200 leading-relaxed">
                 Com o Clube Paradise, você paga um valor fixo por mês e corta o cabelo e/ou barba quantas vezes quiser. Sem limites.
               </p>
-              <ParticleButton onClick={handleSubscribe} className="inline-flex items-center justify-center px-10 py-4 rounded-sm font-medium text-base transition-all bg-primary-foreground text-foreground hover:bg-primary-foreground/90 opacity-0 animate-fade-up delay-300">
-                Assinar Agora
-              </ParticleButton>
+              <div className="opacity-0 animate-fade-up delay-300">
+                <InteractiveHoverButton onClick={handleSubscribe} text="Assinar Agora" className="w-56 border-foreground/20 bg-primary-foreground text-foreground" />
+              </div>
             </div>
             <div className="relative flex justify-center lg:justify-end mt-16 lg:mt-24 opacity-0 animate-fade-up delay-200">
               <div className="absolute inset-0 scale-125 bg-[radial-gradient(ellipse_at_center,_rgba(255,255,255,0.08)_0%,_transparent_70%)] pointer-events-none" />

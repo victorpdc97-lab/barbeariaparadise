@@ -1,4 +1,5 @@
-import { MapPin, Clock, Calendar } from "lucide-react";
+import { MapPin, Clock } from "lucide-react";
+import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
 
 const LocationSection = () => {
   const bookingLink = "https://agendamentos.bestbarbers.app/barbershop/paradise";
@@ -45,15 +46,9 @@ const LocationSection = () => {
               </div>
             </div>
 
-            <a
-              href={bookingLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-primary w-fit opacity-0 animate-fade-up delay-200"
-            >
-              <Calendar size={16} className="mr-2" />
-              Agendar Agora
-            </a>
+            <div className="opacity-0 animate-fade-up delay-200">
+              <InteractiveHoverButton href={bookingLink} target="_blank" text="Agendar Agora" className="w-56" />
+            </div>
           </div>
 
           {/* Right — Map */}

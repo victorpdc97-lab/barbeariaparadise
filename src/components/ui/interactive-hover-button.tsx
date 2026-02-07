@@ -5,15 +5,30 @@ import { cn } from "@/lib/utils";
 interface InteractiveHoverButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   text?: string;
+  href?: string;
+  target?: string;
+  rel?: string;
 }
 
 const InteractiveHoverButton = React.forwardRef<
   HTMLButtonElement,
   InteractiveHoverButtonProps
->(({ text = "Button", className, ...props }, ref) => {
+>(({ text = "Button", className, href, target, rel, onClick, ...props }, ref) => {
+  const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+    if (href) {
+      if (target === "_blank") {
+        window.open(href, "_blank", "noopener,noreferrer");
+      } else {
+        window.location.href = href;
+      }
+    }
+    onClick?.(e);
+  };
+
   return (
     <button
       ref={ref}
+      onClick={handleClick}
       className={cn(
         "group relative w-52 cursor-pointer overflow-hidden rounded-full border bg-background p-2 text-center font-semibold",
         className,
