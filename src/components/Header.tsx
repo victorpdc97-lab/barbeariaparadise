@@ -50,8 +50,8 @@ const Header = () => {
       <header
         className={`nav-clean ${
           isScrolled
-            ? "bg-black/90 backdrop-blur-xl shadow-[0_1px_0_rgba(255,255,255,0.1)]"
-            : "bg-black/70 backdrop-blur-sm"
+            ? "bg-[#000000] backdrop-blur-xl shadow-[0_1px_0_rgba(255,255,255,0.1)]"
+            : "bg-[#000000]"
         }`}
       >
         <div className="container-clean">
