@@ -9,6 +9,7 @@ import PricingCards from "@/components/ui/pricing-component";
 import clubeHeroModel from "@/assets/clube-hero-model.png";
 import { detectOS, APP_STORE_URL, PLAY_STORE_URL } from "@/lib/detectOS";
 import { ParticleButton } from "@/components/ui/particle-button";
+import { AppStoreButton, GooglePlayButton } from "@/components/ui/app-store-button";
 
 const Clube = () => {
   const [showDownloadModal, setShowDownloadModal] = useState(false);
@@ -141,11 +142,11 @@ const Clube = () => {
             <h2 className="font-display text-3xl md:text-4xl text-primary-foreground mb-4 opacity-0 animate-fade-up delay-100">Assine pelo app</h2>
             <p className="text-primary-foreground/60 text-sm mb-8 opacity-0 animate-fade-up delay-200">Faça sua assinatura e gerencie seu plano diretamente pelo aplicativo</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center opacity-0 animate-fade-up delay-300">
-              <a href={APP_STORE_URL} target="_blank" rel="noopener noreferrer" className="transition-all duration-300 hover:scale-105 hover:shadow-2xl">
-                <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/pt-br?size=250x83&releaseDate=1280620800" alt="Download na App Store" className="h-[54px] w-auto" />
+              <a href={APP_STORE_URL} target="_blank" rel="noopener noreferrer">
+                <AppStoreButton className="pointer-events-none" tabIndex={-1} />
               </a>
-              <a href={PLAY_STORE_URL} target="_blank" rel="noopener noreferrer" className="transition-all duration-300 hover:scale-105 hover:shadow-2xl">
-                <img src="https://play.google.com/intl/en_us/badges/static/images/badges/pt-br_badge_web_generic.png" alt="Disponível no Google Play" className="h-[54px] w-auto" />
+              <a href={PLAY_STORE_URL} target="_blank" rel="noopener noreferrer">
+                <GooglePlayButton className="pointer-events-none" tabIndex={-1} />
               </a>
             </div>
           </div>
