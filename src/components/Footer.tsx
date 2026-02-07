@@ -18,7 +18,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           <div>
             <Link to="/" className="inline-block mb-5">
-              <span className="font-display text-3xl text-primary-foreground">Paradise</span>
+              <span className="font-display text-3xl text-primary-foreground">Paraíso do Homem Moderno</span>
             </Link>
             <p className="text-primary-foreground/60 text-sm leading-relaxed mb-6">
               Tradição encontra estilo moderno. Uma experiência única em cortes masculinos e barba em Belo Horizonte.
