@@ -141,12 +141,12 @@ const Clube = () => {
             </div>
             <h2 className="font-display text-3xl md:text-4xl text-primary-foreground mb-4 opacity-0 animate-fade-up delay-100">Assine pelo app</h2>
             <p className="text-primary-foreground/60 text-sm mb-8 opacity-0 animate-fade-up delay-200">Faça sua assinatura e gerencie seu plano diretamente pelo aplicativo</p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center opacity-0 animate-fade-up delay-300">
-              <a href={APP_STORE_URL} target="_blank" rel="noopener noreferrer">
-                <AppStoreButton className="pointer-events-none" tabIndex={-1} />
+            <div className="flex flex-col gap-4 justify-center items-center opacity-0 animate-fade-up delay-300 w-full max-w-xs mx-auto">
+              <a href={APP_STORE_URL} target="_blank" rel="noopener noreferrer" className="w-full">
+                <AppStoreButton className="pointer-events-none w-full" tabIndex={-1} />
               </a>
-              <a href={PLAY_STORE_URL} target="_blank" rel="noopener noreferrer">
-                <GooglePlayButton className="pointer-events-none" tabIndex={-1} />
+              <a href={PLAY_STORE_URL} target="_blank" rel="noopener noreferrer" className="w-full">
+                <GooglePlayButton className="pointer-events-none w-full" tabIndex={-1} />
               </a>
             </div>
           </div>
