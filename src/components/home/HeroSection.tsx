@@ -16,7 +16,7 @@ const HeroSection = () => {
       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/10" />
 
       {/* Content — bottom-left aligned */}
-      <div className="relative z-10 container-clean pb-20 pt-40 md:pb-28">
+      <div className="relative z-10 container-clean pb-20 pt-40 md:pb-28 mb-[20vh]">
         <div className="max-w-2xl">
           <div className="gold-line mb-6 opacity-0 animate-fade-up" />
           
