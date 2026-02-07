@@ -14,13 +14,12 @@ const ContatoPage = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const bookingLink = "https://agendamentos.bestbarbers.app/barbershop/paradise";
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitting(true);
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-    toast({ title: "Mensagem enviada!", description: "Entraremos em contato em breve." });
-    setFormData({ name: "", phone: "", message: "" });
-    setIsSubmitting(false);
+    const { name, phone, message } = formData;
+    const text = `Olá! Meu nome é ${name}.${phone ? ` Telefone: ${phone}.` : ""}${message ? ` ${message}` : ""}`;
+    const whatsappUrl = `https://wa.me/5531986595481?text=${encodeURIComponent(text)}`;
+    window.open(whatsappUrl, "_blank");
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
