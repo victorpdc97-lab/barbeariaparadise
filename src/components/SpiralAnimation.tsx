@@ -361,13 +361,6 @@ export function SpiralAnimation() {
   return (
     <div className="relative w-full h-screen overflow-hidden bg-black">
       <canvas ref={canvasRef} className="absolute inset-0 w-full h-full" />
-      
-      {/* Overlay text */}
-      <div className="absolute inset-0 flex items-center justify-center z-10 pointer-events-none">
-        <h1 className="font-display text-4xl md:text-6xl lg:text-8xl font-bold text-white tracking-[0.2em] uppercase text-center drop-shadow-[0_0_40px_rgba(255,255,255,0.3)]">
-          Barbearia Paradise
-        </h1>
-      </div>
     </div>
   )
 }
