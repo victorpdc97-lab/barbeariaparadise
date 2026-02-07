@@ -73,8 +73,8 @@ const Header = () => {
                   to={link.path}
                   className={`text-base font-medium tracking-wide transition-colors duration-300 ${
                     isActive(link.path)
-                      ? "text-foreground font-semibold"
-                      : "text-foreground/70 hover:text-foreground"
+                      ? "text-white font-semibold"
+                      : "text-white/80 hover:text-white"
                   }`}
                 >
                   {link.name}
