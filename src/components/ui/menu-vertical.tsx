@@ -57,7 +57,7 @@ export const MenuVertical = ({
               hover: { x: 20, skewX: skew },
             }}
             transition={{ duration: 0.3, ease: "easeOut" }}
-            className="font-display text-3xl md:text-4xl text-foreground"
+            className="font-display text-4xl md:text-5xl text-white"
           >
             {item.label}
           </motion.span>
