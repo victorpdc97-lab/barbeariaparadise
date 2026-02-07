@@ -97,7 +97,7 @@ const Header = () => {
 
               {/* Mobile Menu Button */}
               <button
-                className="lg:hidden relative z-50 text-foreground p-2"
+                className="lg:hidden relative z-50 text-white p-2"
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
                 aria-label="Toggle menu"
               >
@@ -123,7 +123,7 @@ const Header = () => {
 
       {/* Mobile Navigation Overlay */}
       <div
-        className={`fixed inset-0 bg-background/98 backdrop-blur-lg z-40 lg:hidden transition-all duration-500 ${
+        className={`fixed inset-0 bg-black/95 backdrop-blur-lg z-40 lg:hidden transition-all duration-500 ${
           isMenuOpen ? "opacity-100 visible" : "opacity-0 invisible"
         }`}
       >
