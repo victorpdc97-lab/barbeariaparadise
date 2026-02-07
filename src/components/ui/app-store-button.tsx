@@ -20,7 +20,7 @@ export function AppStoreButton({
       <AppleIcon className="size-8 fill-current" />
       <div className="flex flex-col items-start">
         <span className="text-[10px] font-normal leading-tight tracking-normal normal-case">
-          Download on the
+          Disponível na
         </span>
         <span className="text-lg font-semibold leading-tight tracking-normal normal-case">
           App Store
@@ -46,7 +46,7 @@ export function GooglePlayButton({
       <GooglePlayIcon className="size-7" />
       <div className="flex flex-col items-start">
         <span className="text-[10px] font-normal leading-tight tracking-normal normal-case">
-          GET IT ON
+          Disponível no
         </span>
         <span className="text-lg font-semibold leading-tight tracking-normal normal-case">
           Google Play
