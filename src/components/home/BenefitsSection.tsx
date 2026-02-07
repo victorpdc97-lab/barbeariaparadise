@@ -21,7 +21,7 @@ const BenefitsSection = () => {
             <p className="body-text mb-8 leading-loose">
               A Paradise se tornou referência em Belo Horizonte. Com{" "}
               <strong className="text-foreground">milhares de clientes atendidos</strong> e nota de{" "}
-              <strong className="text-foreground">4.9 no Google</strong> reflete o compromisso
+              <strong className="text-foreground">4.9 no Google</strong> que reflete o compromisso
               com cada detalhe do atendimento ao acabamento final.
             </p>
           </div>
