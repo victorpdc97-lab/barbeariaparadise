@@ -1,21 +1,28 @@
 
-## Alterar badges da seção "Assine pelo app" para o estilo do modal
+## Melhorar a legibilidade dos menus no Header
 
-A imagem de referência mostra os badges em português, com texto "Disponivel na / App Store" e "Disponivel no / Google Play", em formato de botoes largos (full-width) com cantos arredondados.
+### Problemas identificados
+1. **Logo muito grande**: A logo tem `h-44`/`h-52` mas o header tem apenas `h-16`/`h-20`, fazendo ela transbordar e sobrepor os textos do menu
+2. **Textos pequenos e com pouco contraste**: Os links do desktop usam `text-sm` e cor `text-muted-foreground` (cinza claro), dificultando a leitura
+3. **Menu mobile**: Os textos do MenuVertical podem estar sendo parcialmente cobertos pela logo grande
 
-### Alteracoes
+### Solucao proposta
 
-**1. Atualizar textos do componente `app-store-button.tsx`**
-- `AppStoreButton`: trocar "Download on the" para "Disponivel na"
-- `GooglePlayButton`: trocar "GET IT ON" para "Disponivel no"
+**1. Ajustar a altura do header para acomodar a logo**
+- Aumentar a altura do header de `h-16 lg:h-20` para `h-24 lg:h-28`, dando mais espaco para a logo sem que ela sobreponha o conteudo
 
-**2. Atualizar estilo dos badges na secao "Assine pelo app" em `Clube.tsx`**
-- Alterar layout de `flex-col sm:flex-row` para `flex-col` empilhado
-- Adicionar `w-full max-w-xs` nos links/botoes para ficarem largos como na referencia
-- Adicionar classe `w-full` nos botoes para ocuparem toda a largura disponivel
+**2. Melhorar legibilidade dos links desktop**
+- Aumentar o tamanho do texto dos links de `text-sm` para `text-base`
+- Usar `text-foreground/80` ao inves de `text-muted-foreground` para melhor contraste
+- Aumentar o `font-medium` para `font-semibold` nos links ativos
+
+**3. Garantir que o menu mobile nao seja coberto**
+- Aumentar o `pt-24` do overlay mobile para `pt-32` para compensar o header maior
 
 ### Detalhes tecnicos
 
-- Arquivo: `src/components/ui/app-store-button.tsx` - linhas 22-23 e 48-49 (textos)
-- Arquivo: `src/pages/Clube.tsx` - linhas 144-151 (secao "Assine pelo app")
-- Os botoes do modal (`DownloadAppModal.tsx`) tambem serao atualizados automaticamente pois usam os mesmos componentes
+Arquivo alterado: `src/components/Header.tsx`
+
+- Linha 58: `h-16 lg:h-20` -> `h-24 lg:h-28`
+- Linha 74: `text-sm` -> `text-base`, `text-muted-foreground` -> `text-foreground/70`
+- Linha 130: `pt-24` -> `pt-32`
