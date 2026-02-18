@@ -17,7 +17,7 @@ const TeamSection = () => {
           <h2 className="headline-section text-foreground">Quem cuida de você</h2>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-3 gap-5">
           {team.map((member, index) => (
             <div key={member.name} className="group opacity-0 animate-fade-up" style={{ animationDelay: `${(index + 2) * 0.1}s` }}>
               <div className="aspect-[3/4] overflow-hidden rounded-lg mb-4 relative">
