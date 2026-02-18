@@ -1,11 +1,9 @@
 import teamJonathan from "@/assets/team-jonathan.png";
-import teamKelwin from "@/assets/team-kelwin.png";
 import teamLucas from "@/assets/team-lucas.jpg";
 import teamTariki from "@/assets/team-tariki.jpg";
 
 const team = [
   { name: "Jonathan", role: "Barbeiro", specialty: "Cortes Modernos", description: "Apaixonado por degradês e linhas precisas. Sempre atualizado com as tendências internacionais.", image: teamJonathan, instagram: "https://www.instagram.com/barbeariaparadise/" },
-  { name: "Kelwin", role: "Barbeiro", specialty: "Degradê & Barba", description: "Perfeccionista nos detalhes. Seus degradês são reconhecidos como referência na cidade.", image: teamKelwin, instagram: "https://www.instagram.com/barbeariaparadise/" },
   { name: "Lucas", role: "Barbeiro", specialty: "Cortes Clássicos", description: "O cara dos cortes atemporais. Combina a técnica tradicional com o toque moderno que o cliente quer.", image: teamLucas, instagram: "https://www.instagram.com/barbeariaparadise/" },
   { name: "Tariki", role: "Barbeiro", specialty: "Especialista em Barba", description: "Mestre na navalha e no ritual da barba. Cada cliente sai com o rosto impecável e relaxado.", image: teamTariki, instagram: "https://www.instagram.com/barbeariaparadise/" },
 ];
