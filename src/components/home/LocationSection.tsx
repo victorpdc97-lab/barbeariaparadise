@@ -1,6 +1,7 @@
 import { MapPin, Clock } from "lucide-react";
 import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
 import { useDownloadApp } from "@/contexts/DownloadAppContext";
+import { ADDRESS, HOURS, GOOGLE_MAPS_EMBED_URL } from "@/lib/constants";
 
 const LocationSection = () => {
   const { openDownloadModal } = useDownloadApp();
@@ -27,8 +28,8 @@ const LocationSection = () => {
                 <div>
                   <h4 className="text-sm font-medium text-foreground mb-1">Endereço</h4>
                   <p className="text-sm text-muted-foreground">
-                    Rua Juiz de Fora, 1374<br />
-                    Santo Agostinho, Belo Horizonte - MG
+                    {ADDRESS.street}<br />
+                    {ADDRESS.neighborhood}, {ADDRESS.city} - {ADDRESS.state}
                   </p>
                 </div>
               </div>
@@ -40,8 +41,8 @@ const LocationSection = () => {
                 <div>
                   <h4 className="text-sm font-medium text-foreground mb-1">Horário</h4>
                   <p className="text-sm text-muted-foreground">
-                    Seg-Sex: 09h – 20h<br />
-                    Sábado: 09h – 15h
+                    {HOURS.weekdays}<br />
+                    {HOURS.saturday}
                   </p>
                 </div>
               </div>
@@ -55,7 +56,7 @@ const LocationSection = () => {
           {/* Right — Map */}
           <div className="lg:col-span-3 rounded-lg overflow-hidden opacity-0 animate-fade-up delay-200 min-h-[350px] lg:min-h-[450px]">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3750.2099387897287!2d-43.93919108449647!3d-19.91719434350752!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xa699e3f04d9b81%3A0x99a54a0919a0c7e8!2sR.%20Juiz%20de%20Fora%2C%201374%20-%20Santo%20Agostinho%2C%20Belo%20Horizonte%20-%20MG!5e0!3m2!1spt-BR!2sbr!4v1699999999999!5m2!1spt-BR!2sbr"
+              src={GOOGLE_MAPS_EMBED_URL}
               width="100%"
               height="100%"
               style={{ border: 0 }}

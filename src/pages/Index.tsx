@@ -1,3 +1,4 @@
+import usePageMeta from "@/hooks/usePageMeta";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
@@ -11,6 +12,8 @@ import TestimonialsSection from "@/components/home/TestimonialsSection";
 import LocationSection from "@/components/home/LocationSection";
 
 const Index = () => {
+  usePageMeta({ title: "Barbearia Paradise | Barbearia Premium em Belo Horizonte", description: "Experiência premium em cortes masculinos, barba e cuidados pessoais em Belo Horizonte. Profissionais especializados no bairro Santo Agostinho." });
+
   return (
     <div className="min-h-screen bg-background">
       <Header />

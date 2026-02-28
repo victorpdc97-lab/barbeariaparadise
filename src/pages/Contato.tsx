@@ -1,30 +1,48 @@
 import { useState } from "react";
+import usePageMeta from "@/hooks/usePageMeta";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { MapPin, Clock, Phone, Instagram, Send } from "lucide-react";
+import { MapPin, Clock, Phone, Instagram } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
 import { useDownloadApp } from "@/contexts/DownloadAppContext";
+import { WHATSAPP_NUMBER, PHONE_NUMBER, PHONE_DISPLAY, INSTAGRAM_URL, INSTAGRAM_HANDLE, ADDRESS, HOURS, GOOGLE_MAPS_EMBED_URL } from "@/lib/constants";
 
 const ContatoPage = () => {
+  usePageMeta({ title: "Contato e Localização | Barbearia Paradise", description: "Entre em contato com a Barbearia Paradise. Endereço, horários, telefone e formulário de contato." });
   const { toast } = useToast();
   const [formData, setFormData] = useState({ name: "", phone: "", message: "" });
-  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errors, setErrors] = useState<Record<string, string>>({});
   const { openDownloadModal } = useDownloadApp();
+
+  const validate = () => {
+    const newErrors: Record<string, string> = {};
+    if (formData.name.trim().length < 2) newErrors.name = "Nome deve ter pelo menos 2 caracteres";
+    if (!/^\(?\d{2}\)?\s?\d{4,5}-?\d{4}$/.test(formData.phone.trim())) newErrors.phone = "Telefone inválido. Ex: (31) 99999-9999";
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    if (!validate()) {
+      toast({ title: "Verifique os campos", description: "Corrija os erros antes de enviar.", variant: "destructive" });
+      return;
+    }
     const { name, phone, message } = formData;
     const text = `Olá! Meu nome é ${name}.${phone ? ` Telefone: ${phone}.` : ""}${message ? ` ${message}` : ""}`;
-    const whatsappUrl = `https://wa.me/5531986595481?text=${encodeURIComponent(text)}`;
+    const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
+    toast({ title: "Abrindo WhatsApp...", description: "Sua mensagem será preenchida automaticamente." });
     window.open(whatsappUrl, "_blank");
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+    if (errors[name]) setErrors((prev) => ({ ...prev, [name]: "" }));
   };
 
   return (
@@ -45,20 +63,22 @@ const ContatoPage = () => {
               <div>
                 <div className="gold-line mb-5" />
                 <h2 className="font-display text-2xl md:text-3xl text-foreground mb-8">Envie uma mensagem</h2>
-                <form onSubmit={handleSubmit} className="space-y-5">
+                <form onSubmit={handleSubmit} className="space-y-5" noValidate>
                   <div>
                     <label htmlFor="name" className="block text-xs font-medium text-muted-foreground mb-2 tracking-wide uppercase">Nome</label>
-                    <Input id="name" name="name" type="text" placeholder="Seu nome completo" value={formData.name} onChange={handleChange} required className="border-border bg-transparent focus:border-foreground transition-colors" />
+                    <Input id="name" name="name" type="text" placeholder="Seu nome completo" value={formData.name} onChange={handleChange} required aria-invalid={!!errors.name} className={`border-border bg-transparent focus:border-foreground transition-colors ${errors.name ? "border-red-500" : ""}`} />
+                    {errors.name && <p className="text-red-500 text-xs mt-1">{errors.name}</p>}
                   </div>
                   <div>
                     <label htmlFor="phone" className="block text-xs font-medium text-muted-foreground mb-2 tracking-wide uppercase">Telefone</label>
-                    <Input id="phone" name="phone" type="tel" placeholder="(00) 00000-0000" value={formData.phone} onChange={handleChange} required className="border-border bg-transparent focus:border-foreground transition-colors" />
+                    <Input id="phone" name="phone" type="tel" placeholder="(00) 00000-0000" value={formData.phone} onChange={handleChange} required aria-invalid={!!errors.phone} className={`border-border bg-transparent focus:border-foreground transition-colors ${errors.phone ? "border-red-500" : ""}`} />
+                    {errors.phone && <p className="text-red-500 text-xs mt-1">{errors.phone}</p>}
                   </div>
                   <div>
                     <label htmlFor="message" className="block text-xs font-medium text-muted-foreground mb-2 tracking-wide uppercase">Mensagem</label>
                     <Textarea id="message" name="message" placeholder="Como podemos ajudar?" value={formData.message} onChange={handleChange} rows={4} className="border-border bg-transparent resize-none focus:border-foreground transition-colors" />
                   </div>
-                  <InteractiveHoverButton type="submit" disabled={isSubmitting} text={isSubmitting ? "Enviando..." : "Enviar Mensagem"} className="w-full" />
+                  <InteractiveHoverButton type="submit" text="Enviar Mensagem" className="w-full" />
                 </form>
                 <div className="mt-8 p-5 border border-border rounded-lg">
                   <p className="text-sm text-muted-foreground mb-4">Prefere agendar diretamente?</p>
@@ -70,10 +90,10 @@ const ContatoPage = () => {
                 <div className="gold-line mb-5" />
                 <h2 className="font-display text-2xl md:text-3xl text-foreground mb-8">Informações</h2>
                 {[
-                  { icon: MapPin, title: "Endereço", content: <p className="text-sm text-muted-foreground">Rua Juiz de Fora, 1374<br />Santo Agostinho, Belo Horizonte - MG<br />CEP 30180-061</p> },
-                  { icon: Clock, title: "Horários", content: <p className="text-sm text-muted-foreground">Segunda a Sexta: 09h - 20h<br />Sábado: 09h - 15h<br />Domingo: Fechado</p> },
-                  { icon: Phone, title: "Telefone", content: <a href="tel:+553186595481" className="text-sm text-muted-foreground hover:text-foreground transition-colors">(31) 98659-5481</a> },
-                  { icon: Instagram, title: "Instagram", content: <a href="https://www.instagram.com/barbeariaparadise/" target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground hover:text-foreground transition-colors">@barbeariaparadise</a> },
+                  { icon: MapPin, title: "Endereço", content: <p className="text-sm text-muted-foreground">{ADDRESS.street}<br />{ADDRESS.neighborhood}, {ADDRESS.city} - {ADDRESS.state}<br />CEP {ADDRESS.zip}</p> },
+                  { icon: Clock, title: "Horários", content: <p className="text-sm text-muted-foreground">{HOURS.weekdays}<br />{HOURS.saturday}<br />{HOURS.sunday}</p> },
+                  { icon: Phone, title: "Telefone", content: <a href={`tel:+${PHONE_NUMBER}`} className="text-sm text-muted-foreground hover:text-foreground transition-colors">{PHONE_DISPLAY}</a> },
+                  { icon: Instagram, title: "Instagram", content: <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground hover:text-foreground transition-colors">{INSTAGRAM_HANDLE}</a> },
                 ].map((item) => (
                   <div key={item.title} className="flex gap-4">
                     <div className="icon-container flex-shrink-0"><item.icon size={18} /></div>
@@ -84,7 +104,7 @@ const ContatoPage = () => {
                   </div>
                 ))}
                 <div className="overflow-hidden h-[250px] rounded-lg mt-6 grayscale">
-                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3750.2099387897287!2d-43.93919108449647!3d-19.91719434350752!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xa699e3f04d9b81%3A0x99a54a0919a0c7e8!2sR.%20Juiz%20de%20Fora%2C%201374%20-%20Santo%20Agostinho%2C%20Belo%20Horizonte%20-%20MG!5e0!3m2!1spt-BR!2sbr!4v1699999999999!5m2!1spt-BR!2sbr" width="100%" height="100%" style={{ border: 0 }} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade" title="Localização Barbearia Paradise" />
+                  <iframe src={GOOGLE_MAPS_EMBED_URL} width="100%" height="100%" style={{ border: 0 }} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade" title="Localização Barbearia Paradise" />
                 </div>
               </div>
             </div>

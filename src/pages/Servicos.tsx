@@ -1,3 +1,4 @@
+import usePageMeta from "@/hooks/usePageMeta";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
@@ -54,6 +55,7 @@ const categories = [
 ];
 
 const ServicosPage = () => {
+  usePageMeta({ title: "Serviços e Preços | Barbearia Paradise", description: "Confira nossos serviços de corte, barba, tratamentos, coloração e mais. Preços atualizados." });
   const { openDownloadModal } = useDownloadApp();
 
   return (

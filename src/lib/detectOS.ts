@@ -16,5 +16,4 @@ export const detectOS = (): OperatingSystem => {
   return 'desktop';
 };
 
-export const APP_STORE_URL = "https://apps.apple.com/br/app/barbearia-paradise/id6756071953";
-export const PLAY_STORE_URL = "https://play.google.com/store/apps/details?id=barbeariaparadise.bestbarbers.app";
+export { APP_STORE_URL, PLAY_STORE_URL } from "./constants";

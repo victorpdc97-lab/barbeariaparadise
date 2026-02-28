@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { MapPin, Clock, Phone } from "lucide-react";
 import { FlipLink } from "@/components/ui/reveal-links";
+import { WHATSAPP_URL, INSTAGRAM_URL, PHONE_NUMBER, PHONE_DISPLAY, ADDRESS, HOURS } from "@/lib/constants";
 
 const Footer = () => {
   const navigation = [
@@ -20,8 +21,8 @@ const Footer = () => {
           <div>
             <h4 className="font-display text-lg text-primary-foreground mb-5">Redes Sociais</h4>
             <div className="flex flex-col gap-1 text-sm text-primary-foreground/70">
-              <FlipLink href="https://www.instagram.com/barbeariaparadise/">Instagram</FlipLink>
-              <FlipLink href="https://wa.me/553186595481">WhatsApp</FlipLink>
+              <FlipLink href={INSTAGRAM_URL}>Instagram</FlipLink>
+              <FlipLink href={WHATSAPP_URL}>WhatsApp</FlipLink>
             </div>
           </div>
 
@@ -44,9 +45,9 @@ const Footer = () => {
               <div className="flex items-start gap-2.5">
                 <Clock size={14} className="mt-0.5 flex-shrink-0 text-primary-foreground/40" />
                 <div>
-                  <p>Seg - Sex: 09h às 20h</p>
-                  <p>Sábado: 09h às 15h</p>
-                  <p>Domingo: Fechado</p>
+                  <p>{HOURS.weekdays}</p>
+                  <p>{HOURS.saturday}</p>
+                  <p>{HOURS.sunday}</p>
                 </div>
               </div>
             </div>
@@ -57,11 +58,11 @@ const Footer = () => {
             <div className="space-y-3 text-sm text-primary-foreground/60">
               <div className="flex items-start gap-2.5">
                 <MapPin size={14} className="mt-0.5 flex-shrink-0 text-primary-foreground/40" />
-                <p>Rua Juiz de Fora, 1374<br />Santo Agostinho<br />Belo Horizonte - MG</p>
+                <p>{ADDRESS.street}<br />{ADDRESS.neighborhood}<br />{ADDRESS.city} - {ADDRESS.state}</p>
               </div>
               <div className="flex items-start gap-2.5">
                 <Phone size={14} className="mt-0.5 flex-shrink-0 text-primary-foreground/40" />
-                <a href="tel:+553186595481" className="hover:text-primary-foreground transition-colors">(31) 98659-5481</a>
+                <a href={`tel:+${PHONE_NUMBER}`} className="hover:text-primary-foreground transition-colors">{PHONE_DISPLAY}</a>
               </div>
             </div>
           </div>

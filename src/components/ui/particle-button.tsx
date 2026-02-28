@@ -85,7 +85,7 @@ function ParticleButton({
         ref={buttonRef}
         onClick={handleClick}
         className={cn(
-          "relative",
+          "relative focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-foreground",
           showParticles && "scale-95",
           "transition-transform duration-100",
           className

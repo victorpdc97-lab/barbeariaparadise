@@ -26,7 +26,7 @@ const ServicesSection = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4 auto-rows-[220px] md:auto-rows-[240px]">
           {services.map((service, index) => (
             <div key={service.title} className={`group relative overflow-hidden rounded-lg cursor-pointer opacity-0 animate-fade-up ${service.span}`} style={{ animationDelay: `${(index + 2) * 0.08}s` }}>
-              <img src={service.image} alt={service.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+              <img src={service.image} alt={service.title} loading="lazy" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent transition-opacity duration-500" />
               <div className="absolute bottom-0 left-0 right-0 p-5 md:p-6">
                 <span className="text-[10px] font-medium tracking-[0.2em] uppercase text-white/50 mb-1.5 block">{service.badge}</span>

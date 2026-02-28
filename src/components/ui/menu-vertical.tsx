@@ -25,7 +25,7 @@ export const MenuVertical = ({
   onItemClick,
 }: MenuVerticalProps) => {
   return (
-    <div className="flex flex-col w-full">
+    <nav className="flex flex-col w-full" role="navigation" aria-label="Menu principal">
       {menuItems.map((item, index) => (
         <MotionLink
           key={index}
@@ -33,7 +33,8 @@ export const MenuVertical = ({
           onClick={onItemClick}
           initial="initial"
           whileHover="hover"
-          className="group relative flex items-center gap-4 border-b border-border py-6 transition-colors"
+          whileFocus="hover"
+          className="group relative flex items-center gap-4 border-b border-border py-6 transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
           style={{
             ["--menu-color" as string]: color,
           }}
@@ -46,6 +47,7 @@ export const MenuVertical = ({
             transition={{ duration: 0.3, ease: "easeOut" }}
           >
             <ArrowRight
+              aria-hidden="true"
               className="h-6 w-6"
               style={{ color: "var(--menu-color)" }}
             />
@@ -63,6 +65,6 @@ export const MenuVertical = ({
           </motion.span>
         </MotionLink>
       ))}
-    </div>
+    </nav>
   );
 };

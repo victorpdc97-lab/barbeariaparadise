@@ -1,3 +1,4 @@
+import usePageMeta from "@/hooks/usePageMeta";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
@@ -11,6 +12,7 @@ import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button
 import { useDownloadApp } from "@/contexts/DownloadAppContext";
 
 const Clube = () => {
+  usePageMeta({ title: "Clube Paradise | Assinatura Ilimitada", description: "Assine o Clube Paradise e corte cabelo e barba quantas vezes quiser por um valor fixo mensal. Planos Premium e Basic." });
   const { openDownloadModal } = useDownloadApp();
 
   const handleSubscribe = () => {

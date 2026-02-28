@@ -1,3 +1,4 @@
+import usePageMeta from "@/hooks/usePageMeta";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
@@ -35,6 +36,7 @@ const categories = [
 ];
 
 const EsteticsistaPage = () => {
+  usePageMeta({ title: "Estética e Bem-estar | Barbearia Paradise", description: "Serviços de manicure, pedicure, massagens, tratamentos faciais e corporais. Cuide de você na Barbearia Paradise." });
   const { openDownloadModal } = useDownloadApp();
 
   return (
