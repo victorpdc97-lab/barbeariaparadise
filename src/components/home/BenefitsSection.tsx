@@ -1,4 +1,4 @@
-
+import useCountUp from "@/hooks/useCountUp";
 
 const steps = [
   { title: "Agendamento", description: "Reserve pelo app ou site em segundos. Escolha seu barbeiro, horário e serviço preferido." },
@@ -7,10 +7,29 @@ const steps = [
   { title: "Finalização", description: "Styling perfeito, dicas personalizadas e um café para fechar a experiência." },
 ];
 
+const CountStat = ({ end, decimals = 0, suffix = "", prefix = "", label }: { end: number; decimals?: number; suffix?: string; prefix?: string; label: string }) => {
+  const { ref, display, started } = useCountUp({ end, decimals, suffix, prefix, duration: 2000 });
+  return (
+    <div className="text-center">
+      <span ref={ref} className={`font-display text-4xl md:text-5xl font-bold text-foreground block transition-opacity duration-500 ${started ? "opacity-100" : "opacity-0"}`}>
+        {display}
+      </span>
+      <span className="text-xs text-muted-foreground tracking-wide uppercase mt-1 block">{label}</span>
+    </div>
+  );
+};
+
 const BenefitsSection = () => {
   return (
     <section className="section-clean bg-background relative grain">
       <div className="container-clean relative z-10">
+        {/* Stats row */}
+        <div className="grid grid-cols-3 gap-8 mb-16 animate-fade-up">
+          <CountStat end={10} suffix="+" label="Anos de experiência" />
+          <CountStat end={4.9} decimals={1} label="Nota no Google" />
+          <CountStat end={5000} suffix="+" label="Clientes atendidos" />
+        </div>
+
         <div className="grid lg:grid-cols-2 gap-16 items-start">
           <div className="animate-fade-up">
             <div className="gold-line mb-5" />
@@ -19,9 +38,7 @@ const BenefitsSection = () => {
               <span className="italic">cuidando do seu estilo</span>
             </h2>
             <p className="body-text mb-8 leading-loose">
-              A Paradise se tornou referência em Belo Horizonte. Com{" "}
-              <strong className="text-foreground">milhares de clientes atendidos</strong> e nota de{" "}
-              <strong className="text-foreground">4.9 no Google</strong> que reflete o compromisso
+              A Paradise se tornou referência em Belo Horizonte. Compromisso
               com cada detalhe do atendimento ao acabamento final.
             </p>
           </div>

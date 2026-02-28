@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { Star, ChevronLeft, ChevronRight } from "lucide-react";
 
 const testimonials = [
@@ -9,16 +9,31 @@ const testimonials = [
   { name: "Gustavo Couto", role: "Membro do Clube", text: "Definitivamente é a melhor barbearia de BH e região. Tenho o plano de assinatura \"Premium\" e é sensacional, atendimento impecável, sempre corto o cabelo e faço barba com o Jonathan, o cara é fera, o melhor. Recomendo a todos.", rating: 5, source: "Google Reviews" },
 ];
 
+const AUTOPLAY_INTERVAL = 6000;
+
 const TestimonialsSection = () => {
   const [current, setCurrent] = useState(0);
-  const next = () => setCurrent((prev) => (prev + 1) % testimonials.length);
+  const [paused, setPaused] = useState(false);
+
+  const next = useCallback(() => setCurrent((prev) => (prev + 1) % testimonials.length), []);
   const prev = () => setCurrent((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+
+  useEffect(() => {
+    if (paused) return;
+    const timer = setInterval(next, AUTOPLAY_INTERVAL);
+    return () => clearInterval(timer);
+  }, [paused, next]);
+
   const t = testimonials[current];
 
   return (
     <section className="section-clean bg-gradient-soft relative grain">
       <div className="container-clean relative z-10">
-        <div className="max-w-3xl mx-auto text-center">
+        <div
+          className="max-w-3xl mx-auto text-center"
+          onMouseEnter={() => setPaused(true)}
+          onMouseLeave={() => setPaused(false)}
+        >
           <div className="mb-10 animate-fade-up">
             <p className="eyebrow mb-4">Depoimentos</p>
             <h2 className="headline-section text-foreground">O que dizem sobre nós</h2>
@@ -40,15 +55,15 @@ const TestimonialsSection = () => {
           </div>
 
           <div className="flex items-center justify-center gap-6">
-            <button onClick={prev} className="w-10 h-10 rounded-full border border-border flex items-center justify-center text-muted-foreground hover:text-foreground hover:border-foreground transition-all">
+            <button onClick={prev} className="w-10 h-10 rounded-full border border-border flex items-center justify-center text-muted-foreground hover:text-foreground hover:border-foreground transition-all" aria-label="Depoimento anterior">
               <ChevronLeft size={18} />
             </button>
             <div className="flex gap-2">
               {testimonials.map((_, i) => (
-                <button key={i} onClick={() => setCurrent(i)} className={`w-2 h-2 rounded-full transition-all duration-300 ${i === current ? "bg-foreground w-6" : "bg-border hover:bg-muted-foreground"}`} />
+                <button key={i} onClick={() => setCurrent(i)} className={`h-2 rounded-full transition-all duration-300 ${i === current ? "bg-foreground w-6" : "bg-border hover:bg-muted-foreground w-2"}`} aria-label={`Depoimento ${i + 1}`} />
               ))}
             </div>
-            <button onClick={next} className="w-10 h-10 rounded-full border border-border flex items-center justify-center text-muted-foreground hover:text-foreground hover:border-foreground transition-all">
+            <button onClick={next} className="w-10 h-10 rounded-full border border-border flex items-center justify-center text-muted-foreground hover:text-foreground hover:border-foreground transition-all" aria-label="Próximo depoimento">
               <ChevronRight size={18} />
             </button>
           </div>
