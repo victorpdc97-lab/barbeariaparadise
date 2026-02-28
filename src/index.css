@@ -324,6 +324,11 @@
   }
 
   .animate-fade-up {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  .animate-fade-up.in-view {
     animation: fadeUp 0.7s ease-out forwards;
   }
 

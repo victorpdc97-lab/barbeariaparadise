@@ -51,18 +51,18 @@ const Clube = () => {
         <div className="relative z-10 container-clean py-16 lg:py-24">
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             <div className="text-left">
-              <div className="gold-line mb-6 opacity-0 animate-fade-up" style={{ background: 'hsl(0 0% 100%)' }} />
-              <h1 className="headline-hero text-primary-foreground mb-6 opacity-0 animate-fade-up delay-100">
+              <div className="gold-line mb-6 animate-fade-up" style={{ background: 'hsl(0 0% 100%)' }} />
+              <h1 className="headline-hero text-primary-foreground mb-6 animate-fade-up delay-100">
                 Já pensou em<br /><span className="italic text-primary-foreground/90">assinar uma barbearia?</span>
               </h1>
-              <p className="text-base text-primary-foreground/60 max-w-lg mb-10 opacity-0 animate-fade-up delay-200 leading-relaxed">
+              <p className="text-base text-primary-foreground/60 max-w-lg mb-10 animate-fade-up delay-200 leading-relaxed">
                 Com o Clube Paradise, você paga um valor fixo por mês e corta o cabelo e/ou barba quantas vezes quiser. Sem limites.
               </p>
-              <div className="opacity-0 animate-fade-up delay-300">
+              <div className="animate-fade-up delay-300">
                 <InteractiveHoverButton onClick={handleSubscribe} text="Assinar Agora" className="w-56 border-foreground/20 bg-primary-foreground text-foreground" />
               </div>
             </div>
-            <div className="relative flex justify-center lg:justify-end mt-16 lg:mt-24 opacity-0 animate-fade-up delay-200">
+            <div className="relative flex justify-center lg:justify-end mt-16 lg:mt-24 animate-fade-up delay-200">
               <div className="absolute inset-0 scale-125 bg-[radial-gradient(ellipse_at_center,_rgba(255,255,255,0.08)_0%,_transparent_70%)] pointer-events-none" />
               <img src={clubeHeroModel} alt="Modelo Paradise Barber" className="relative z-10 max-h-[480px] lg:max-h-[600px] w-auto object-contain drop-shadow-2xl" style={{ maskImage: 'linear-gradient(to bottom, black 60%, transparent 100%)', WebkitMaskImage: 'linear-gradient(to bottom, black 60%, transparent 100%)' }} />
             </div>
@@ -72,11 +72,11 @@ const Clube = () => {
 
       <section className="section-clean bg-background">
         <div className="container-clean">
-          <div className="text-center mb-14 opacity-0 animate-fade-up">
+          <div className="text-center mb-14 animate-fade-up">
             <p className="eyebrow mb-4">Escolha seu plano</p>
             <h2 className="headline-section text-foreground">O plano ideal para você</h2>
           </div>
-          <div className="opacity-0 animate-fade-up delay-200">
+          <div className="animate-fade-up delay-200">
             <PricingCards onSubscribe={handleSubscribe} />
           </div>
         </div>
@@ -85,7 +85,7 @@ const Clube = () => {
       <section className="section-tight bg-gradient-soft relative grain">
         <div className="container-clean relative z-10">
           <div className="grid lg:grid-cols-2 gap-16 items-start">
-            <div className="opacity-0 animate-fade-up">
+            <div className="animate-fade-up">
               <div className="gold-line mb-5" />
               <h2 className="headline-section text-foreground mb-8">Vantagens de<br /><span className="italic">ser membro</span></h2>
               <ul className="space-y-4">
@@ -97,7 +97,7 @@ const Clube = () => {
                 ))}
               </ul>
             </div>
-            <div className="opacity-0 animate-fade-up delay-200">
+            <div className="animate-fade-up delay-200">
               <div className="card-clean p-8">
                 <p className="text-muted-foreground text-sm mb-5 font-medium">Benefícios em +30 mil estabelecimentos parceiros</p>
                 <div className="flex flex-wrap gap-2">
@@ -113,14 +113,14 @@ const Clube = () => {
 
       <section className="section-clean bg-background">
         <div className="container-clean">
-          <div className="text-center mb-14 opacity-0 animate-fade-up">
+          <div className="text-center mb-14 animate-fade-up">
             <p className="eyebrow mb-4">FAQ</p>
             <h2 className="headline-section text-foreground">Perguntas frequentes</h2>
           </div>
           <div className="max-w-2xl mx-auto">
             <Accordion type="single" collapsible className="space-y-3">
               {faqs.map((faq, index) => (
-                <AccordionItem key={index} value={`item-${index}`} className="border border-border rounded-lg px-6 opacity-0 animate-fade-up" style={{ animationDelay: `${(index + 2) * 0.06}s` }}>
+                <AccordionItem key={index} value={`item-${index}`} className="border border-border rounded-lg px-6 animate-fade-up" style={{ animationDelay: `${(index + 2) * 0.06}s` }}>
                   <AccordionTrigger className="text-foreground text-sm font-medium hover:text-muted-foreground hover:no-underline py-4">{faq.question}</AccordionTrigger>
                   <AccordionContent className="text-muted-foreground text-sm pb-4">{faq.answer}</AccordionContent>
                 </AccordionItem>
@@ -133,12 +133,12 @@ const Clube = () => {
       <section className="section-clean bg-foreground">
         <div className="container-clean">
           <div className="max-w-2xl mx-auto text-center">
-            <div className="inline-flex items-center justify-center w-16 h-16 rounded-sm bg-primary-foreground/10 mb-6 opacity-0 animate-fade-up">
+            <div className="inline-flex items-center justify-center w-16 h-16 rounded-sm bg-primary-foreground/10 mb-6 animate-fade-up">
               <Smartphone className="w-8 h-8 text-primary-foreground" />
             </div>
-            <h2 className="font-display text-3xl md:text-4xl text-primary-foreground mb-4 opacity-0 animate-fade-up delay-100">Assine pelo app</h2>
-            <p className="text-primary-foreground/60 text-sm mb-8 opacity-0 animate-fade-up delay-200">Faça sua assinatura e gerencie seu plano diretamente pelo aplicativo</p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center opacity-0 animate-fade-up delay-300">
+            <h2 className="font-display text-3xl md:text-4xl text-primary-foreground mb-4 animate-fade-up delay-100">Assine pelo app</h2>
+            <p className="text-primary-foreground/60 text-sm mb-8 animate-fade-up delay-200">Faça sua assinatura e gerencie seu plano diretamente pelo aplicativo</p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-up delay-300">
               <a href={APP_STORE_URL} target="_blank" rel="noopener noreferrer">
                 <InteractiveHoverButton text="App Store" className="w-56 border-white/20 bg-white/5 text-primary-foreground" />
               </a>

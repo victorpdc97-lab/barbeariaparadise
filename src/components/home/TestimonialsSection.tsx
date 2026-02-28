@@ -19,7 +19,7 @@ const TestimonialsSection = () => {
     <section className="section-clean bg-gradient-soft relative grain">
       <div className="container-clean relative z-10">
         <div className="max-w-3xl mx-auto text-center">
-          <div className="mb-10 opacity-0 animate-fade-up">
+          <div className="mb-10 animate-fade-up">
             <p className="eyebrow mb-4">Depoimentos</p>
             <h2 className="headline-section text-foreground">O que dizem sobre nós</h2>
           </div>

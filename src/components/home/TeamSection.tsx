@@ -12,14 +12,14 @@ const TeamSection = () => {
   return (
     <section className="section-clean bg-background">
       <div className="container-clean">
-        <div className="text-center mb-14 opacity-0 animate-fade-up">
+        <div className="text-center mb-14 animate-fade-up">
           <p className="eyebrow mb-4">Nossa Equipe</p>
           <h2 className="headline-section text-foreground">Quem cuida de você</h2>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-3 gap-5">
           {team.map((member, index) => (
-            <div key={member.name} className="group opacity-0 animate-fade-up" style={{ animationDelay: `${(index + 2) * 0.1}s` }}>
+            <div key={member.name} className="group animate-fade-up" style={{ animationDelay: `${(index + 2) * 0.1}s` }}>
               <div className="aspect-[3/4] overflow-hidden rounded-lg mb-4 relative">
                 <img src={member.image} alt={member.name} loading="lazy" className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105" />
               </div>

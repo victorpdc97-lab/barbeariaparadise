@@ -16,7 +16,7 @@ const ServicesSection = () => {
   return (
     <section className="section-tight bg-gradient-soft relative grain">
       <div className="container-clean relative z-10">
-        <div className="mb-12 opacity-0 animate-fade-up">
+        <div className="mb-12 animate-fade-up">
           <div className="gold-line mb-5" />
           <h2 className="headline-section text-foreground">
             O que nos torna<br /><span className="italic">diferentes</span>
@@ -25,7 +25,7 @@ const ServicesSection = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4 auto-rows-[220px] md:auto-rows-[240px]">
           {services.map((service, index) => (
-            <div key={service.title} className={`group relative overflow-hidden rounded-lg cursor-pointer opacity-0 animate-fade-up ${service.span}`} style={{ animationDelay: `${(index + 2) * 0.08}s` }}>
+            <div key={service.title} className={`group relative overflow-hidden rounded-lg cursor-pointer animate-fade-up ${service.span}`} style={{ animationDelay: `${(index + 2) * 0.08}s` }}>
               <img src={service.image} alt={service.title} loading="lazy" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent transition-opacity duration-500" />
               <div className="absolute bottom-0 left-0 right-0 p-5 md:p-6">
@@ -37,7 +37,7 @@ const ServicesSection = () => {
           ))}
         </div>
 
-        <div className="text-center mt-10 opacity-0 animate-fade-up delay-400 flex justify-center">
+        <div className="text-center mt-10 animate-fade-up delay-400 flex justify-center">
           <InteractiveHoverButton href="/servicos" text="Ver Todos os Serviços" className="w-64" />
         </div>
       </div>

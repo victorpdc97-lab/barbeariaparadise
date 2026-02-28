@@ -6,7 +6,10 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { DownloadAppProvider } from "@/contexts/DownloadAppContext";
 import ErrorBoundary from "./components/ErrorBoundary";
 import ScrollToTop from "./components/ScrollToTop";
+import ScrollAnimator from "./components/ScrollAnimator";
+import ScrollToTopButton from "./components/ScrollToTopButton";
 import PageTransition from "./components/PageTransition";
+import PageSkeleton from "./components/PageSkeleton";
 import Index from "./pages/Index";
 
 const Servicos = lazy(() => import("./pages/Servicos"));
@@ -24,8 +27,10 @@ const App = () => (
       <BrowserRouter>
         <DownloadAppProvider>
           <ScrollToTop />
+          <ScrollAnimator />
+          <ScrollToTopButton />
           <PageTransition />
-          <Suspense fallback={null}>
+          <Suspense fallback={<PageSkeleton />}>
             <Routes>
               <Route path="/" element={<Index />} />
               <Route path="/servicos" element={<Servicos />} />

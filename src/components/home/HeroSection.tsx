@@ -17,9 +17,9 @@ const HeroSection = () => {
       {/* Content — bottom-left aligned */}
       <div className="relative z-10 container-clean pb-20 pt-40 md:pb-28 mb-[20vh]">
         <div className="max-w-2xl">
-          <div className="gold-line mb-6 opacity-0 animate-fade-up" />
+          <div className="gold-line mb-6 animate-fade-up" />
           
-          <h1 className="headline-hero text-white mb-6 opacity-0 animate-fade-up delay-100">
+          <h1 className="headline-hero text-white mb-6 animate-fade-up delay-100">
             Sua melhor<br />
             <AnimatedText
               text="versão"
@@ -29,7 +29,7 @@ const HeroSection = () => {
             />
           </h1>
           
-          <p className="text-base md:text-lg text-white/70 max-w-lg mb-10 opacity-0 animate-fade-up delay-200 leading-relaxed">
+          <p className="text-base md:text-lg text-white/70 max-w-lg mb-10 animate-fade-up delay-200 leading-relaxed">
             Onde tradição e modernidade se encontram. Experiência única em cortes 
             masculinos e barba, com profissionais especializados.
           </p>

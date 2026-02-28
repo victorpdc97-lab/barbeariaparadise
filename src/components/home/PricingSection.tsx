@@ -16,12 +16,12 @@ const PricingSection = () => {
     <section className="section-tight bg-gradient-soft relative grain">
       <div className="container-clean relative z-10">
         <div className="max-w-2xl mx-auto">
-          <div className="text-center mb-10 opacity-0 animate-fade-up">
+          <div className="text-center mb-10 animate-fade-up">
             
             <h2 className="headline-section text-foreground">Valores</h2>
           </div>
 
-          <div className="card-clean bg-card opacity-0 animate-fade-up delay-100">
+          <div className="card-clean bg-card animate-fade-up delay-100">
             {services.map((service, index) => (
               <div key={service.name} className={`flex items-center justify-between px-6 py-5 transition-colors hover:bg-muted/50 ${index !== services.length - 1 ? "border-b border-border" : ""}`}>
                 <div>
@@ -33,7 +33,7 @@ const PricingSection = () => {
             ))}
           </div>
 
-          <div className="text-center mt-8 opacity-0 animate-fade-up delay-300 flex justify-center">
+          <div className="text-center mt-8 animate-fade-up delay-300 flex justify-center">
             <InteractiveHoverButton onClick={openDownloadModal} text="Agendar Agora" className="w-56" />
           </div>
         </div>

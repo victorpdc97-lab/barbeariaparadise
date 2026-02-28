@@ -12,7 +12,7 @@ const BenefitsSection = () => {
     <section className="section-clean bg-background relative grain">
       <div className="container-clean relative z-10">
         <div className="grid lg:grid-cols-2 gap-16 items-start">
-          <div className="opacity-0 animate-fade-up">
+          <div className="animate-fade-up">
             <div className="gold-line mb-5" />
             <h2 className="headline-section text-foreground mb-8">
               Mais de uma década<br />
@@ -26,7 +26,7 @@ const BenefitsSection = () => {
             </p>
           </div>
 
-          <div className="opacity-0 animate-fade-up delay-200">
+          <div className="animate-fade-up delay-200">
             <p className="eyebrow mb-8">Como funciona</p>
             <div className="space-y-0">
               {steps.map((step, index) => (

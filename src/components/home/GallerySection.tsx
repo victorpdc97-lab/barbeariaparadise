@@ -23,7 +23,7 @@ const GallerySection = () => {
     <section className="section-clean bg-background">
       <div className="container-clean">
         {/* Header — left aligned */}
-        <div className="mb-12 opacity-0 animate-fade-up">
+        <div className="mb-12 animate-fade-up">
           <div className="gold-line mb-5" />
           <h2 className="headline-section text-foreground">
             Nosso<br />
@@ -36,7 +36,7 @@ const GallerySection = () => {
           {galleryImages.map((image, index) => (
             <div
               key={index}
-              className={`overflow-hidden rounded-lg group cursor-pointer opacity-0 animate-fade-up ${image.span}`}
+              className={`overflow-hidden rounded-lg group cursor-pointer animate-fade-up ${image.span}`}
               style={{ animationDelay: `${(index + 2) * 0.06}s` }}
               onClick={() => setLightbox(index)}
             >

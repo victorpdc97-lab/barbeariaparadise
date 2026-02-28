@@ -12,7 +12,7 @@ const LocationSection = () => {
         <div className="grid lg:grid-cols-5 gap-6">
           {/* Left — Info card overlapping */}
           <div className="lg:col-span-2 flex flex-col justify-center">
-            <div className="opacity-0 animate-fade-up">
+            <div className="animate-fade-up">
               <div className="gold-line mb-5" />
               <h2 className="headline-section text-foreground mb-8">
                 Venha nos<br />
@@ -20,7 +20,7 @@ const LocationSection = () => {
               </h2>
             </div>
 
-            <div className="space-y-6 mb-8 opacity-0 animate-fade-up delay-100">
+            <div className="space-y-6 mb-8 animate-fade-up delay-100">
               <div className="flex items-start gap-4">
                 <div className="icon-container flex-shrink-0">
                   <MapPin size={18} />
@@ -48,13 +48,13 @@ const LocationSection = () => {
               </div>
             </div>
 
-            <div className="opacity-0 animate-fade-up delay-200">
+            <div className="animate-fade-up delay-200">
               <InteractiveHoverButton onClick={openDownloadModal} text="Agendar Agora" className="w-56" />
             </div>
           </div>
 
           {/* Right — Map */}
-          <div className="lg:col-span-3 rounded-lg overflow-hidden opacity-0 animate-fade-up delay-200 min-h-[350px] lg:min-h-[450px]">
+          <div className="lg:col-span-3 rounded-lg overflow-hidden animate-fade-up delay-200 min-h-[350px] lg:min-h-[450px]">
             <iframe
               src={GOOGLE_MAPS_EMBED_URL}
               width="100%"
