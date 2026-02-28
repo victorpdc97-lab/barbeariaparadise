@@ -1,6 +1,6 @@
-import teamJonathan from "@/assets/team-jonathan.png";
-import teamLucas from "@/assets/team-lucas.jpg";
-import teamTariki from "@/assets/team-tariki.jpg";
+import teamJonathan from "@/assets/team-jonathan.webp";
+import teamLucas from "@/assets/team-lucas.webp";
+import teamTariki from "@/assets/team-tariki.webp";
 
 const team = [
   { name: "Jonathan", role: "Barbeiro", specialty: "Cortes Modernos", description: "Apaixonado por degradês e linhas precisas. Sempre atualizado com as tendências internacionais.", image: teamJonathan, instagram: "https://www.instagram.com/barbeariaparadise/" },

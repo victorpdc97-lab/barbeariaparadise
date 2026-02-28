@@ -1,11 +1,11 @@
 import { useState } from "react";
 import { X } from "lucide-react";
-import galleryBarbearia from "@/assets/gallery-barbearia.jpg";
-import galleryBar from "@/assets/gallery-bar.jpg";
-import galleryBanheiro from "@/assets/gallery-banheiro.jpg";
-import galleryLoja from "@/assets/gallery-loja.jpg";
-import galleryOutlet from "@/assets/gallery-outlet.jpg";
-import galleryLogoMadeira from "@/assets/gallery-logo-madeira.jpg";
+import galleryBarbearia from "@/assets/gallery-barbearia.webp";
+import galleryBar from "@/assets/gallery-bar.webp";
+import galleryBanheiro from "@/assets/gallery-banheiro.webp";
+import galleryLoja from "@/assets/gallery-loja.webp";
+import galleryOutlet from "@/assets/gallery-outlet.webp";
+import galleryLogoMadeira from "@/assets/gallery-logo-madeira.webp";
 
 const galleryImages = [
   { src: galleryBarbearia, alt: "Área de corte", span: "col-span-2 row-span-2" },

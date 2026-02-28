@@ -5,14 +5,14 @@ import WhatsAppButton from "@/components/WhatsAppButton";
 import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
 import { WHATSAPP_URL } from "@/lib/constants";
 
-import diaNoivo1 from "@/assets/dia-noivo-1.png";
-import diaNoivo2 from "@/assets/dia-noivo-2.png";
-import diaNoivo3 from "@/assets/dia-noivo-3.png";
-import diaNoivo4 from "@/assets/dia-noivo-4.png";
-import diaNoivo5 from "@/assets/dia-noivo-5.png";
-import diaNoivo6 from "@/assets/dia-noivo-6.png";
-import diaNoivo7 from "@/assets/dia-noivo-7.png";
-import diaNoivo8 from "@/assets/dia-noivo-8.png";
+import diaNoivo1 from "@/assets/dia-noivo-1.webp";
+import diaNoivo2 from "@/assets/dia-noivo-2.webp";
+import diaNoivo3 from "@/assets/dia-noivo-3.webp";
+import diaNoivo4 from "@/assets/dia-noivo-4.webp";
+import diaNoivo5 from "@/assets/dia-noivo-5.webp";
+import diaNoivo6 from "@/assets/dia-noivo-6.webp";
+import diaNoivo7 from "@/assets/dia-noivo-7.webp";
+import diaNoivo8 from "@/assets/dia-noivo-8.webp";
 
 const DiaDoNoivo = () => {
   usePageMeta({ title: "Dia do Noivo | Barbearia Paradise", description: "Pacote especial Dia do Noivo. Cuide de cada detalhe para o grande dia com a Barbearia Paradise." });

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
-import deltaLogo from "@/assets/delta-logo.png";
+import deltaLogo from "@/assets/delta-logo.webp";
 
 const PageTransition = () => {
   const location = useLocation();

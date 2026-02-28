@@ -5,7 +5,7 @@ import WhatsAppButton from "@/components/WhatsAppButton";
 import { Check, Crown, Calendar, Sparkles, Percent, X, Smartphone } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import PricingCards from "@/components/ui/pricing-component";
-import clubeHeroModel from "@/assets/clube-hero-model.png";
+import clubeHeroModel from "@/assets/clube-hero-model.webp";
 import { APP_STORE_URL, PLAY_STORE_URL } from "@/lib/detectOS";
 import { ParticleButton } from "@/components/ui/particle-button";
 import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";

@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
 import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
-import serviceHaircut from "@/assets/service-haircut.jpg";
-import serviceBeard from "@/assets/service-beard.jpg";
-import serviceCombo from "@/assets/service-combo.jpg";
-import manicurePedicure from "@/assets/manicure-pedicure.png";
+import serviceHaircut from "@/assets/service-haircut.webp";
+import serviceBeard from "@/assets/service-beard.webp";
+import serviceCombo from "@/assets/service-combo.webp";
+import manicurePedicure from "@/assets/manicure-pedicure.webp";
 
 const services = [
   { title: "Consultoria de Moda", description: "Consultores especializados em moda que elaboram looks sob medida para cada ocasião, do casual ao formal.", image: serviceHaircut, badge: "Looks", span: "md:col-span-2 md:row-span-2" },

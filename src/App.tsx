@@ -4,6 +4,7 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { DownloadAppProvider } from "@/contexts/DownloadAppContext";
+import ErrorBoundary from "./components/ErrorBoundary";
 import ScrollToTop from "./components/ScrollToTop";
 import PageTransition from "./components/PageTransition";
 import Index from "./pages/Index";
@@ -16,27 +17,29 @@ const DiaDoNoivo = lazy(() => import("./pages/DiaDoNoivo"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 const App = () => (
-  <TooltipProvider>
-    <Toaster />
-    <Sonner />
-    <BrowserRouter>
-      <DownloadAppProvider>
-        <ScrollToTop />
-        <PageTransition />
-        <Suspense fallback={null}>
-          <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/servicos" element={<Servicos />} />
-            <Route path="/esteticista" element={<Esteticista />} />
-            <Route path="/contato" element={<Contato />} />
-            <Route path="/clube" element={<Clube />} />
-            <Route path="/dia-do-noivo" element={<DiaDoNoivo />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </Suspense>
-      </DownloadAppProvider>
-    </BrowserRouter>
-  </TooltipProvider>
+  <ErrorBoundary>
+    <TooltipProvider>
+      <Toaster />
+      <Sonner />
+      <BrowserRouter>
+        <DownloadAppProvider>
+          <ScrollToTop />
+          <PageTransition />
+          <Suspense fallback={null}>
+            <Routes>
+              <Route path="/" element={<Index />} />
+              <Route path="/servicos" element={<Servicos />} />
+              <Route path="/esteticista" element={<Esteticista />} />
+              <Route path="/contato" element={<Contato />} />
+              <Route path="/clube" element={<Clube />} />
+              <Route path="/dia-do-noivo" element={<DiaDoNoivo />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </Suspense>
+        </DownloadAppProvider>
+      </BrowserRouter>
+    </TooltipProvider>
+  </ErrorBoundary>
 );
 
 export default App;
