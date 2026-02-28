@@ -1,24 +1,20 @@
-import { useState } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
-import DownloadAppModal from "@/components/DownloadAppModal";
 import { Check, Crown, Calendar, Sparkles, Percent, X, Smartphone } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import PricingCards from "@/components/ui/pricing-component";
 import clubeHeroModel from "@/assets/clube-hero-model.png";
-import { detectOS, APP_STORE_URL, PLAY_STORE_URL } from "@/lib/detectOS";
+import { APP_STORE_URL, PLAY_STORE_URL } from "@/lib/detectOS";
 import { ParticleButton } from "@/components/ui/particle-button";
 import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
+import { useDownloadApp } from "@/contexts/DownloadAppContext";
 
 const Clube = () => {
-  const [showDownloadModal, setShowDownloadModal] = useState(false);
+  const { openDownloadModal } = useDownloadApp();
 
   const handleSubscribe = () => {
-    const os = detectOS();
-    if (os === "ios") window.open(APP_STORE_URL, "_blank");
-    else if (os === "android") window.open(PLAY_STORE_URL, "_blank");
-    else setShowDownloadModal(true);
+    openDownloadModal();
   };
 
   const plans = [
@@ -48,7 +44,6 @@ const Clube = () => {
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      <DownloadAppModal open={showDownloadModal} onOpenChange={setShowDownloadModal} />
 
       <section className="relative min-h-[80vh] flex items-center overflow-hidden bg-foreground">
         <div className="relative z-10 container-clean py-16 lg:py-24">

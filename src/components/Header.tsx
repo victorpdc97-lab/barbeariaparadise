@@ -4,6 +4,7 @@ import { Menu, X } from "lucide-react";
 import logoParadise from "@/assets/logo-paradise-barber-new.png";
 import { ParticleButton } from "@/components/ui/particle-button";
 import { MenuVertical } from "@/components/ui/menu-vertical";
+import { useDownloadApp } from "@/contexts/DownloadAppContext";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -43,7 +44,7 @@ const Header = () => {
   ];
 
   const isActive = (path: string) => location.pathname === path;
-  const bookingLink = "https://agendamentos.bestbarbers.app/barbershop/paradise";
+  const { openDownloadModal } = useDownloadApp();
 
   return (
     <>
@@ -88,8 +89,7 @@ const Header = () => {
             {/* CTA Button */}
             <div className="flex items-center gap-4">
               <ParticleButton
-                href={bookingLink}
-                target="_blank"
+                onClick={openDownloadModal}
                 className="hidden lg:flex btn-primary text-sm px-8 py-3"
               >
                 Agendar Horário
@@ -136,8 +136,7 @@ const Header = () => {
           
           <div className="mt-8">
             <ParticleButton
-              href={bookingLink}
-              target="_blank"
+              onClick={openDownloadModal}
               className="btn-primary px-12 py-4 text-base"
             >
               Agendar Horário

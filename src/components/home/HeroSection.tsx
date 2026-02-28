@@ -3,7 +3,6 @@ import { ParticleButton } from "@/components/ui/particle-button";
 import SpiralAnimation from "@/components/SpiralAnimation";
 
 const HeroSection = () => {
-  const bookingLink = "https://agendamentos.bestbarbers.app/barbershop/paradise";
 
   return (
     <section className="relative min-h-screen flex items-end overflow-hidden">

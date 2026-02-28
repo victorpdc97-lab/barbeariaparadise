@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import { Clock } from "lucide-react";
 import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
+import { useDownloadApp } from "@/contexts/DownloadAppContext";
 
 const categories = [
   {
@@ -53,7 +54,7 @@ const categories = [
 ];
 
 const ServicosPage = () => {
-  const bookingLink = "https://agendamentos.bestbarbers.app/barbershop/paradise";
+  const { openDownloadModal } = useDownloadApp();
 
   return (
     <div className="min-h-screen bg-background">
@@ -102,7 +103,7 @@ const ServicosPage = () => {
           <div className="container-narrow text-center">
             <h2 className="font-display text-3xl md:text-4xl text-primary-foreground mb-4">Pronto para transformar seu visual?</h2>
             <p className="text-primary-foreground/60 text-sm max-w-md mx-auto mb-8">Agende seu horário e venha viver a experiência Paradise.</p>
-            <InteractiveHoverButton href={bookingLink} target="_blank" text="Agendar Horário" className="w-56 border-white/20 bg-white/5 text-primary-foreground" />
+            <InteractiveHoverButton onClick={openDownloadModal} text="Agendar Horário" className="w-56 border-white/20 bg-white/5 text-primary-foreground" />
           </div>
         </section>
       </main>

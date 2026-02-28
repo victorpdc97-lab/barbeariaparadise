@@ -1,7 +1,8 @@
 import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
+import { useDownloadApp } from "@/contexts/DownloadAppContext";
 
 const PricingSection = () => {
-  const bookingLink = "https://agendamentos.bestbarbers.app/barbershop/paradise";
+  const { openDownloadModal } = useDownloadApp();
   const services = [
     { name: "Corte", price: "R$ 65", duration: "30 min" },
     { name: "Barba", price: "R$ 50", duration: "30 min" },
@@ -33,7 +34,7 @@ const PricingSection = () => {
           </div>
 
           <div className="text-center mt-8 opacity-0 animate-fade-up delay-300 flex justify-center">
-            <InteractiveHoverButton href={bookingLink} target="_blank" text="Agendar Agora" className="w-56" />
+            <InteractiveHoverButton onClick={openDownloadModal} text="Agendar Agora" className="w-56" />
           </div>
         </div>
       </div>

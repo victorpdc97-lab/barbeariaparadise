@@ -1,8 +1,9 @@
 import { MapPin, Clock } from "lucide-react";
 import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
+import { useDownloadApp } from "@/contexts/DownloadAppContext";
 
 const LocationSection = () => {
-  const bookingLink = "https://agendamentos.bestbarbers.app/barbershop/paradise";
+  const { openDownloadModal } = useDownloadApp();
 
   return (
     <section className="section-clean bg-background">
@@ -47,7 +48,7 @@ const LocationSection = () => {
             </div>
 
             <div className="opacity-0 animate-fade-up delay-200">
-              <InteractiveHoverButton href={bookingLink} target="_blank" text="Agendar Agora" className="w-56" />
+              <InteractiveHoverButton onClick={openDownloadModal} text="Agendar Agora" className="w-56" />
             </div>
           </div>
 

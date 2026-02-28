@@ -21,7 +21,7 @@ const DownloadAppModal = ({ open, onOpenChange }: DownloadAppModalProps) => {
             Baixe o App Paradise
           </DialogTitle>
           <DialogDescription className="text-center text-muted-foreground">
-            Para assinar o Clube Paradise, baixe nosso aplicativo e faça sua assinatura diretamente por lá.
+            Baixe nosso aplicativo para agendar horários e assinar o Clube Paradise.
           </DialogDescription>
         </DialogHeader>
 

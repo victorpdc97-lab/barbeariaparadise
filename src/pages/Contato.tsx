@@ -7,12 +7,13 @@ import { Textarea } from "@/components/ui/textarea";
 import { MapPin, Clock, Phone, Instagram, Send } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
+import { useDownloadApp } from "@/contexts/DownloadAppContext";
 
 const ContatoPage = () => {
   const { toast } = useToast();
   const [formData, setFormData] = useState({ name: "", phone: "", message: "" });
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const bookingLink = "https://agendamentos.bestbarbers.app/barbershop/paradise";
+  const { openDownloadModal } = useDownloadApp();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -61,7 +62,7 @@ const ContatoPage = () => {
                 </form>
                 <div className="mt-8 p-5 border border-border rounded-lg">
                   <p className="text-sm text-muted-foreground mb-4">Prefere agendar diretamente?</p>
-                  <InteractiveHoverButton href={bookingLink} target="_blank" text="Agendar Horário" className="w-full" />
+                  <InteractiveHoverButton onClick={openDownloadModal} text="Agendar Horário" className="w-full" />
                 </div>
               </div>
 
