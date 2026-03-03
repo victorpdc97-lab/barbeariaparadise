@@ -95,7 +95,7 @@ const Header = () => {
             <div className="flex items-center gap-4">
               <ParticleButton
                 onClick={openDownloadModal}
-                className="hidden lg:flex btn-primary text-sm px-8 py-3"
+                className="hidden lg:flex text-sm px-8 py-3 rounded-sm font-medium tracking-wide transition-all duration-300 bg-white text-black hover:bg-white/90"
               >
                 Agendar Horário
               </ParticleButton>
@@ -142,7 +142,7 @@ const Header = () => {
           <div className="mt-8">
             <ParticleButton
               onClick={openDownloadModal}
-              className="btn-primary px-12 py-4 text-base"
+              className="px-12 py-4 text-base rounded-sm font-medium tracking-wide transition-all duration-300 bg-white text-black hover:bg-white/90"
             >
               Agendar Horário
             </ParticleButton>

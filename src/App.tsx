@@ -17,6 +17,7 @@ const Esteticista = lazy(() => import("./pages/Esteticista"));
 const Contato = lazy(() => import("./pages/Contato"));
 const Clube = lazy(() => import("./pages/Clube"));
 const DiaDoNoivo = lazy(() => import("./pages/DiaDoNoivo"));
+const Afiliados = lazy(() => import("./pages/Afiliados"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 const App = () => (
@@ -38,6 +39,7 @@ const App = () => (
               <Route path="/contato" element={<Contato />} />
               <Route path="/clube" element={<Clube />} />
               <Route path="/dia-do-noivo" element={<DiaDoNoivo />} />
+              <Route path="/afiliados" element={<Afiliados />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </Suspense>

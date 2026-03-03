@@ -11,6 +11,7 @@ const Footer = () => {
     { name: "Clube", path: "/clube" },
     { name: "Dia do Noivo", path: "/dia-do-noivo" },
     { name: "Contato", path: "/contato" },
+    { name: "Afiliados", path: "/afiliados" },
   ];
 
   return (

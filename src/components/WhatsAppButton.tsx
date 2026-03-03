@@ -9,6 +9,7 @@ const messages: Record<string, string> = {
   "/contato": "Olá! Gostaria de falar com a Barbearia Paradise.",
   "/clube": "Olá! Tenho interesse no Clube Paradise.",
   "/dia-do-noivo": "Olá! Tenho interesse no pacote Dia do Noivo.",
+  "/afiliados": "Olá! Gostaria de indicar alguém para o Clube Paradise.",
 };
 
 const WhatsAppButton = () => {
