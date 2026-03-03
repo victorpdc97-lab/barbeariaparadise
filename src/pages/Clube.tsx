@@ -121,7 +121,7 @@ const Clube = () => {
             <Accordion type="single" collapsible className="space-y-3">
               {faqs.map((faq, index) => (
                 <AccordionItem key={index} value={`item-${index}`} className="border border-border rounded-lg px-6 animate-fade-up" style={{ animationDelay: `${(index + 2) * 0.06}s` }}>
-                  <AccordionTrigger className="text-foreground text-sm font-medium hover:text-muted-foreground hover:no-underline py-4">{faq.question}</AccordionTrigger>
+                  <AccordionTrigger className="text-foreground text-sm font-medium hover:text-foreground/70 hover:no-underline py-4">{faq.question}</AccordionTrigger>
                   <AccordionContent className="text-muted-foreground text-sm pb-4">{faq.answer}</AccordionContent>
                 </AccordionItem>
               ))}

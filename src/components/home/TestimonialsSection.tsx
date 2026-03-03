@@ -55,15 +55,15 @@ const TestimonialsSection = () => {
           </div>
 
           <div className="flex items-center justify-center gap-6">
-            <button onClick={prev} className="w-10 h-10 rounded-full border border-border flex items-center justify-center text-muted-foreground hover:text-foreground hover:border-foreground transition-all" aria-label="Depoimento anterior">
+            <button onClick={prev} className="w-11 h-11 rounded-full border border-border flex items-center justify-center text-muted-foreground hover:text-foreground hover:border-foreground transition-all" aria-label="Depoimento anterior">
               <ChevronLeft size={18} />
             </button>
             <div className="flex gap-2">
               {testimonials.map((_, i) => (
-                <button key={i} onClick={() => setCurrent(i)} className={`h-2 rounded-full transition-all duration-300 ${i === current ? "bg-foreground w-6" : "bg-border hover:bg-muted-foreground w-2"}`} aria-label={`Depoimento ${i + 1}`} />
+                <button key={i} onClick={() => setCurrent(i)} className={`h-3 rounded-full transition-all duration-300 ${i === current ? "bg-foreground w-6" : "bg-border hover:bg-muted-foreground w-3"}`} aria-label={`Depoimento ${i + 1}`} />
               ))}
             </div>
-            <button onClick={next} className="w-10 h-10 rounded-full border border-border flex items-center justify-center text-muted-foreground hover:text-foreground hover:border-foreground transition-all" aria-label="Próximo depoimento">
+            <button onClick={next} className="w-11 h-11 rounded-full border border-border flex items-center justify-center text-muted-foreground hover:text-foreground hover:border-foreground transition-all" aria-label="Próximo depoimento">
               <ChevronRight size={18} />
             </button>
           </div>

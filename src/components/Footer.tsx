@@ -44,7 +44,7 @@ const Footer = () => {
             <h4 className="font-display text-lg text-primary-foreground mb-5">Horário</h4>
             <div className="space-y-3 text-sm text-primary-foreground/60">
               <div className="flex items-start gap-2.5">
-                <Clock size={14} className="mt-0.5 flex-shrink-0 text-primary-foreground/40" />
+                <Clock size={14} className="mt-0.5 flex-shrink-0 text-primary-foreground/60" />
                 <div>
                   <p>{HOURS.weekdays}</p>
                   <p>{HOURS.saturday}</p>
@@ -58,11 +58,11 @@ const Footer = () => {
             <h4 className="font-display text-lg text-primary-foreground mb-5">Endereço</h4>
             <div className="space-y-3 text-sm text-primary-foreground/60">
               <div className="flex items-start gap-2.5">
-                <MapPin size={14} className="mt-0.5 flex-shrink-0 text-primary-foreground/40" />
+                <MapPin size={14} className="mt-0.5 flex-shrink-0 text-primary-foreground/60" />
                 <p>{ADDRESS.street}<br />{ADDRESS.neighborhood}<br />{ADDRESS.city} - {ADDRESS.state}</p>
               </div>
               <div className="flex items-start gap-2.5">
-                <Phone size={14} className="mt-0.5 flex-shrink-0 text-primary-foreground/40" />
+                <Phone size={14} className="mt-0.5 flex-shrink-0 text-primary-foreground/60" />
                 <a href={`tel:+${PHONE_NUMBER}`} className="hover:text-primary-foreground transition-colors">{PHONE_DISPLAY}</a>
               </div>
             </div>
