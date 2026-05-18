@@ -20,7 +20,6 @@ const services = [
   { icon: Sparkles, text: "Barba" },
   { icon: Sparkles, text: "Sobrancelha" },
   { icon: Sparkles, text: "Limpeza de pele" },
-  { icon: Sparkles, text: "Massagem" },
   { icon: Sparkles, text: "Finalização" },
 ];
 
@@ -37,7 +36,7 @@ const galleryImages = [
   { src: diaNoivo3, alt: "Barbearia Paradise, Espaço moderno e diferenciado" },
   { src: diaNoivo4, alt: "Dia do Noivo no Paraíso, Experiência exclusiva para o casamento" },
   { src: diaNoivo5, alt: "Experiência, Bar, sinuca, vestiário e tratamentos completos" },
-  { src: diaNoivo6, alt: "Serviços inclusos, Corte, barba, massagem, limpeza de pele e mais" },
+  { src: diaNoivo6, alt: "Serviços inclusos, Corte, barba, sobrancelha, limpeza de pele e finalização" },
   { src: diaNoivo7, alt: "Valores, R$150 por pessoa, formato Day Use" },
   { src: diaNoivo8, alt: "Agendamento, Reserve sua data pelo WhatsApp" },
 ];
@@ -46,7 +45,7 @@ const DiaDoNoivo = () => {
   usePageMeta({
     title: "Dia do Noivo | Barbearia Paradise",
     description:
-      "Pacote especial Dia do Noivo. Experiência exclusiva para o noivo e padrinhos com corte, barba, massagem e mais. Grupos a partir de 3 pessoas. R$150/pessoa.",
+      "Pacote especial Dia do Noivo. Experiência exclusiva para o noivo e padrinhos com corte, barba, sobrancelha e limpeza de pele. Grupos a partir de 3 pessoas. R$150/pessoa.",
   });
 
   const whatsappMessage = encodeURIComponent(
