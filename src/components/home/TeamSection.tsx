@@ -1,13 +1,11 @@
 import teamJonathan from "@/assets/team-jonathan.webp";
 import teamLucas from "@/assets/team-lucas.webp";
 import teamTariki from "@/assets/team-tariki.webp";
-import teamPatrick from "@/assets/team-patrick.webp";
 
 const team = [
   { name: "Jonathan", role: "Barbeiro", specialty: "Cortes Modernos", description: "Apaixonado por degradês e linhas precisas. Sempre atualizado com as tendências internacionais.", image: teamJonathan, instagram: "https://www.instagram.com/barbeariaparadise/" },
   { name: "Lucas", role: "Barbeiro", specialty: "Cortes Clássicos", description: "O cara dos cortes atemporais. Combina a técnica tradicional com o toque moderno que o cliente quer.", image: teamLucas, instagram: "https://www.instagram.com/barbeariaparadise/" },
   { name: "Tariki", role: "Barbeiro", specialty: "Especialista em Barba", description: "Mestre na navalha e no ritual da barba. Cada cliente sai com o rosto impecável e relaxado.", image: teamTariki, instagram: "https://www.instagram.com/barbeariaparadise/" },
-  { name: "Patrick", role: "Barbeiro", specialty: "Cortes na Tesoura", description: "O mestre da tesoura. Cada corte é feito fio a fio, com precisão artesanal e um acabamento que valoriza o seu estilo.", image: teamPatrick, instagram: "https://www.instagram.com/barbeariaparadise/" },
 ];
 
 const TeamSection = () => {
@@ -19,7 +17,7 @@ const TeamSection = () => {
           <h2 className="headline-section text-foreground">Quem cuida de você</h2>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-3 gap-5">
           {team.map((member, index) => (
             <div key={member.name} className="group animate-fade-up" style={{ animationDelay: `${(index + 2) * 0.1}s` }}>
               <div className="aspect-[3/4] overflow-hidden rounded-lg mb-4 relative">
