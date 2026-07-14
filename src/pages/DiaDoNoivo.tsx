@@ -25,7 +25,7 @@ const services = [
 
 const experience = [
   { icon: Sparkles, text: "Tratamentos completos por profissionais especializados" },
-  { icon: Wine, text: "Bar completo e sinuca à vontade para os convidados" },
+  { icon: Wine, text: "Bar completo e sinuca para os convidados" },
   { icon: Car, text: "Estacionamento na porta para sua comodidade" },
   { icon: Users, text: "Consultoria exclusiva para o noivo, cada detalhe perfeito" },
 ];
