@@ -37,7 +37,7 @@ const galleryImages = [
   { src: diaNoivo4, alt: "Dia do Noivo no Paraíso, Experiência exclusiva para o casamento" },
   { src: diaNoivo5, alt: "Experiência, Bar, sinuca, vestiário e tratamentos completos" },
   { src: diaNoivo6, alt: "Serviços inclusos, Corte, barba, sobrancelha, limpeza de pele e finalização" },
-  { src: diaNoivo7, alt: "Valores, R$150 por pessoa, formato Day Use" },
+  { src: diaNoivo7, alt: "Valores, R$200 por pessoa, formato Day Use" },
   { src: diaNoivo8, alt: "Agendamento, Reserve sua data pelo WhatsApp" },
 ];
 
@@ -45,7 +45,7 @@ const DiaDoNoivo = () => {
   usePageMeta({
     title: "Dia do Noivo | Barbearia Paradise",
     description:
-      "Pacote especial Dia do Noivo. Experiência exclusiva para o noivo e padrinhos com corte, barba, sobrancelha e limpeza de pele. Grupos a partir de 3 pessoas. R$150/pessoa.",
+      "Pacote especial Dia do Noivo. Experiência exclusiva para o noivo e padrinhos com corte, barba, sobrancelha e limpeza de pele. Grupos a partir de 3 pessoas. R$200/pessoa.",
   });
 
   const whatsappMessage = encodeURIComponent(
@@ -146,7 +146,7 @@ const DiaDoNoivo = () => {
                 </div>
                 <div className="flex-1">
                   <h3 className="text-xl md:text-2xl font-semibold text-foreground mb-2">
-                    R$150,00 por pessoa
+                    R$200,00 por pessoa
                   </h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">
                     Pacote completo no formato Day Use. Grupos a partir de 3
