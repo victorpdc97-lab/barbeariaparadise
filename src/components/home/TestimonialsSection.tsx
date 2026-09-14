@@ -4,7 +4,7 @@ import { Star, ChevronLeft, ChevronRight } from "lucide-react";
 const testimonials = [
   { name: "Marcos Silva", role: "Cliente desde 2020", text: "Vou à Paradise toda semana e nunca me decepcionei. O ambiente é impecável, os barbeiros são atenciosos e o resultado é sempre acima do esperado. Recomendo de olhos fechados.", rating: 5, source: "Google Reviews" },
   { name: "João Pedro", role: "Membro do Clube", text: "Depois que assinei o Clube, não consigo imaginar ir a outra barbearia. O custo-benefício é absurdo e a qualidade do corte se mantém consistente toda vez.", rating: 5, source: "Google Reviews" },
-  { name: "Dr. Luís Reis", role: "Cliente", text: "Excelente atendimento na barbearia! Cada detalhe faz a diferença: do cuidado com os clientes ao atendimento personalizado, tudo impecável. Quero parabenizar toda a equipe incrível: Túlio, Tariki, Lucas e Kelvin vocês transformam cada visita em uma experiência VIP, do corte ao momento de barbearia. Vale muito a pena conhecer e se sentir cuidado com tanto profissionalismo e dedicação!", rating: 5, source: "Google Reviews" },
+  { name: "Dr. Luís Reis", role: "Cliente", text: "Excelente atendimento na barbearia! Cada detalhe faz a diferença: do cuidado com os clientes ao atendimento personalizado, tudo impecável. Quero parabenizar toda a equipe incrível: Túlio, Tariki e Lucas vocês transformam cada visita em uma experiência VIP, do corte ao momento de barbearia. Vale muito a pena conhecer e se sentir cuidado com tanto profissionalismo e dedicação!", rating: 5, source: "Google Reviews" },
 ];
 
 const AUTOPLAY_INTERVAL = 6000;
