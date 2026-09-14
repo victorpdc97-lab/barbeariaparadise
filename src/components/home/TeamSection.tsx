@@ -1,9 +1,9 @@
-import teamJonathan from "@/assets/team-jonathan.webp";
+import teamTulio from "@/assets/team-tulio.webp";
 import teamLucas from "@/assets/team-lucas.webp";
 import teamTariki from "@/assets/team-tariki.webp";
 
 const team = [
-  { name: "Jonathan", role: "Barbeiro", specialty: "Cortes Modernos", description: "Apaixonado por degradês e linhas precisas. Sempre atualizado com as tendências internacionais.", image: teamJonathan, instagram: "https://www.instagram.com/barbeariaparadise/" },
+  { name: "Túlio", role: "Barbeiro", specialty: "Cortes Modernos", description: "Apaixonado por degradês e linhas precisas. Sempre atualizado com as tendências internacionais.", image: teamTulio, instagram: "https://www.instagram.com/barbeariaparadise/" },
   { name: "Lucas", role: "Barbeiro", specialty: "Cortes Clássicos", description: "O cara dos cortes atemporais. Combina a técnica tradicional com o toque moderno que o cliente quer.", image: teamLucas, instagram: "https://www.instagram.com/barbeariaparadise/" },
   { name: "Tariki", role: "Barbeiro", specialty: "Especialista em Barba", description: "Mestre na navalha e no ritual da barba. Cada cliente sai com o rosto impecável e relaxado.", image: teamTariki, instagram: "https://www.instagram.com/barbeariaparadise/" },
 ];
