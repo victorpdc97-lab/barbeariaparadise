@@ -15,7 +15,6 @@ import {
   Wine,
   Car,
   Users,
-  Clock,
   Lock,
   ShowerHead,
   CalendarCheck,
@@ -81,10 +80,6 @@ const examples = [
 
 const experience = [
   { icon: Lock, text: "Barbearia reservada para o seu grupo: um Dia do Noivo por dia" },
-  {
-    icon: Clock,
-    text: "Três barbeiros ao mesmo tempo: 1h30 para até 3 pessoas, mais 30 min a cada pessoa extra",
-  },
   { icon: Sparkles, text: "Tratamentos completos por profissionais especializados" },
   { icon: Wine, text: "Espaço climatizado com bar completo e sinuca para os convidados" },
   { icon: ShowerHead, text: "Vestiário com toalete completo para todos saírem prontos" },
