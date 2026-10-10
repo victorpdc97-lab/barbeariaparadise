@@ -1,7 +1,6 @@
 import usePageMeta from "@/hooks/usePageMeta";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import WhatsAppButton from "@/components/WhatsAppButton";
 import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
 import { WHATSAPP_NUMBER } from "@/lib/constants";
 import {
@@ -10,6 +9,9 @@ import {
   Wine,
   Car,
   Users,
+  Clock,
+  Lock,
+  ShowerHead,
   CalendarCheck,
   CreditCard,
   MessageCircle,
@@ -20,8 +22,6 @@ import diaNoivo2 from "@/assets/dia-noivo-2.webp";
 import diaNoivo3 from "@/assets/dia-noivo-3.webp";
 import diaNoivo4 from "@/assets/dia-noivo-4.webp";
 import diaNoivo5 from "@/assets/dia-noivo-5.webp";
-import diaNoivo6 from "@/assets/dia-noivo-6.webp";
-import diaNoivo7 from "@/assets/dia-noivo-7.webp";
 
 // Sistema de reserva online do Dia do Noivo.
 const RESERVA_URL = "https://noivo.barbeariaparadise.com.br";
@@ -67,9 +67,21 @@ const extraGroups = [
   },
 ];
 
+// Exemplos calculados com os preços acima (5 pessoas: noivo + 4 padrinhos).
+const examples = [
+  { label: "Noivo + 4 padrinhos, Combo Barbearia", total: "R$ 1.000" },
+  { label: "O mesmo grupo, com banho e café da manhã para todos", total: "R$ 1.400" },
+];
+
 const experience = [
+  { icon: Lock, text: "Barbearia reservada para o seu grupo: um Dia do Noivo por dia" },
+  {
+    icon: Clock,
+    text: "Três barbeiros ao mesmo tempo: 1h30 para até 3 pessoas, mais 30 min a cada pessoa extra",
+  },
   { icon: Sparkles, text: "Tratamentos completos por profissionais especializados" },
-  { icon: Wine, text: "Bar completo e sinuca para os convidados" },
+  { icon: Wine, text: "Espaço climatizado com bar completo e sinuca para os convidados" },
+  { icon: ShowerHead, text: "Vestiário com toalete completo para todos saírem prontos" },
   { icon: Car, text: "Estacionamento na porta para sua comodidade" },
   { icon: Users, text: "Consultoria exclusiva para o noivo, cada detalhe perfeito" },
 ];
@@ -98,8 +110,6 @@ const galleryImages = [
   { src: diaNoivo3, alt: "Barbearia Paradise, Espaço moderno e diferenciado" },
   { src: diaNoivo4, alt: "Dia do Noivo no Paraíso, Experiência exclusiva para o casamento" },
   { src: diaNoivo5, alt: "Experiência, Bar, sinuca, vestiário e tratamentos completos" },
-  { src: diaNoivo6, alt: "Serviços inclusos, Corte, barba, sobrancelha, limpeza de pele e finalização" },
-  { src: diaNoivo7, alt: "Valores, R$200 por pessoa no Combo Barbearia" },
 ];
 
 const DiaDoNoivo = () => {
@@ -222,6 +232,25 @@ const DiaDoNoivo = () => {
               ))}
             </div>
 
+            <div className="mt-6 animate-fade-up delay-200">
+              <p className="text-xs font-medium uppercase tracking-[0.15em] text-muted-foreground mb-3 text-center">
+                Exemplos
+              </p>
+              <ul className="space-y-2">
+                {examples.map((example) => (
+                  <li
+                    key={example.label}
+                    className="flex items-center justify-between gap-4 text-sm border-b border-border pb-2"
+                  >
+                    <span className="text-muted-foreground">{example.label}</span>
+                    <span className="font-display text-lg text-foreground whitespace-nowrap">
+                      {example.total}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
             <p className="text-xs text-muted-foreground text-center mt-6 animate-fade-up delay-200">
               Clube Paradise não disponível para este serviço.
             </p>
@@ -301,9 +330,7 @@ const DiaDoNoivo = () => {
         <div className="container-clean">
           <div className="text-center mb-14 animate-fade-up">
             <p className="eyebrow mb-4">Conheça o projeto</p>
-            <h2 className="headline-section text-foreground">
-              Apresentação completa
-            </h2>
+            <h2 className="headline-section text-foreground">O espaço</h2>
           </div>
           <div className="flex flex-col gap-3 max-w-4xl mx-auto">
             {galleryImages.map((image, index) => (
@@ -355,7 +382,6 @@ const DiaDoNoivo = () => {
       </section>
 
       <Footer />
-      <WhatsAppButton />
     </div>
   );
 };
