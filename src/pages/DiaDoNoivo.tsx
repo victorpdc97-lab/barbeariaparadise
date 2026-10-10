@@ -2,6 +2,12 @@ import usePageMeta from "@/hooks/usePageMeta";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 import { WHATSAPP_NUMBER } from "@/lib/constants";
 import {
   Scissors,
@@ -101,6 +107,49 @@ const steps = [
     icon: MessageCircle,
     title: "Receba a confirmação no WhatsApp",
     text: "Assim que o pagamento for conferido, você recebe a confirmação da reserva com o resumo completo. Depois, é só chegar e aproveitar.",
+  },
+];
+
+// Respostas seguem as regras do sistema de reserva (repo dia-do-noivo, config.ts).
+const faqs = [
+  {
+    question: "Tem número mínimo de pessoas?",
+    answer:
+      "Não. Você escolhe de 1 a 10 pessoas em cada item, de forma independente. Dá para fechar só o Combo Barbearia para o noivo ou montar um pacote completo para todos os padrinhos.",
+  },
+  {
+    question: "Com quanta antecedência preciso reservar?",
+    answer:
+      "A reserva online aceita datas a partir de 7 dias e até 6 meses à frente. Como é um grupo por dia, vale garantir a data assim que o casamento estiver marcado.",
+  },
+  {
+    question: "Em quais dias e horários acontece?",
+    answer:
+      "De segunda a sexta das 7h às 20h e aos sábados das 7h às 15h. Não funciona aos domingos. Você escolhe o horário de início na reserva e a duração depende de quantas pessoas vão fazer o Combo Barbearia.",
+  },
+  {
+    question: "Posso pagar no dia?",
+    answer:
+      "Não. O pagamento é antecipado e é ele que garante a data. Pode ser à vista no Pix ou no cartão de crédito em até 3x sem juros, com link enviado pela nossa equipe pelo WhatsApp. A reserva fica guardada por 48 horas aguardando o pagamento.",
+  },
+  {
+    question: "Posso cancelar ou remarcar?",
+    answer:
+      "Para cancelar ou mudar a data, fale com a nossa equipe pelo WhatsApp. Pelo site você consulta a reserva, mas não altera.",
+  },
+  {
+    question: "Como consulto minha reserva?",
+    answer:
+      "No sistema de reserva, em Minha reserva, informando o celular usado no cadastro. Você também recebe o resumo e a confirmação do pagamento no WhatsApp.",
+  },
+  {
+    question: "Preciso levar alguma coisa?",
+    answer:
+      "Se escolher passadoria ou montagem do look, traga o look no dia (calça, blazer, camisa e paletó). É permitida a entrada de alimentos, e o café da manhã e o sushi também podem ser incluídos no pacote.",
+  },
+  {
+    question: "Posso usar o Clube Paradise?",
+    answer: "Não. O Dia do Noivo é um pacote à parte e não entra nos benefícios do Clube Paradise.",
   },
 ];
 
@@ -325,8 +374,37 @@ const DiaDoNoivo = () => {
         </div>
       </section>
 
-      {/* Galeria */}
+      {/* FAQ */}
       <section className="section-clean bg-background">
+        <div className="container-clean">
+          <div className="text-center mb-14 animate-fade-up">
+            <p className="eyebrow mb-4">FAQ</p>
+            <h2 className="headline-section text-foreground">Perguntas frequentes</h2>
+          </div>
+          <div className="max-w-2xl mx-auto">
+            <Accordion type="single" collapsible className="space-y-3">
+              {faqs.map((faq, index) => (
+                <AccordionItem
+                  key={index}
+                  value={`item-${index}`}
+                  className="border border-border rounded-lg px-6 animate-fade-up"
+                  style={{ animationDelay: `${(index + 2) * 0.06}s` }}
+                >
+                  <AccordionTrigger className="text-foreground text-sm font-medium hover:text-foreground/70 hover:no-underline py-4 text-left">
+                    {faq.question}
+                  </AccordionTrigger>
+                  <AccordionContent className="text-muted-foreground text-sm pb-4">
+                    {faq.answer}
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </div>
+        </div>
+      </section>
+
+      {/* Galeria */}
+      <section className="section-clean bg-background border-t border-border">
         <div className="container-clean">
           <div className="text-center mb-14 animate-fade-up">
             <p className="eyebrow mb-4">Conheça o projeto</p>
