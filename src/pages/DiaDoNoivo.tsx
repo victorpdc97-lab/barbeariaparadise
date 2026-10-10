@@ -95,8 +95,8 @@ const steps = [
   },
   {
     icon: CreditCard,
-    title: "Pague à vista no Pix ou no cartão em até 3x",
-    text: "O pagamento é antecipado e garante a data. No Pix, a chave aparece na hora. No cartão, a equipe envia o link pelo WhatsApp, sem juros em até 3 vezes.",
+    title: "Pague no Pix ou no cartão",
+    text: "O pagamento é antecipado e garante a data. No Pix, a chave aparece na hora. No cartão, a equipe envia o link pelo WhatsApp.",
   },
   {
     icon: MessageCircle,
@@ -125,7 +125,7 @@ const faqs = [
   {
     question: "Posso pagar no dia?",
     answer:
-      "Não. O pagamento é antecipado e é ele que garante a data. Pode ser à vista no Pix ou no cartão de crédito em até 3x sem juros, com link enviado pela nossa equipe pelo WhatsApp. A reserva fica guardada por 48 horas aguardando o pagamento.",
+      "Não. O pagamento é antecipado e é ele que garante a data. Pode ser no Pix ou no cartão de crédito, com link enviado pela nossa equipe pelo WhatsApp. A reserva fica guardada por 48 horas aguardando o pagamento.",
   },
   {
     question: "Posso cancelar ou remarcar?",
