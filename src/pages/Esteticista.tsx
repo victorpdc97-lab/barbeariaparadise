@@ -2,41 +2,40 @@ import usePageMeta from "@/hooks/usePageMeta";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
-import { Clock } from "lucide-react";
 import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
 import { useDownloadApp } from "@/contexts/DownloadAppContext";
 
-const categories = [
-  { title: "Mãos & Pés", services: [
-    { name: "Manicure (Masculino)", price: "R$ 30,00", duration: "00:30" },
-    { name: "Pedicure (Masculino)", price: "R$ 30,00", duration: "00:30" },
-    { name: "Manicure (Feminino)", price: "R$ 35,00", duration: "00:40" },
-    { name: "Pedicure (Feminino)", price: "R$ 35,00", duration: "00:40" },
-    { name: "Spa dos pés", price: "R$ 60,00", duration: "01:00" },
+type Service = { name: string; price: string; note?: string };
+type Category = { title: string; subtitle?: string; services: Service[] };
+
+const categories: Category[] = [
+  { title: "Massagens & Terapias", subtitle: "Assinantes do Clube Paradise têm 10% de desconto", services: [
+    { name: "Massagem Facial", price: "R$ 130,00", note: "Clube: -10%" },
+    { name: "Massagem Relaxante", price: "R$ 130,00", note: "Clube: -10%" },
+    { name: "Massagem Terapêutica", price: "R$ 130,00", note: "Clube: -10%" },
+    { name: "Massagem Craniocervical", price: "R$ 130,00", note: "Clube: -10%" },
+    { name: "Ventosaterapia", price: "R$ 130,00", note: "Clube: -10%" },
+    { name: "Auriculoterapia", price: "R$ 45,00", note: "Clube: -10%" },
   ]},
-  { title: "Massagens", services: [
-    { name: "Quick massage", price: "R$ 40,00", duration: "00:15" },
-    { name: "Massagem Relaxante", price: "R$ 130,00", duration: "01:00" },
-    { name: "Massagem Reflexologia", price: "R$ 150,00", duration: "01:00" },
-    { name: "Massagem Modeladora", price: "R$ 180,00", duration: "01:00" },
-    { name: "Drenagem Linfática", price: "R$ 180,00", duration: "01:00" },
+  { title: "Combos", services: [
+    { name: "Terapêutica + Ventosaterapia", price: "R$ 180,00" },
+    { name: "Ventosaterapia + Relaxante", price: "R$ 180,00" },
+    { name: "Craniocervical + Relaxante", price: "R$ 180,00" },
+    { name: "Limpeza de Pele + Massagem", price: "R$ 220,00" },
   ]},
-  { title: "Pacotes de Massagem", services: [
-    { name: "4 Massagens Relaxantes", price: "R$ 450,00", duration: "01:00 cada" },
-    { name: "4 Massagens Reflexologia", price: "R$ 520,00", duration: "01:00 cada" },
-    { name: "4 Massagens Modeladora", price: "R$ 620,00", duration: "01:00 cada" },
+  { title: "Pacotes", services: [
+    { name: "Bem Estar", price: "R$ 250,00", note: "2 massagens" },
+    { name: "Relaxar", price: "R$ 430,00", note: "4 massagens" },
   ]},
-  { title: "Tratamentos Faciais & Corporais", services: [
-    { name: "Clean face", price: "R$ 150,00", duration: "00:50" },
-    { name: "Esfoliação Corporal", price: "R$ 200,00", duration: "01:00" },
-    { name: "Limpeza de Pele (Costas)", price: "R$ 200,00", duration: "01:00" },
-    { name: "Microagulhamento", price: "R$ 250,00", duration: "00:40" },
-    { name: "Depilação cera região", price: "a partir de R$ 45", duration: "00:15" },
+  { title: "Vale Presente", subtitle: "Presenteie quem você ama. Ele(a) decide como e quando utilizar!", services: [
+    { name: "Vale Presente", price: "R$ 300,00" },
+    { name: "Vale Presente", price: "R$ 500,00" },
+    { name: "Vale Presente", price: "R$ 1.000,00" },
   ]},
 ];
 
 const EsteticsistaPage = () => {
-  usePageMeta({ title: "Estética e Bem-estar | Barbearia Paradise", description: "Serviços de manicure, pedicure, massagens, tratamentos faciais e corporais. Cuide de você na Barbearia Paradise." });
+  usePageMeta({ title: "Estética e Bem-estar | Barbearia Paradise", description: "Massagens, ventosaterapia, auriculoterapia, combos, pacotes e vale presente. Cuide de você na Estética Paradise." });
   const { openDownloadModal } = useDownloadApp();
 
   return (
@@ -56,16 +55,18 @@ const EsteticsistaPage = () => {
             <div className="max-w-3xl mx-auto space-y-12">
               {categories.map((category) => (
                 <div key={category.title}>
-                  <div className="flex items-center gap-4 mb-6">
+                  <div className="flex items-center gap-4 mb-2">
                     <h2 className="font-display text-2xl text-foreground">{category.title}</h2>
                     <div className="flex-1 h-px bg-border" />
                   </div>
+                  {category.subtitle && <p className="text-muted-foreground text-sm mb-4">{category.subtitle}</p>}
+                  {!category.subtitle && <div className="mb-4" />}
                   <div className="space-y-0">
                     {category.services.map((service, index) => (
-                      <div key={service.name} className={`flex items-center justify-between py-4 ${index !== category.services.length - 1 ? "border-b border-border/50" : ""} hover:bg-muted/30 transition-colors px-4 -mx-4 rounded-sm`}>
+                      <div key={`${service.name}-${service.price}`} className={`flex items-center justify-between py-4 ${index !== category.services.length - 1 ? "border-b border-border/50" : ""} hover:bg-muted/30 transition-colors px-4 -mx-4 rounded-sm`}>
                         <div className="flex-1">
                           <span className="text-foreground font-light tracking-wide">{service.name}</span>
-                          <div className="flex items-center gap-1 text-muted-foreground text-xs mt-0.5"><Clock size={11} />{service.duration}</div>
+                          {service.note && <div className="text-muted-foreground text-xs mt-0.5">{service.note}</div>}
                         </div>
                         <span className="font-display text-lg text-foreground">{service.price}</span>
                       </div>
