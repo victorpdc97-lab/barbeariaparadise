@@ -9,13 +9,13 @@ type Service = { name: string; price: string; note?: string };
 type Category = { title: string; subtitle?: string; services: Service[] };
 
 const categories: Category[] = [
-  { title: "Massagens & Terapias", subtitle: "Assinantes do Clube Paradise têm 10% de desconto", services: [
-    { name: "Massagem Facial", price: "R$ 130,00", note: "Clube: -10%" },
-    { name: "Massagem Relaxante", price: "R$ 130,00", note: "Clube: -10%" },
-    { name: "Massagem Terapêutica", price: "R$ 130,00", note: "Clube: -10%" },
-    { name: "Massagem Craniocervical", price: "R$ 130,00", note: "Clube: -10%" },
-    { name: "Ventosaterapia", price: "R$ 130,00", note: "Clube: -10%" },
-    { name: "Auriculoterapia", price: "R$ 45,00", note: "Clube: -10%" },
+  { title: "Massagens & Terapias", subtitle: "Membros do Clube Paradise têm 10% de desconto", services: [
+    { name: "Massagem Facial", price: "R$ 130,00", note: "Membro do Clube: -10%" },
+    { name: "Massagem Relaxante", price: "R$ 130,00", note: "Membro do Clube: -10%" },
+    { name: "Massagem Terapêutica", price: "R$ 130,00", note: "Membro do Clube: -10%" },
+    { name: "Massagem Craniocervical", price: "R$ 130,00", note: "Membro do Clube: -10%" },
+    { name: "Ventosaterapia", price: "R$ 130,00", note: "Membro do Clube: -10%" },
+    { name: "Auriculoterapia", price: "R$ 45,00", note: "Membro do Clube: -10%" },
   ]},
   { title: "Combos", services: [
     { name: "Terapêutica + Ventosaterapia", price: "R$ 180,00" },
