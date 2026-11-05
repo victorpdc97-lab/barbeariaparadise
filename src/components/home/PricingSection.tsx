@@ -4,9 +4,9 @@ import { useDownloadApp } from "@/contexts/DownloadAppContext";
 const PricingSection = () => {
   const { openDownloadModal } = useDownloadApp();
   const services = [
-    { name: "Corte", price: "R$ 65", duration: "30 min" },
-    { name: "Barba", price: "R$ 50", duration: "30 min" },
-    { name: "Corte + Barba", price: "R$ 115", duration: "50 min", featured: true },
+    { name: "Corte", price: "R$ 70", duration: "30 min" },
+    { name: "Barba", price: "R$ 55", duration: "30 min" },
+    { name: "Corte + Barba", price: "R$ 125", duration: "50 min", featured: true },
     { name: "Acabamento", price: "R$ 20", duration: "15 min" },
     { name: "Sobrancelha Navalha", price: "R$ 20", duration: "15 min" },
     { name: "Pigmentação de Barba", price: "a partir de R$ 30", duration: "15 min" },

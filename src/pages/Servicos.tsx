@@ -10,9 +10,9 @@ const categories = [
   {
     title: "Corte & Barba",
     services: [
-      { name: "Corte", price: "R$ 65,00", duration: "00:30" },
-      { name: "Barba", price: "R$ 50,00", duration: "00:30" },
-      { name: "Corte + Barba", price: "R$ 115,00", duration: "00:40", featured: true },
+      { name: "Corte", price: "R$ 70,00", duration: "00:30" },
+      { name: "Barba", price: "R$ 55,00", duration: "00:30" },
+      { name: "Corte + Barba", price: "R$ 125,00", duration: "00:40", featured: true },
       { name: "Acabamento", price: "R$ 20,00", duration: "00:15" },
     ],
   },
