@@ -34,7 +34,7 @@ export default function PricingCards({ onSubscribe }: PricingCardsProps) {
   ]
 
   const premiumFeatures = ["Uso ilimitado", "Segunda a Sábado", "10% off em produtos", "Sem fidelidade"]
-  const basicFeatures = ["Uso limitado", "Segunda a Quarta", "10% off em produtos", "Sem fidelidade"]
+  const basicFeatures = ["Uso ilimitado", "Segunda a Quarta", "10% off em produtos", "Sem fidelidade"]
 
   const ServiceSelector = ({
     options,

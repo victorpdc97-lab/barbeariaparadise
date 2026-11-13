@@ -12,7 +12,7 @@ import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button
 import { useDownloadApp } from "@/contexts/DownloadAppContext";
 
 const Clube = () => {
-  usePageMeta({ title: "Clube Paradise | Premium e Basic", description: "Assine o Clube Paradise por um valor fixo mensal. Premium com uso ilimitado de segunda a sábado e Basic com uso limitado de segunda a quarta." });
+  usePageMeta({ title: "Clube Paradise | Assinatura Ilimitada", description: "Assine o Clube Paradise e corte cabelo e barba quantas vezes quiser por um valor fixo mensal. Planos Premium e Basic." });
   const { openDownloadModal } = useDownloadApp();
 
   const handleSubscribe = () => {
@@ -21,7 +21,7 @@ const Clube = () => {
 
   const plans = [
     { name: "Clube Paradise", subtitle: "Premium", tag: "Ilimitado", availability: "Segunda a Sábado", featured: true, options: [{ service: "Corte + Barba", price: "R$209,90" }, { service: "Corte", price: "R$139,90" }, { service: "Barba", price: "R$139,90" }] },
-    { name: "Clube Paradise", subtitle: "Basic", tag: "Limitado", availability: "Segunda a Quarta", featured: false, options: [{ service: "Corte + Barba", price: "R$179,90" }, { service: "Corte", price: "R$119,90" }, { service: "Barba", price: "R$119,90" }] },
+    { name: "Clube Paradise", subtitle: "Basic", tag: "Ilimitado", availability: "Segunda a Quarta", featured: false, options: [{ service: "Corte + Barba", price: "R$179,90" }, { service: "Corte", price: "R$119,90" }, { service: "Barba", price: "R$119,90" }] },
   ];
 
   const benefits = [
@@ -37,7 +37,7 @@ const Clube = () => {
   const faqs = [
     { question: "Como funciona?", answer: "O Clube Paradise é um serviço de assinatura recorrente dividido em 2 opções: Premium e Basic. Para assinar, basta baixar nosso app (disponível na App Store e Google Play) e fazer sua assinatura diretamente por lá." },
     { question: "Como faço para assinar?", answer: "A assinatura é feita exclusivamente pelo nosso aplicativo. Baixe o app Paradise, crie sua conta e escolha o plano ideal." },
-    { question: "Possui limite de uso?", answer: "Premium: uso ilimitado, de segunda a sábado. Basic: uso limitado, de segunda a quarta." },
+    { question: "Possui limite de uso?", answer: "Premium: quantas vezes quiser de segunda a sábado. Basic: quantas vezes quiser de segunda a quarta." },
     { question: "Quais as formas de pagamento?", answer: "A mensalidade é realizada via cartão de crédito através do app, sem prejudicar o limite." },
     { question: "Possui taxa de adesão/fidelidade?", answer: "Sem cobranças adicionais. Você pode entrar e sair quando quiser sem pagar nada a mais!" },
     { question: "Terceiros podem utilizar o meu plano?", answer: "Não. A assinatura é individual e intransferível." },
@@ -56,7 +56,7 @@ const Clube = () => {
                 Já pensou em<br /><span className="italic text-primary-foreground/90">assinar uma barbearia?</span>
               </h1>
               <p className="text-base text-primary-foreground/60 max-w-lg mb-10 animate-fade-up delay-200 leading-relaxed">
-                Com o Clube Paradise, você paga um valor fixo por mês. Premium: uso ilimitado de segunda a sábado. Basic: uso limitado de segunda a quarta.
+                Com o Clube Paradise, você paga um valor fixo por mês e corta o cabelo e/ou barba quantas vezes quiser. Sem limites.
               </p>
               <div className="animate-fade-up delay-300">
                 <InteractiveHoverButton onClick={handleSubscribe} text="Assinar Agora" className="w-56 border-foreground/20 bg-primary-foreground text-foreground" />
