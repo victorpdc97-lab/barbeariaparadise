@@ -22,15 +22,15 @@ export default function PricingCards({ onSubscribe }: PricingCardsProps) {
   )
 
   const premiumOptions = [
-    { service: "Corte + Barba", price: "R$199,90" },
-    { service: "Corte", price: "R$129,90" },
-    { service: "Barba", price: "R$129,90" },
+    { service: "Corte + Barba", price: "R$209,90" },
+    { service: "Corte", price: "R$139,90" },
+    { service: "Barba", price: "R$139,90" },
   ]
 
   const basicOptions = [
-    { service: "Corte + Barba", price: "R$169,90" },
-    { service: "Corte", price: "R$109,90" },
-    { service: "Barba", price: "R$109,90" },
+    { service: "Corte + Barba", price: "R$179,90" },
+    { service: "Corte", price: "R$119,90" },
+    { service: "Barba", price: "R$119,90" },
   ]
 
   const premiumFeatures = ["Uso ilimitado", "Segunda a Sábado", "10% off em produtos", "Sem fidelidade"]
